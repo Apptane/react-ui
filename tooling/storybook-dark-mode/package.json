@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-storybook-dark-mode",
   "description": "Storybook dark mode addon for Apptane UI components",
   "license": "Apache-2.0",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/apptane/react-ui/tree/main/tooling/storybook-dark-mode#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
@@ -46,7 +46,7 @@
     "watch": "concurrently \"yarn build:esm -- --watch\""
   },
   "peerDependencies": {
-    "@apptane/react-ui-theme": "workspace:^0.0.0",
+    "@apptane/react-ui-theme": "workspace:^1.0.0",
     "@storybook/addons": "^6.3.6",
     "@storybook/api": "^6.3.6",
     "@storybook/components": "^6.3.6",
@@ -66,7 +66,7 @@
     "react": "17.0.2"
   },
   "dependencies": {
-    "@apptane/react-ui-theme": "workspace:^0.0.0",
+    "@apptane/react-ui-theme": "workspace:^1.0.0",
     "@babel/runtime": "^7.15.4"
   },
   "storybook": {
