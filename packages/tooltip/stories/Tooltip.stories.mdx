@@ -1,0 +1,189 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { Tooltip } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Primitives/Tooltip"
+  component={Tooltip}
+  argTypes={{
+    header: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    children: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        category: "Appearance",
+      },
+      options: ["default", "inverted"],
+      control: {
+        type: "inline-radio",
+      },
+    },
+    arrowVisible: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    placement: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    maxWidth: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => <Tooltip {...args} />;
+
+# Tooltip
+
+<Description of={Tooltip} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ header: "Header", children: "Body text", placement: "top" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Different placements with `arrowVisible = true`.
+
+<Canvas withSource="none">
+  <Story
+    name="Top"
+    args={{
+      children: "Top",
+      placement: "top",
+      arrowVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Top-Left"
+    args={{
+      children: "Top — Left",
+      placement: "top-left",
+      arrowVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Top-Center"
+    args={{
+      children: "Top — Center",
+      placement: "top-center",
+      arrowVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Top-Right"
+    args={{
+      children: "Top — Right",
+      placement: "top-right",
+      arrowVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Bottom"
+    args={{
+      children: "Bottom",
+      placement: "bottom",
+      arrowVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Bottom-Left"
+    args={{
+      children: "Bottom — Left",
+      placement: "bottom-left",
+      arrowVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Bottom-Center"
+    args={{
+      children: "Bottom — Center",
+      placement: "bottom-center",
+      arrowVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Bottom-Right"
+    args={{
+      children: "Bottom — Right",
+      placement: "bottom-right",
+      arrowVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Left"
+    args={{
+      children: "Left",
+      placement: "left",
+      arrowVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Right"
+    args={{
+      children: "Right",
+      placement: "right",
+      arrowVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Maximum content width can be overridden via `maxWidth`.
+
+<Canvas>
+  <Story name="Max Width">
+    <Tooltip maxWidth={400}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacus ligula, mollis tempus turpis et, semper varius
+      nunc.
+    </Tooltip>
+  </Story>
+</Canvas>
+
+Tooltip supports `default` and `inverted` visual appearances.
+
+<Canvas>
+  <Story name="Default Appearance">
+    <Tooltip maxWidth={400} appearance="default" header="Default">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacus ligula, mollis tempus turpis et, semper varius
+      nunc.
+    </Tooltip>
+  </Story>
+  <Story name="Inverted Appearance">
+    <Tooltip maxWidth={400} appearance="inverted" header="Inverted">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacus ligula, mollis tempus turpis et, semper varius
+      nunc.
+    </Tooltip>
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />

@@ -1,0 +1,135 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { PositionerArgTypes, StateManager } from "@apptane/react-ui-storybook-docs";
+import { Button, IconButton, Pane, Paragraph, Tooltip, Trigger } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Behaviors/Trigger"
+  component={Trigger}
+  argTypes={{
+    component: {
+      table: {
+        category: "Target",
+      },
+    },
+    width: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    zIndex: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    trigger: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    visible: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    preventDefault: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    shouldCloseOnClick: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    shouldCloseOnEsc: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    shouldCaptureFocus: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    inline: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    disabled: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    transitionDuration: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    ...PositionerArgTypes,
+  }}
+/>
+
+# Trigger
+
+<Description of={Trigger} />
+
+export const CustomPopover = ({ placement, close }) => (
+  <Tooltip appearance="light" placement={placement}>
+    <Pane orientation="horizontal" verticalAlignment="center">
+      This button closes the popover{" "}
+      <IconButton inline marginLeft={8} size="small" iconName="i:close" onClick={close} />
+    </Pane>
+  </Tooltip>
+);
+
+export const Template = (args) => (
+  <StateManager initialValue={{ visible: false, offset: 0 }}>
+    {({ state, setState, bind }) => (
+      <>
+        <Pane orientation="horizontal">
+          <Trigger component={CustomPopover} trigger="click">
+            <Button>Click</Button>
+          </Trigger>
+          <Trigger component={CustomPopover} trigger="hover">
+            <Button marginLeft={16}>Hover</Button>
+          </Trigger>
+          <Trigger component={CustomPopover} trigger="focus">
+            <Button marginLeft={16}>Focus</Button>
+          </Trigger>
+          <Trigger component={CustomPopover} trigger="manual" visible={state.visible}>
+            <Button
+              marginLeft={16}
+              onClick={() =>
+                setState((prevState) => ({
+                  ...prevState,
+                  visible: !prevState.visible,
+                }))
+              }>
+              Manual
+            </Button>
+          </Trigger>
+        </Pane>
+        <Pane orientation="horizontal" marginTop={16}>
+          <Trigger component={CustomPopover} trigger="click" shouldCloseOnClick>
+            <Button>Click (shouldCloseOnClick)</Button>
+          </Trigger>
+          <Trigger component={CustomPopover} trigger="click" shouldCloseOnEsc>
+            <Button marginLeft={16}>Click (shouldCloseOnEsc)</Button>
+          </Trigger>
+          <Trigger component={CustomPopover} trigger="click" shouldCaptureFocus>
+            <Button marginLeft={16}>Click (shouldCaptureFocus)</Button>
+          </Trigger>
+        </Pane>
+      </>
+    )}
+  </StateManager>
+);
+
+<Canvas>
+  <Story name="Example">{Template.bind({})}</Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Example" />

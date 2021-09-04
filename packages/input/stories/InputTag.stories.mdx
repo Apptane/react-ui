@@ -1,0 +1,197 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { MarginArgTypes, StateManager } from "@apptane/react-ui-storybook-docs";
+import { InputTag } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Controls/Input — Tag"
+  component={InputTag}
+  argTypes={{
+    value: {
+      table: {
+        category: "Interactivity",
+      },
+    },
+    onChange: {
+      table: {
+        category: "Interactivity",
+      },
+    },
+    type: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        category: "Appearance",
+      },
+      options: ["default", "embedded"],
+      control: {
+        type: "radio",
+      },
+    },
+    tagSize: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    tagAppearance: {
+      table: {
+        category: "Appearance",
+      },
+      options: ["primary", "secondary", "neutral"],
+      control: {
+        type: "select",
+      },
+    },
+    tagHue: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    error: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    errorAppearance: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    autoFocus: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    disabled: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    focused: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    readonly: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    deleteOnBackspace: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    separators: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    sort: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    width: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    inline: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    embedLeft: {
+      table: {
+        category: "Content",
+      },
+    },
+    embedRight: {
+      table: {
+        category: "Content",
+      },
+    },
+    label: {
+      table: {
+        category: "Content",
+      },
+    },
+    iconAfterName: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconAfterData: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconBeforeName: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconBeforeData: {
+      table: {
+        category: "Icon",
+      },
+    },
+    ...MarginArgTypes,
+  }}
+/>
+
+export const Template = (args) => (
+  <StateManager initialValue={args.value}>
+    {({ state, setState }) => <InputTag {...args} value={state} onChange={setState} />}
+  </StateManager>
+);
+
+# Input — Tag
+
+<Description of={InputTag} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ value: ["Alpha", "Bravo"] }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## States
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      disabled: true,
+      value: ["Alpha", "Bravo"],
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Options
+
+Maintain entered tags in sorted order by specifying `sort` property that takes a string comparer function.
+
+<Canvas withSource="none">
+  <Story
+    name="Sorted"
+    args={{
+      sort: (a, b) => a.localeCompare(b),
+      value: ["Alpha", "Bravo", "Delta", "Charlie"],
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

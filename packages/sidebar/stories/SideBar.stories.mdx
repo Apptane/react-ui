@@ -1,0 +1,177 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { StateManager } from "@apptane/react-ui-storybook-docs";
+import { Avatar, Icon, IconButton, Pane, Scroller, SideBar, Text } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Layout/SideBar"
+  component={SideBar}
+  argTypes={{
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        category: "Appearance",
+      },
+      options: ["default", "inverted"],
+      control: {
+        type: "inline-radio",
+      },
+    },
+    collapsed: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    expandedLogo: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    collapsedLogo: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    expandedWidth: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    collapsedWidth: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    transitionDuration: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    onStateChange: {
+      table: {
+        category: "Events",
+      },
+    },
+  }}
+/>
+
+export const SwitcherCollapsed = () => (
+  <Pane padding={16} verticalAlignment="center" horizontalAlignment="center" grow={1} background="accent:100:20">
+    <Avatar size="large" name="Fabrikam Corp." border />
+  </Pane>
+);
+
+export const SwitcherExpanded = () => (
+  <Pane padding={16} orientation="horizontal" verticalAlignment="center" grow={1} background="accent:100:20">
+    <Avatar size="large" name="Fabrikam Corp." border />
+    <Pane grow={1} orientation="horizontal" verticalAlignment="center" grow={1} paddingLeft={12} paddingRight={12}>
+      <Text color="text:600" weight="bold" ellipsis>
+        Fabrikam Corp.
+      </Text>
+    </Pane>
+    <IconButton iconName="i:arrow-updown" appearance="minimal" />
+  </Pane>
+);
+
+export const Template = (args) => (
+  <StateManager initialValue={false}>
+    {({ state, setState }) => (
+      <Pane height={920}>
+        <SideBar
+          {...args}
+          collapsed={state || args.collapsed}
+          onStateChange={setState}
+          collapsedLogo={<Icon name="i:settings" color="warning" margin={12} />}
+          expandedLogo={<Icon name="i:settings" color="warning" margin={12} />}>
+          <SideBar.Group header="ADMINISTRATION">
+            <SideBar.Item iconName="i:empty-circle" content="Users" badge={568} />
+            <SideBar.Item iconName="i:empty-circle" content="Organizations" badge={47} />
+            <SideBar.Item iconName="i:empty-circle" content="Licenses" />
+            <SideBar.Item iconName="i:empty-circle" content="RBAC">
+              <SideBar.Item content="Roles" />
+              <SideBar.Item content="Services" disabled />
+              <SideBar.Item content="Assignments" />
+            </SideBar.Item>
+          </SideBar.Group>
+          <Scroller shadow>
+            <SideBar.Group header="MY IT ENVIRONMENT">
+              <SideBar.Item iconName="i:empty-circle" content="Analyze" />
+              <SideBar.Item iconName="i:empty-circle" content="Connectors" badge={1} intent="warning" />
+            </SideBar.Group>
+            <SideBar.Group
+              header="MY WORKSPACES"
+              stretch
+              actions={
+                <IconButton
+                  size="small"
+                  appearance={args.appearance === "inverted" ? "inverted" : "minimal"}
+                  intent="neutral"
+                  iconName="i:plus-circle"
+                />
+              }>
+              <SideBar.Item
+                iconName="i:bullet"
+                iconColor="success"
+                content="Think Industries"
+                collapsedContent={<Avatar name="Think Industries" square size="small" color="green" />}
+              />
+              <SideBar.Item
+                iconName="i:bullet-empty"
+                content="New Mosquito"
+                collapsedContent={<Avatar name="New Mosquito" square size="small" color="none" textColor="default" />}
+              />
+              <SideBar.Item
+                iconName="i:bullet-empty"
+                content="Nomadics Inc."
+                collapsedContent={<Avatar name="Nomadics Inc." square size="small" color="none" textColor="default" />}
+              />
+              <SideBar.Item
+                iconName="i:bullet-empty"
+                content="Buzzfly Corp."
+                collapsedContent={<Avatar name="Buzzfly Corp." square size="small" color="none" textColor="default" />}
+              />
+            </SideBar.Group>
+          </Scroller>
+          <SideBar.Group>
+            <SideBar.Item iconName="i:empty-circle" content="IT Environments" badge={36} />
+            <SideBar.Item iconName="i:empty-circle" content="Workspaces" badge={12} />
+            <SideBar.Item iconName="i:empty-circle" content="Invitations" badge={3} intent="danger" />
+            <SideBar.Item iconName="i:empty-circle" content="Notifications" badge={36} intent="danger" />
+            <SideBar.Item iconName="i:question-circle" content="Help" />
+            <SideBar.Item iconName="i:empty-circle" content="Logout" />
+          </SideBar.Group>
+          <SideBar.Avatar type="gravatar" email="oleg.grodzevich@gmail.com">
+            Oleg Grodzevich
+          </SideBar.Avatar>
+          <SideBar.Content
+            content={<SwitcherExpanded />}
+            collapsedContent={<SwitcherCollapsed />}
+            tooltipContent="Fabrikam Corp."
+          />
+        </SideBar>
+      </Pane>
+    )}
+  </StateManager>
+);
+
+# SideBar
+
+<Description of={SideBar} />
+
+<Canvas withSource="none">
+  <Story
+    name="Basic"
+    args={{
+      collapsedWidth: 72,
+      expandedWidth: 240,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />

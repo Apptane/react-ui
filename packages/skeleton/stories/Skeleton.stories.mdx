@@ -1,0 +1,17 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { Skeleton, SkeletonText, SkeletonBlock } from "@apptane/react-ui";
+
+<Meta title="Components/Primitives/Skeleton" component={Skeleton} />
+
+# Text and Blocks
+
+<Canvas>
+  <Story name="Basic">
+    <Skeleton.Text lines={6} />
+    <Skeleton.Block width={128} height={64} marginTop={16} />
+    <Skeleton.Text lines={4} />
+    <Skeleton.Text lines={4} />
+    <Skeleton.Block height={48} round marginTop={16} />
+    <Skeleton.Text lines={2} />
+  </Story>
+</Canvas>

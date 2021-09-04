@@ -1,0 +1,89 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { MarginArgTypes } from "@apptane/react-ui-storybook-docs";
+import { Calendar } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Controls/Calendar"
+  component={Calendar}
+  argTypes={{
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        disable: true,
+      },
+    },
+    selected: {
+      table: {
+        category: "Data",
+      },
+    },
+    rangeStart: {
+      table: {
+        category: "Data",
+      },
+    },
+    rangeEnd: {
+      table: {
+        category: "Data",
+      },
+    },
+    notBefore: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    notAfter: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    weekStartsOnSunday: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    panes: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    onClick: {
+      table: {
+        category: "Interactivity",
+      },
+    },
+    ...MarginArgTypes,
+  }}
+  parameters={{
+    actions: { argTypesRegex: "^on.*" },
+  }}
+/>
+
+export const Template = (args) => <Calendar {...args} />;
+
+# Calendar
+
+<Description of={Calendar} />
+
+<Canvas withSource="none">
+  <Story
+    name="Basic"
+    args={{
+      panes: 2,
+      selected: new Date(2021, 8, 20),
+      rangeStart: new Date(2021, 8, 5),
+      rangeEnd: new Date(2021, 9, 20),
+      notBefore: new Date(2021, 6, 15),
+      notAfter: new Date(2021, 11, 15),
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />

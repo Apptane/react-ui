@@ -1,0 +1,236 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import {
+  MarginArgTypes,
+  PaddingArgTypes,
+  BoxBorderArgTypes,
+  BoxLayoutArgTypes,
+  StateManager,
+} from "@apptane/react-ui-storybook-docs";
+import { Button, InputToggle, Pane, Scroller, SidePanel } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Layout/SidePanel"
+  component={SidePanel}
+  parameters={{ actions: { argTypesRegex: "^on.*" } }}
+  argTypes={{
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        disable: true,
+      },
+    },
+    closeButtonVisible: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    backdrop: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    style: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    background: {
+      table: {
+        category: "Background",
+      },
+    },
+    striped: {
+      table: {
+        category: "Background",
+      },
+    },
+    visible: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    shouldCaptureFocus: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    shouldCloseOnEsc: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    shouldCloseOnBackdropClick: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    enableBodyScroll: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    scrollOnOverflow: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    overflow: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    transitionDuration: {
+      table: {
+        category: "Behavior",
+      },
+      control: {
+        type: "range",
+        min: 0,
+        max: 5000,
+        step: 100,
+      },
+    },
+    accessibilityRole: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    side: {
+      table: {
+        category: "Layout",
+      },
+    },
+    size: {
+      table: {
+        category: "Layout",
+      },
+    },
+    ...BoxLayoutArgTypes,
+    basis: {
+      table: {
+        category: "Flexbox",
+      },
+    },
+    grow: {
+      table: {
+        category: "Flexbox",
+      },
+    },
+    shrink: {
+      table: {
+        category: "Flexbox",
+      },
+    },
+    ...BoxBorderArgTypes,
+    onCloseOnEsc: {
+      table: {
+        category: "Events",
+      },
+    },
+    onClosing: {
+      table: {
+        category: "Events",
+      },
+    },
+    children: {
+      table: {
+        category: "Content",
+      },
+    },
+    ...PaddingArgTypes,
+    ...MarginArgTypes,
+  }}
+  parameters={{
+    actions: { argTypesRegex: "^on.*" },
+  }}
+/>
+
+export const Template = (args) => <SidePanel {...args} background="transparent" />;
+
+# Side Panel
+
+<Description of={SidePanel} />
+
+<Canvas withSource="none">
+  <Story
+    name="Basic"
+    args={{
+      side: "left",
+      size: 300,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Other
+
+<Canvas withSource="none">
+  <Story name="Scrollable">
+    <StateManager
+      initialValue={{
+        backdrop: false,
+        shouldCloseOnEsc: false,
+        shouldCloseOnBackdropClick: false,
+        closeButtonVisible: true,
+        size: 300,
+        visible: false,
+      }}>
+      {({ state, setState, bind }) => (
+        <Pane height={480}>
+          <Scroller>
+            <Pane>
+              <Button onClick={() => setState((prevState) => ({ ...prevState, visible: !prevState.visible }))}>
+                {state.visible ? "Hide" : "Show"}
+              </Button>
+              <InputToggle
+                label="Backdrop"
+                marginTop={16}
+                value={state.backdrop}
+                onChange={(v) => setState((prevState) => ({ ...prevState, backdrop: v }))}
+              />
+              <InputToggle
+                label="Close button visible"
+                marginTop={16}
+                value={state.closeButtonVisible}
+                onChange={(v) => setState((prevState) => ({ ...prevState, closeButtonVisible: v }))}
+              />
+              <InputToggle
+                label="Close on Escape"
+                marginTop={16}
+                value={state.shouldCloseOnEsc}
+                onChange={(v) => setState((prevState) => ({ ...prevState, shouldCloseOnEsc: v }))}
+              />
+              <InputToggle
+                label="Close on backdrop click"
+                marginTop={16}
+                value={state.shouldCloseOnBackdropClick}
+                onChange={(v) => setState((prevState) => ({ ...prevState, shouldCloseOnBackdropClick: v }))}
+              />
+            </Pane>
+            <SidePanel
+              closeButtonVisible={state.closeButtonVisible}
+              shouldCloseOnEsc={state.shouldCloseOnEsc}
+              shouldCloseOnBackdropClick={state.shouldCloseOnBackdropClick}
+              backdrop={state.backdrop}
+              size={state.size}
+              side="right"
+              visible={state.visible}
+              onClosing={() => setState((prevState) => ({ ...prevState, visible: false }))}>
+              <Scroller>
+                <Pane background="transparent" height={2000} />
+              </Scroller>
+            </SidePanel>
+          </Scroller>
+        </Pane>
+      )}
+    </StateManager>
+  </Story>
+</Canvas>

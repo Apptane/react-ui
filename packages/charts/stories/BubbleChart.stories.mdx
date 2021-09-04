@@ -1,0 +1,215 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { XYChart } from "@apptane/react-ui";
+import {
+  XYZOrdinalDomainX,
+  XYZOrdinalDomainY,
+  SingleXYZOrdinalOrdinalSeriesData,
+  DoubleXYZOrdinalOrdinalSeriesData,
+  MultiXYZOrdinalOrdinalSeriesData,
+} from "./data";
+
+<Meta
+  title="Components/Visualization/Chart — Bubble"
+  component={XYChart}
+  argTypes={{
+    width: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    height: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    domainType: {
+      table: {
+        category: "Domain",
+      },
+    },
+    domain: {
+      table: {
+        category: "Domain",
+      },
+    },
+    domainNice: {
+      table: {
+        category: "Domain",
+      },
+    },
+    formatDomain: {
+      table: {
+        category: "Domain",
+      },
+    },
+    formatTooltip: {
+      table: {
+        category: "Domain",
+      },
+    },
+    gridXVisible: {
+      table: {
+        category: "Axis X",
+      },
+    },
+    axisXValues: {
+      table: {
+        category: "Axis X",
+      },
+    },
+    axisXVisible: {
+      table: {
+        category: "Axis X",
+      },
+    },
+    axisXTitle: {
+      table: {
+        category: "Axis X",
+      },
+    },
+    axisYWidth: {
+      table: {
+        category: "Axis Y",
+      },
+    },
+    axisPadding: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    emptyText: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    colorScheme: {
+      table: {
+        category: "Appearance",
+      },
+    },
+  }}
+/>
+
+export const DimensionsProps = { width: 600, height: 400 };
+
+export const Template = (args) => (
+  <XYChart {...args}>
+    <XYChart.Bubble
+      header="Header"
+      legendVisible
+      legendInteractive
+      domainY={XYZOrdinalDomainY}
+      data={DoubleXYZOrdinalOrdinalSeriesData}
+    />
+  </XYChart>
+);
+
+# Bubble Chart
+
+<Description of={XYChart} />
+
+<Canvas withSource="none">
+  <Story name="Example" args={{ ...DimensionsProps, domainType: "ordinal", domain: XYZOrdinalDomainX, axisYWidth: 40 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story name="Multiple Panes">
+    <XYChart width={600} height={800} domainType="ordinal" domain={XYZOrdinalDomainX} axisYWidth={40}>
+      <XYChart.Bubble
+        header="Side-by-side"
+        legendVisible
+        legendInteractive
+        domainY={XYZOrdinalDomainY}
+        data={SingleXYZOrdinalOrdinalSeriesData}
+      />
+      <XYChart.Bubble
+        legendVisible
+        legendInteractive
+        domainY={XYZOrdinalDomainY}
+        data={DoubleXYZOrdinalOrdinalSeriesData}
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+## Options
+
+<Canvas>
+  <Story name="Header and titles">
+    <XYChart
+      {...DimensionsProps}
+      domainType="ordinal"
+      domain={XYZOrdinalDomainX}
+      axisYWidth={40}
+      axisXTitle="X Axis Title">
+      <XYChart.Bubble
+        header="Header and titles"
+        legendVisible
+        legendInteractive
+        gridYVisible
+        domainY={XYZOrdinalDomainY}
+        axisYTitle="Y Axis Title"
+        data={DoubleXYZOrdinalOrdinalSeriesData}
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="No header, titles, legend">
+    <XYChart {...DimensionsProps} domainType="ordinal" domain={XYZOrdinalDomainX} axisYWidth={40} axisXValues={12}>
+      <XYChart.Bubble
+        gridYVisible
+        domainY={XYZOrdinalDomainY}
+        data={DoubleXYZOrdinalOrdinalSeriesData}
+        tooltipTotalVisible
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Multiple series">
+    <XYChart
+      width={600}
+      height={400}
+      domainType="ordinal"
+      domain={XYZOrdinalDomainX}
+      axisYWidth={40}
+      axisXValues={12}
+      axisPadding={0}>
+      <XYChart.Bubble
+        header="Multiple series"
+        gridYVisible
+        legendVisible
+        legendInteractive
+        domainY={XYZOrdinalDomainY}
+        data={MultiXYZOrdinalOrdinalSeriesData}
+        tooltipTotalVisible
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="No data">
+    <XYChart {...DimensionsProps}>
+      <XYChart.Bubble header="Header" emptyText="No performance data available" />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="No data — Domain">
+    <XYChart {...DimensionsProps} domainType="ordinal" domain={XYZOrdinalDomainX}>
+      <XYChart.Bubble header="Header" domainY={XYZOrdinalDomainY} emptyText="No data available" />
+    </XYChart>
+  </Story>
+</Canvas>

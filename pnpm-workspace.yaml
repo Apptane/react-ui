@@ -1,0 +1,7 @@
+packages:
+  - "packages/**"
+  - "tooling/**"
+  - "docs/**"
+  # exclude test directories
+  - "!**/test/**"
+  - "!**/__tests__/**"

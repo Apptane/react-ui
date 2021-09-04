@@ -1,0 +1,69 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { StateManager } from "@apptane/react-ui-storybook-docs";
+import { Button, Card, Collapsible, InputToggle, Paragraph } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Behaviors/Collapsible"
+  component={Collapsible}
+  argTypes={{
+    open: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    transitionDuration: {
+      table: {
+        category: "Behavior",
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => (
+  <StateManager initialValue={{ expanded: false, large: false }}>
+    {({ state, setState, bind }) => (
+      <>
+        <Button
+          checked={state.expanded}
+          onClick={() =>
+            setState((prevState) => ({
+              ...prevState,
+              expanded: !prevState.expanded,
+            }))
+          }>
+          Toggle
+        </Button>
+        <Collapsible {...args} open={state.expanded}>
+          <Card width={240} height={state.large ? 360 : 240} marginTop={12} padding={24}>
+            <Paragraph>
+              This content is residing within a collapsible panel implemented via CollapsibleBehavior
+            </Paragraph>
+            <InputToggle
+              label="Large card size"
+              marginTop={16}
+              value={state.large}
+              onChange={(v) =>
+                setState((prevState) => ({
+                  ...prevState,
+                  large: v,
+                }))
+              }
+            />
+          </Card>
+        </Collapsible>
+      </>
+    )}
+  </StateManager>
+);
+
+# Collapsible
+
+<Description of={Collapsible} />
+
+<Canvas>
+  <Story name="Example">{Template.bind({})}</Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Example" />

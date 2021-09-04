@@ -1,0 +1,269 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { MarginArgTypes } from "@apptane/react-ui-storybook-docs";
+import { Avatar, AvatarGroup } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Primitives/Avatar"
+  component={Avatar}
+  argTypes={{
+    name: {
+      table: {
+        category: "Content",
+      },
+    },
+    image: {
+      table: {
+        category: "Content",
+      },
+    },
+    email: {
+      table: {
+        category: "Content",
+      },
+    },
+    overflow: {
+      table: {
+        category: "Content",
+      },
+    },
+    tooltip: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    type: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    color: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    textColor: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    border: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    square: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    inline: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    size: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    onClick: {
+      table: {
+        category: "Events",
+      },
+    },
+    ...MarginArgTypes,
+  }}
+  parameters={{
+    actions: { argTypesRegex: "^on.*" },
+  }}
+/>
+
+export const Template = (args) => <Avatar {...args} />;
+
+# Avatar
+
+<Description of={Avatar} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ name: "Oleg Grodzevich" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Sizes
+
+Supports standard sizes — `small` `medium` `large`, as well as custom size in pixels.
+
+<Canvas>
+  <Story
+    name="Sizes"
+    parameters={{
+      backgrounds: {
+        default: "dark",
+      },
+    }}>
+    <Avatar inline name="Oleg Grodzevich" size="small" />
+    <Avatar inline name="Oleg Grodzevich" marginLeft={16} size="default" />
+    <Avatar inline name="Oleg Grodzevich" marginLeft={16} size="large" />
+    <Avatar inline name="Oleg Grodzevich" marginLeft={16} size={64} />
+    <Avatar inline name="Oleg Grodzevich" marginLeft={16} size="small" square />
+    <Avatar inline name="Oleg Grodzevich" marginLeft={16} size="default" square />
+    <Avatar inline name="Oleg Grodzevich" marginLeft={16} size="large" square />
+    <Avatar inline name="Oleg Grodzevich" marginLeft={16} size={64} square />
+  </Story>
+</Canvas>
+
+## Appearances
+
+### Gravatar
+
+Set `type = gravatar` to use automatically fetch avatar from Gravatar service by `email`.
+Alternative `image` can be specified as an URI to display.
+
+<Canvas>
+  <Story
+    name="Gravatar"
+    parameters={{
+      backgrounds: {
+        default: "dark",
+      },
+    }}>
+    <Avatar type="gravatar" email="oleg.grodzevich@gmail.com" inline />
+    <Avatar
+      type="gravatar"
+      email="oleg.grodzevich@gmail.com"
+      inline
+      marginLeft={16}
+      size="large"
+      tooltip="Oleg Grodzevich"
+    />
+    <Avatar type="gravatar" email="oleg.grodzevich@gmail.com" inline marginLeft={16} square />
+    <Avatar
+      type="gravatar"
+      email="oleg.grodzevich@gmail.com"
+      inline
+      marginLeft={16}
+      size="large"
+      tooltip="Oleg Grodzevich"
+      square
+    />
+  </Story>
+</Canvas>
+
+### Overflow
+
+Set `overflow` to display `+X` as content.
+
+<Canvas>
+  <Story
+    name="Overflow"
+    parameters={{
+      backgrounds: {
+        default: "dark",
+      },
+    }}>
+    <Avatar overflow={8} inline size="small" />
+    <Avatar overflow={8} inline size="medium" marginLeft={16} />
+    <Avatar overflow={8} inline size="large" marginLeft={16} />
+    <Avatar overflow={8} inline size="small" marginLeft={16} square />
+    <Avatar overflow={8} inline size="medium" marginLeft={16} square />
+    <Avatar overflow={8} inline size="large" marginLeft={16} square />
+  </Story>
+</Canvas>
+
+### Colors
+
+Colors can be customized by setting `color` to one of the palette's hues or to a valid CSS color.
+This mode applies only to avatars displaying initials.
+
+<Canvas>
+  <Story name="Colors">
+    <Avatar name="Oleg Grodzevich" inline size="large" color="red" />
+    <Avatar name="Oleg Grodzevich" inline size="large" marginLeft={16} color="orange" />
+    <Avatar name="Oleg Grodzevich" inline size="large" marginLeft={16} color="yellow" />
+    <Avatar name="Oleg Grodzevich" inline size="large" marginLeft={16} color="green" />
+    <Avatar name="Oleg Grodzevich" inline size="large" marginLeft={16} color="teal" />
+    <Avatar name="Oleg Grodzevich" inline size="large" marginLeft={16} color="blue" />
+    <Avatar name="Oleg Grodzevich" inline size="large" marginLeft={16} color="indigo" />
+    <Avatar name="Oleg Grodzevich" inline size="large" marginLeft={16} color="purple" />
+    <Avatar
+      name="Oleg Grodzevich"
+      inline
+      size="large"
+      marginLeft={16}
+      color="linear-gradient(45deg, #3B00B1, #A99BFF)"
+    />
+  </Story>
+</Canvas>
+
+### Interactivity
+
+Setting `onClick` property to a valid callback enables interactive behavior.
+
+<Canvas>
+  <Story name="Interactivity">
+    <Avatar name="Oleg Grodzevich" inline size="large" onClick={() => {}} />
+    <Avatar name="Oleg Grodzevich" inline size="large" marginLeft={16} color="orange" onClick={() => {}} />
+  </Story>
+</Canvas>
+
+## Group
+
+Use `AvatarGroup` to display a stacked row of avatars.
+
+<Canvas>
+  <Story name="Group">
+    <AvatarGroup size="small">
+      <Avatar type="gravatar" email="oleg.grodzevich@gmail.com" />
+      <Avatar name="Oleg Grodzevich" />
+      <Avatar name="Iryna Zolotarenko" color="red" />
+      <Avatar name="Alice" color="green" />
+      <Avatar name="Bob" color="blue" />
+    </AvatarGroup>
+    <AvatarGroup size="medium" marginTop={16}>
+      <Avatar type="gravatar" email="oleg.grodzevich@gmail.com" />
+      <Avatar name="Oleg Grodzevich" />
+      <Avatar name="Iryna Zolotarenko" color="red" />
+      <Avatar name="Alice" color="green" />
+      <Avatar name="Bob" color="blue" />
+    </AvatarGroup>
+    <AvatarGroup size="large" marginTop={16}>
+      <Avatar type="gravatar" email="oleg.grodzevich@gmail.com" />
+      <Avatar name="Oleg Grodzevich" />
+      <Avatar name="Iryna Zolotarenko" color="red" />
+      <Avatar name="Alice" color="green" />
+      <Avatar name="Bob" color="blue" />
+    </AvatarGroup>
+  </Story>
+</Canvas>
+
+The stack size can be controlled via `maxCount` or `maxWidth` properties. The first one restricts the stack to the maximum number of items and the second one indicates the maximum width to fit into. Overflow mode is enabled automatically.
+
+<Canvas>
+  <Story name="Group Overflow">
+    <AvatarGroup size="large" maxCount={3}>
+      <Avatar type="gravatar" email="oleg.grodzevich@gmail.com" />
+      <Avatar name="Oleg Grodzevich" />
+      <Avatar name="Iryna Zolotarenko" color="red" />
+      <Avatar name="Alice" color="green" />
+      <Avatar name="Bob" color="blue" />
+    </AvatarGroup>
+    <AvatarGroup size="large" maxWidth={150} marginTop={16}>
+      <Avatar type="gravatar" email="oleg.grodzevich@gmail.com" />
+      <Avatar name="Oleg Grodzevich" />
+      <Avatar name="Iryna Zolotarenko" color="red" />
+      <Avatar name="Alice" color="green" />
+      <Avatar name="Bob" color="blue" />
+    </AvatarGroup>
+  </Story>
+</Canvas>

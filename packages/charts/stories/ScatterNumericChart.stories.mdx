@@ -1,0 +1,203 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { XYChart } from "@apptane/react-ui";
+import {
+  NumericDomain,
+  SingleXYZNumericNumericSeriesData,
+  DoubleXYZNumericNumericSeriesData,
+  MultiXYZNumericNumericSeriesData,
+} from "./data";
+
+<Meta
+  title="Components/Visualization/Chart — Scatter (Numeric)"
+  component={XYChart}
+  argTypes={{
+    width: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    height: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    domainType: {
+      table: {
+        category: "Domain",
+      },
+    },
+    domain: {
+      table: {
+        category: "Domain",
+      },
+    },
+    domainNice: {
+      table: {
+        category: "Domain",
+      },
+    },
+    formatDomain: {
+      table: {
+        category: "Domain",
+      },
+    },
+    formatTooltip: {
+      table: {
+        category: "Domain",
+      },
+    },
+    gridXVisible: {
+      table: {
+        category: "Axis X",
+      },
+    },
+    axisXValues: {
+      table: {
+        category: "Axis X",
+      },
+    },
+    axisXVisible: {
+      table: {
+        category: "Axis X",
+      },
+    },
+    axisXTitle: {
+      table: {
+        category: "Axis X",
+      },
+    },
+    axisYWidth: {
+      table: {
+        category: "Axis Y",
+      },
+    },
+    axisPadding: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    emptyText: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    colorScheme: {
+      table: {
+        category: "Appearance",
+      },
+    },
+  }}
+/>
+
+export const DimensionsProps = { width: 600, height: 400 };
+
+export const Template = (args) => (
+  <XYChart {...args}>
+    <XYChart.Scatter
+      header="Header"
+      legendVisible
+      legendInteractive
+      domainY={NumericDomain}
+      data={DoubleXYZNumericNumericSeriesData}
+    />
+  </XYChart>
+);
+
+# Scatter Chart
+
+<Description of={XYChart} />
+
+<Canvas withSource="none">
+  <Story name="Example" args={{ ...DimensionsProps, domainType: "numeric", domain: NumericDomain, axisYWidth: 40 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story name="Multiple Panes">
+    <XYChart width={600} height={800} domainType="numeric" domain={NumericDomain} axisYWidth={40}>
+      <XYChart.Scatter
+        header="Side-by-side"
+        legendVisible
+        legendInteractive
+        domainY={NumericDomain}
+        data={SingleXYZNumericNumericSeriesData}
+      />
+      <XYChart.Scatter
+        legendVisible
+        legendInteractive
+        domainY={NumericDomain}
+        data={DoubleXYZNumericNumericSeriesData}
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+## Options
+
+<Canvas>
+  <Story name="Header and titles">
+    <XYChart {...DimensionsProps} domainType="numeric" domain={NumericDomain} axisYWidth={40} axisXTitle="X Axis Title">
+      <XYChart.Scatter
+        header="Header and titles"
+        legendVisible
+        legendInteractive
+        gridYVisible
+        domainY={NumericDomain}
+        axisYTitle="Y Axis Title"
+        data={DoubleXYZNumericNumericSeriesData}
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="No header, titles, legend">
+    <XYChart {...DimensionsProps} domainType="numeric" domain={NumericDomain} axisYWidth={40} axisXValues={12}>
+      <XYChart.Scatter
+        gridYVisible
+        domainY={NumericDomain}
+        data={DoubleXYZNumericNumericSeriesData}
+        tooltipTotalVisible
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Multiple series">
+    <XYChart width={600} height={400} domainType="numeric" domain={NumericDomain} axisYWidth={40} axisXValues={12}>
+      <XYChart.Scatter
+        header="Multiple series"
+        gridYVisible
+        legendVisible
+        legendInteractive
+        domainY={NumericDomain}
+        data={MultiXYZNumericNumericSeriesData}
+        tooltipTotalVisible
+        pointSize={40}
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="No data">
+    <XYChart {...DimensionsProps}>
+      <XYChart.Scatter header="Header" emptyText="No performance data available" />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="No data — Domain">
+    <XYChart {...DimensionsProps} domainType="numeric" domain={NumericDomain}>
+      <XYChart.Scatter header="Header" domainY={NumericDomain} emptyText="No data available" />
+    </XYChart>
+  </Story>
+</Canvas>

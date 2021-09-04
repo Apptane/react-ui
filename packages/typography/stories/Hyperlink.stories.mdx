@@ -1,0 +1,148 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { MarginArgTypes, TextArgTypes } from "@apptane/react-ui-storybook-docs";
+import { Hyperlink, Text } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Primitives/Hyperlink"
+  component={Hyperlink.type}
+  argTypes={{
+    children: {
+      table: {
+        category: "content",
+      },
+      control: "text",
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        category: "Appearance",
+      },
+      options: ["primary", "secondary", "inverted"],
+      control: {
+        type: "select",
+      },
+    },
+    disabled: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    block: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    decorated: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    href: {
+      table: {
+        category: "Link",
+      },
+    },
+    title: {
+      table: {
+        category: "Link",
+      },
+    },
+    target: {
+      table: {
+        category: "Link",
+      },
+    },
+    iconSize: {
+      table: {
+        category: "Icon",
+      },
+      control: {
+        type: "range",
+        min: 0,
+        max: 32,
+        step: 1,
+      },
+    },
+    iconAfterName: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconAfterData: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconBeforeName: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconBeforeData: {
+      table: {
+        category: "Icon",
+      },
+    },
+    onClick: {
+      table: {
+        category: "Events",
+      },
+    },
+    ...TextArgTypes,
+    ...MarginArgTypes,
+  }}
+  parameters={{
+    actions: { argTypesRegex: "^on.*" },
+  }}
+/>
+
+export const Template = (args) => <Hyperlink {...args} />;
+
+# Hyperlink
+
+<Description of={Hyperlink.type} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ children: "www.apptane.com" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Can be used both as `inline` and `block` element.
+
+<Canvas>
+  <Story name="Inline">
+    <Text>
+      Use{" "}
+      <Hyperlink decorated href="https://www.google.com">
+        Google
+      </Hyperlink>{" "}
+      to search
+    </Text>
+  </Story>
+  <Story name="Block">
+    <Text>
+      Use{" "}
+      <Hyperlink block href="https://www.google.com">
+        Google
+      </Hyperlink>{" "}
+      to search
+    </Text>
+  </Story>
+</Canvas>
+
+With `icon`.
+
+<Canvas>
+  <Story name="With Icon">
+    <Hyperlink iconBeforeName="i:close">Close</Hyperlink>
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />

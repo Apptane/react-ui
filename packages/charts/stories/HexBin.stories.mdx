@@ -1,0 +1,132 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { HexBin } from "@apptane/react-ui";
+import { HexBinData1 } from "./data";
+
+<Meta
+  title="Components/Visualization/HexBin"
+  component={HexBin}
+  argTypes={{
+    data: {
+      table: {
+        category: "Data",
+      },
+    },
+    rangeMin: {
+      table: {
+        category: "Data",
+      },
+    },
+    rangeMax: {
+      table: {
+        category: "Data",
+      },
+    },
+    size: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    gap: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    maxPerRow: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    maxWidth: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    borderless: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    colorScheme: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    color: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    formatTooltip: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    onClick: {
+      table: {
+        category: "Events",
+      },
+    },
+  }}
+  parameters={{
+    actions: { argTypesRegex: "^on.*" },
+  }}
+/>
+
+export const Template = (args) => (
+  <HexBin
+    {...args}
+    data={HexBinData1}
+    color={(d) => (d.value > 90 ? "red:500" : d.value > 75 ? "orange:400" : undefined)}
+  />
+);
+
+# Hex Bin
+
+<Description of={HexBin} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ maxPerRow: 5 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Options
+
+<Canvas withSource="none">
+  <Story name="Max per row" args={{ maxPerRow: 2 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story name="Max width" args={{ maxWidth: 100 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story name="Custom size" args={{ size: 100, maxPerRow: 5, margin: 8 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story name="One line">{Template.bind({})}</Story>
+</Canvas>
+
+## Formatting
+
+<Canvas withSource="none">
+  <Story name="Tooltip" args={{ formatTooltip: (d) => `${d.label} - ${d.value}` }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

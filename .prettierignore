@@ -1,0 +1,24 @@
+# Package manager files
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+shrinkwrap.json
+
+# Build outputs
+dist
+lib
+
+# Prettier reformats code blocks inside Markdown, which affects rendered output
+*.md
+
+# Storybook
+.storybook/*.html
+
+# VS Code
+.vscode/
+
+# Test coverage
+coverage
+
+# Dependencies
+node_modules

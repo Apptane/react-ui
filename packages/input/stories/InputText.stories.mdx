@@ -1,0 +1,174 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { InputTextArgTypes, StateManager } from "@apptane/react-ui-storybook-docs";
+import { InputText, Spinner, Tag } from "@apptane/react-ui";
+
+<Meta title="Components/Controls/Input — Text" component={InputText} argTypes={InputTextArgTypes} />
+
+export const Template = (args) => (
+  <StateManager initialValue={args.value}>
+    {({ state, setState }) => <InputText {...args} value={state} onChange={setState} />}
+  </StateManager>
+);
+
+# Input — Text
+
+<Description of={InputText} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ value: "", placeholder: "Enter something" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Sizes
+
+Supports standard sizes — `large` `medium` `small`.
+
+<Canvas withSource="none">
+  <Story
+    name="Large"
+    args={{
+      label: "Large",
+      size: "large",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Medium"
+    args={{
+      label: "Medium",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Small"
+    args={{
+      label: "Small",
+      size: "small",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## States
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      label: "Large",
+      size: "large",
+      disabled: true,
+      value: "This input is disabled",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story
+    name="Error with glyph"
+    args={{
+      label: "Large",
+      size: "large",
+      error: "Please correct the value entered",
+      errorAppearance: "glyph",
+      value: "This input is not correct",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story
+    name="Error with hint"
+    args={{
+      label: "Large",
+      size: "large",
+      error: "Please correct the value entered",
+      errorAppearance: "hint",
+      value: "This input is not correct",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Customization
+
+Left and right embedded content:
+
+<Canvas withSource="none">
+  <Story
+    name="Embedded content"
+    args={{
+      label: "Large",
+      size: "large",
+      embedLeft: <Tag>Left</Tag>,
+      embedRight: <Tag>Right</Tag>,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story
+    name="Embedded spinner"
+    args={{
+      label: "Large",
+      size: "large",
+      disabled: true,
+      value: "You can embed any component",
+      embedRight: <Spinner />,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Left and right icons:
+
+<Canvas withSource="none">
+  <Story
+    name="Embedded icons"
+    args={{
+      label: "Large",
+      size: "large",
+      iconBeforeName: "i:check-circle",
+      iconAfterName: "i:close",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Standard types — `text` `email` `password`.
+
+<Canvas withSource="none">
+  <Story
+    name="Password"
+    args={{
+      label: "Password",
+      size: "large",
+      value: "password",
+      type: "password",
+      embedRight: <Tag appearance="neutral">Password</Tag>,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Text area can be specified `lines` property:
+
+<Canvas withSource="none">
+  <Story
+    name="Text Area"
+    args={{
+      label: "Text area",
+      lines: 5,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

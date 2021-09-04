@@ -1,0 +1,278 @@
+import { useState } from "react";
+import { Canvas, Meta, Story, Source, Description, ArgsTable } from "@storybook/addon-docs";
+import dedent from "ts-dedent";
+import { Button, Toast, Toaster, useInterval } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Controls/Toast"
+  component={Toast}
+  argTypes={{
+    header: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    children: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    actionContent: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        category: "Appearance",
+      },
+      options: ["default", "inverted"],
+      control: {
+        type: "inline-radio",
+      },
+    },
+    intent: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    actionHidden: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    maxWidth: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    zIndex: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    duration: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    visible: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    animationDirection: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    iconColor: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconName: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconData: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconSize: {
+      table: {
+        category: "Icon",
+      },
+      control: {
+        type: "range",
+        min: 4,
+        max: 128,
+        step: 1,
+      },
+    },
+    onAction: {
+      table: {
+        category: "Events",
+      },
+    },
+    onClosed: {
+      table: {
+        category: "Events",
+      },
+    },
+  }}
+  parameters={{
+    actions: { argTypesRegex: "^on.*" },
+  }}
+/>
+
+export const Template = (args) => <Toast {...args} />;
+
+# Toast
+
+<Description of={Toast} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ header: "Header", children: "Description text", intent: "success", duration: -1 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Toaster
+
+export const toaster = new Toaster();
+export const ToastContent =
+  "To be, or not to be: that is the question: Whether ’tis nobler in the mind to suffer. The slings and arrows of outrageous fortune, Or to take arms against a sea of troubles, And by opposing end them. To die: to sleep.";
+
+Toasts are created and managed by an instance of `Toaster`. Typically you should create one global instance and use it for toast management.
+
+<Source
+  language="typescript"
+  code={dedent`
+    const toaster = new Toaster();
+  `}
+/>
+
+<Button appearance="primary" intent="danger" onClick={() => toaster.closeAll()}>
+  Close all toasts
+</Button>
+
+Toasts with header.
+
+<Canvas>
+  <Story name="Simple">
+    <Button inline onClick={() => toaster.message("Here can be your message")}>
+      Message
+    </Button>
+    <Button inline marginLeft={16} onClick={() => toaster.notify("Be informed that this toast has appeared")}>
+      Notify
+    </Button>
+    <Button inline marginLeft={16} onClick={() => toaster.success("Everything works, hooray!")}>
+      Success
+    </Button>
+    <Button inline marginLeft={16} onClick={() => toaster.warning("Clicking this button is addictive")}>
+      Warning
+    </Button>
+    <Button inline marginLeft={16} onClick={() => toaster.error("Something is no longer where it used to be")}>
+      Error
+    </Button>
+    <Button inline marginLeft={16} onClick={() => toaster.danger("Danger! Danger! Danger!")}>
+      Danger
+    </Button>
+  </Story>
+</Canvas>
+
+Toasts with header and simple content.
+
+<Canvas>
+  <Story name="Simple Content">
+    <Button inline onClick={() => toaster.message("Here can be your message", ToastContent)}>
+      Message
+    </Button>
+    <Button
+      inline
+      marginLeft={16}
+      onClick={() => toaster.notify("Be informed that this toast has appeared", ToastContent)}>
+      Notify
+    </Button>
+    <Button inline marginLeft={16} onClick={() => toaster.success("Everything works, hooray!", ToastContent)}>
+      Success
+    </Button>
+    <Button inline marginLeft={16} onClick={() => toaster.warning("Clicking this button is addictive", ToastContent)}>
+      Warning
+    </Button>
+    <Button
+      inline
+      marginLeft={16}
+      onClick={() => toaster.error("Something is no longer where it used to be", ToastContent)}>
+      Error
+    </Button>
+    <Button inline marginLeft={16} onClick={() => toaster.danger("Danger! Danger! Danger!", ToastContent)}>
+      Danger
+    </Button>
+  </Story>
+</Canvas>
+
+Control toast duration via `options` argument:
+
+export const ToastTickerContent = ({ duration }) => {
+  const [ticks, setTicks] = useState(duration);
+  useInterval(() => setTicks((prevState) => --prevState), 1000);
+  return `I will stick around for ${ticks} seconds`;
+};
+
+<Canvas>
+  <Story name="Options">
+    <Button
+      inline
+      onClick={() => toaster.warning("Custom Duration", <ToastTickerContent duration={15} />, { duration: 15 })}>
+      Duration 15s
+    </Button>
+  </Story>
+</Canvas>
+
+### Appearances
+
+Pass `appearance = "default" | "inverted"` option to the `Toaster` to control the appearance of toasts. Use `placement` and `padding` to define where toasts should appear on the screen.
+
+<Source
+  language="typescript"
+  code={dedent`
+    const toaster = new Toaster({
+      appearance: "inverted",
+      maxWidth: 480,
+      placement: "bottom-right",
+      paddingBottom: 40,
+      paddingRight: 40,
+    });
+  `}
+/>
+
+export const toasterInverted = new Toaster({
+  appearance: "inverted",
+  maxWidth: 480,
+  placement: "bottom-right",
+  paddingBottom: 40,
+  paddingRight: 40,
+});
+
+<Canvas>
+  <Story name="Inverted">
+    <Button inline onClick={() => toasterInverted.message("Here can be your message")}>
+      Message
+    </Button>
+    <Button inline marginLeft={16} onClick={() => toasterInverted.notify("Be informed that this toast has appeared")}>
+      Notify
+    </Button>
+    <Button inline marginLeft={16} onClick={() => toasterInverted.success("Everything works, hooray!")}>
+      Success
+    </Button>
+    <Button inline marginLeft={16} onClick={() => toasterInverted.warning("Clicking this button is addictive")}>
+      Warning
+    </Button>
+    <Button inline marginLeft={16} onClick={() => toasterInverted.error("Something is no longer where it used to be")}>
+      Error
+    </Button>
+    <Button inline marginLeft={16} onClick={() => toasterInverted.danger("Danger! Danger! Danger!")}>
+      Danger
+    </Button>
+  </Story>
+</Canvas>
+
+<Button appearance="primary" intent="danger" onClick={() => toasterInverted.closeAll()}>
+  Close all toasts
+</Button>

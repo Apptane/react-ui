@@ -1,0 +1,65 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { MediaObject, Paragraph, Skeleton, Text } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Layout/Media Object"
+  component={MediaObject}
+  argTypes={{
+    children: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    header: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    media: {
+      table: {
+        category: "Content",
+      },
+    },
+    alignment: {
+      table: {
+        category: "Layout",
+      },
+    },
+    spacing: {
+      table: {
+        category: "Layout",
+      },
+      control: {
+        type: "range",
+        min: 0,
+        max: 64,
+        step: 1,
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => (
+  <MediaObject {...args} header={<Text category="header">Header</Text>} media={<Skeleton.Block height={32} round />}>
+    <Paragraph marginTop={8}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacus ligula, mollis tempus turpis et, semper varius
+      nunc.
+    </Paragraph>
+  </MediaObject>
+);
+
+# Media Object
+
+<Description of={MediaObject} />
+
+<Canvas>
+  <Story name="Example" args={{ spacing: 16 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Example" />

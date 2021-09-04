@@ -1,0 +1,65 @@
+{
+  "name": "@apptane/react-ui-storybook",
+  "description": "Apptane UI Framework Storybook Documentation",
+  "license": "Apache-2.0",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Oleg Grodzevich <oleg@apptane.com>",
+  "keywords": [
+    "apptane",
+    "ui",
+    "react",
+    "components",
+    "framework",
+    "storybook"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apptane/react-ui.git",
+    "directory": "docs/storybook"
+  },
+  "bugs": {
+    "url": "https://github.com/apptane/react-ui/issues"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 7002",
+    "build:storybook": "build-storybook -c .storybook -o .storybook-app",
+    "deploy:storybook": "storybook-to-ghpages"
+  },
+  "devDependencies": {
+    "@apptane/react-ui": "workspace:^0.0.0",
+    "@apptane/react-ui-storybook-dark-mode": "workspace:^0.0.0",
+    "@apptane/react-ui-storybook-docs": "workspace:^0.0.0",
+    "@babel/core": "7.15.4",
+    "@babel/plugin-proposal-class-properties": "7.14.5",
+    "@babel/plugin-proposal-export-default-from": "7.14.5",
+    "@babel/plugin-proposal-export-namespace-from": "7.14.5",
+    "@babel/plugin-proposal-object-rest-spread": "7.14.7",
+    "@babel/plugin-transform-runtime": "7.15.0",
+    "@babel/preset-env": "7.15.4",
+    "@babel/preset-react": "7.14.5",
+    "@babel/preset-typescript": "7.15.0",
+    "@emotion/babel-plugin": "11.3.0",
+    "@emotion/babel-preset-css-prop": "11.2.0",
+    "@emotion/core": "11.0.0",
+    "@emotion/react": "11.4.1",
+    "@storybook/addon-a11y": "6.3.8",
+    "@storybook/addon-actions": "6.3.8",
+    "@storybook/addon-essentials": "6.3.8",
+    "@storybook/addon-storysource": "6.3.8",
+    "@storybook/react": "6.3.8",
+    "@storybook/storybook-deployer": "2.8.10",
+    "@storybook/theming": "6.3.8",
+    "babel-loader": "8.2.2",
+    "hsluv": "0.1.0",
+    "lodash": "4.17.21",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "ts-dedent": "2.2.0",
+    "typescript": "4.4.2"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ]
+}

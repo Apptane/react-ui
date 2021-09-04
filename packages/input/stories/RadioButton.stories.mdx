@@ -1,0 +1,131 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { MarginArgTypes, ButtonBaseArgTypes, StateManager } from "@apptane/react-ui-storybook-docs";
+import { RadioButton, Pane } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Controls/Input — RadioButton"
+  component={RadioButton}
+  argTypes={{
+    label: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    children: {
+      table: {
+        category: "Content",
+      },
+    },
+    labelWidth: {
+      table: {
+        category: "Content",
+      },
+    },
+    width: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        disable: true,
+      },
+    },
+    readonly: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    ...ButtonBaseArgTypes,
+    ...MarginArgTypes,
+  }}
+/>
+
+export const Template = (args) => (
+  <StateManager initialValue={args.checked}>
+    {({ state, setState }) => (
+      <RadioButton {...args} checked={state} onClick={(v) => setState((prevState) => !prevState)} />
+    )}
+  </StateManager>
+);
+
+# Radio Button
+
+<Description of={RadioButton} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ label: "Label", checked: false }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Sizes and States
+
+Supports standard sizes — `large` `medium` `small`.
+
+<Canvas withSource="none">
+  <Story name="Large" args={{ label: "Large", size: "large", checked: false }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium" args={{ label: "Medium", size: "medium", checked: false }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small" args={{ label: "Small", size: "small", checked: false }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Custom `size`.
+
+<Canvas withSource="none">
+  <Story name="Custom Size">
+    <StateManager initialValue={false}>
+      {({ state, setState }) => (
+        <RadioButton
+          checked={state}
+          onClick={(v) => setState((prevState) => !prevState)}
+          size={40}
+          label={state ? "40px — On" : "40px — Off"}
+        />
+      )}
+    </StateManager>
+  </Story>
+</Canvas>
+
+Set `labelWidth` to restrict label content and force ellipsis on overflow.
+
+> Use `width` to control the maximum width of the entire component!
+
+<Canvas>
+  <Story
+    name="Label width"
+    args={{
+      label: "Label is restricted to 200px, but is longer",
+      labelWidth: 200,
+      checked: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Visual States
+
+<Canvas withSource="none">
+  <Story name="Visual States">
+    <RadioButton marginBottom={8} label="Unchecked" />
+    <RadioButton marginBottom={8} label="Checked" checked />
+    <RadioButton marginBottom={8} label="Checked and Disabled" checked disabled />
+    <RadioButton marginBottom={8} label="Readonly" checked readonly />
+    <RadioButton disabled label="Disabled" />
+  </Story>
+</Canvas>

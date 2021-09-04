@@ -1,0 +1,389 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { MarginArgTypes } from "@apptane/react-ui-storybook-docs";
+import { Badge, Pane } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Primitives/Badge"
+  component={Badge.type}
+  argTypes={{
+    value: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        category: "Appearance",
+      },
+      options: ["primary", "secondary", "minimal", "inverted"],
+      control: {
+        type: "select",
+      },
+    },
+    intent: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    bulletVisible: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    size: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    padding: {
+      table: {
+        category: "Dimensions",
+      },
+      control: {
+        type: "range",
+        min: 0,
+        max: 16,
+        step: 1,
+      },
+    },
+    ...MarginArgTypes,
+  }}
+/>
+
+export const Template = (args) => <Badge {...args} />;
+
+# Badge
+
+<Description of={Badge.type} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ value: "36" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+As a decorator for other elements.
+
+<Canvas>
+  <Story name="Decorator">
+    <Badge appearance="primary" intent="danger" value={36}>
+      <Pane width={20} height={20} background="contrast" cornerRadius={4} />
+    </Badge>
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Sizes
+
+Supports standard sizes — `large` `medium` `small`.
+
+<Canvas withSource="none">
+  <Story
+    name="Large"
+    args={{
+      value: "Large",
+      size: "large",
+      appearance: "primary",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Medium"
+    args={{
+      value: "Medium",
+      size: "medium",
+      appearance: "primary",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Small"
+    args={{
+      value: "Small",
+      size: "small",
+      appearance: "primary",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Custom `size` and `padding`.
+
+<Canvas withSource="none">
+  <Story
+    name="Custom Size"
+    args={{
+      value: "40px + 12px Padding",
+      size: 40,
+      padding: 12,
+      appearance: "primary",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Appearances
+
+`Primary` appearance, no bullet visible.
+
+<Canvas withSource="none">
+  <Story
+    name="Primary — None"
+    args={{
+      value: "None",
+      intent: "none",
+      appearance: "primary",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Primary — Success"
+    args={{
+      value: "Success",
+      intent: "success",
+      appearance: "primary",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Primary — Warning"
+    args={{
+      value: "Warning",
+      intent: "warning",
+      appearance: "primary",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Primary — Danger"
+    args={{
+      value: "Danger",
+      intent: "danger",
+      appearance: "primary",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Primary — Neutral"
+    args={{
+      value: "Neutral",
+      intent: "neutral",
+      appearance: "primary",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+`Secondary` appearance, bullet not visible by default — can be enabled via `bulletVisible=true`.
+
+<Canvas withSource="none">
+  <Story
+    name="Secondary — None"
+    args={{
+      value: "None",
+      intent: "none",
+      appearance: "secondary",
+      size: "medium",
+      bulletVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary — Success"
+    args={{
+      value: "Success",
+      intent: "success",
+      appearance: "secondary",
+      size: "medium",
+      bulletVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary — Warning"
+    args={{
+      value: "Warning",
+      intent: "warning",
+      appearance: "secondary",
+      size: "medium",
+      bulletVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary — Danger"
+    args={{
+      value: "Danger",
+      intent: "danger",
+      appearance: "secondary",
+      size: "medium",
+      bulletVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary — Neutral"
+    args={{
+      value: "Neutral",
+      intent: "neutral",
+      appearance: "secondary",
+      size: "medium",
+      bulletVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+`Minimal` appearance, bullet visible by default.
+
+<Canvas withSource="none">
+  <Story
+    name="Minimal — None"
+    args={{
+      value: "None",
+      intent: "none",
+      appearance: "minimal",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Minimal — Success"
+    args={{
+      value: "Success",
+      intent: "success",
+      appearance: "minimal",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Minimal — Warning"
+    args={{
+      value: "Warning",
+      intent: "warning",
+      appearance: "minimal",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Minimal — Danger"
+    args={{
+      value: "Danger",
+      intent: "danger",
+      appearance: "minimal",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Minimal — Neutral"
+    args={{
+      value: "Neutral",
+      intent: "neutral",
+      appearance: "minimal",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+`Inverted` appearance, bullet not visible by default — can be enabled via `bulletVisible=true`.
+
+<Canvas withSource="none">
+  <Story
+    name="Inverted — None"
+    parameters={{
+      backgrounds: {
+        default: "dark",
+      },
+    }}
+    args={{
+      value: "None",
+      intent: "none",
+      appearance: "inverted",
+      size: "medium",
+      bulletVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Inverted — Success"
+    parameters={{
+      backgrounds: {
+        default: "dark",
+      },
+    }}
+    args={{
+      value: "Success",
+      intent: "success",
+      appearance: "inverted",
+      size: "medium",
+      bulletVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Inverted — Warning"
+    parameters={{
+      backgrounds: {
+        default: "dark",
+      },
+    }}
+    args={{
+      value: "Warning",
+      intent: "warning",
+      appearance: "inverted",
+      size: "medium",
+      bulletVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Inverted — Danger"
+    parameters={{
+      backgrounds: {
+        default: "dark",
+      },
+    }}
+    args={{
+      value: "Danger",
+      intent: "danger",
+      appearance: "inverted",
+      size: "medium",
+      bulletVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Inverted — Neutral"
+    parameters={{
+      backgrounds: {
+        default: "dark",
+      },
+    }}
+    args={{
+      value: "Neutral",
+      intent: "neutral",
+      appearance: "inverted",
+      size: "medium",
+      bulletVisible: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

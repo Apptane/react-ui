@@ -1,0 +1,172 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { BoxDimensionsArgTypes, MarginArgTypes, PaddingArgTypes } from "@apptane/react-ui-storybook-docs";
+import { Banner, Button, Pane } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Controls/Banner"
+  component={Banner}
+  argTypes={{
+    header: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    children: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    actions: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        disable: true,
+      },
+    },
+    intent: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    orientation: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    iconAlignment: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    card: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    iconColor: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconName: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconData: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconSize: {
+      table: {
+        category: "Icon",
+      },
+      control: {
+        type: "range",
+        min: 4,
+        max: 128,
+        step: 1,
+      },
+    },
+    ...BoxDimensionsArgTypes,
+    ...PaddingArgTypes,
+    ...MarginArgTypes,
+  }}
+/>
+
+export const Template = (args) => <Banner {...args} />;
+
+# Banner
+
+<Description of={Banner} />
+
+<Canvas withSource="none">
+  <Story
+    name="Basic"
+    args={{
+      children: "Please read this message and take the prescribed action for the desired efffect",
+      intent: "success",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Appearances
+
+The banner default appearance is the borderless panel. It supports custom actions panel that can be located to the left or to the bottom of the main content.
+
+export const BannerActions = () => (
+  <Pane orientation="horizontal" horizontalAlignment="right">
+    <Button appearance="minimal">Cancel</Button>
+    <Button marginLeft={8}>OK</Button>
+  </Pane>
+);
+
+<Canvas>
+  <Story name="Actions — Horizontal">
+    <Banner actions={<BannerActions />}>
+      Please read this message and take the prescribed action for the desired efffect
+    </Banner>
+    <Banner intent="neutral" actions={<BannerActions />} marginTop={16} width={450}>
+      Please read this message and take the prescribed action for the desired efffect
+    </Banner>
+  </Story>
+  <Story name="Actions — Vertical">
+    <Banner actions={<BannerActions />} orientation="vertical">
+      Please read this message and take the prescribed action for the desired efffect
+    </Banner>
+  </Story>
+</Canvas>
+
+### Intent
+
+Different `intent` values result in one of the pre-defined color theme.
+
+<Canvas>
+  <Story name="Intents">
+    <Banner intent="none" header="Intent — None">
+      Please read this message and take the prescribed action for the desired efffect
+    </Banner>
+    <Banner intent="success" header="Intent — Success" marginTop={16}>
+      Please read this message and take the prescribed action for the desired efffect
+    </Banner>
+    <Banner intent="warning" header="Intent — Warning" marginTop={16}>
+      Please read this message and take the prescribed action for the desired efffect
+    </Banner>
+    <Banner intent="danger" header="Intent — Danger" marginTop={16}>
+      Please read this message and take the prescribed action for the desired efffect
+    </Banner>
+    <Banner intent="neutral" header="Intent — Neutral" marginTop={16}>
+      Please read this message and take the prescribed action for the desired efffect
+    </Banner>
+  </Story>
+</Canvas>
+
+### Card
+
+Setting `card` property renders the banner in card with intent-colored border. Padding can also be customized.
+
+<Canvas>
+  <Story name="Card">
+    <Banner intent="warning" card padding={16} maxWidth={560}>
+      You do not have an IT environment yet — one will be automatically provisioned for you in the background as you
+      accept this invitation
+    </Banner>
+  </Story>
+</Canvas>

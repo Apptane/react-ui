@@ -1,0 +1,326 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { InputNumericArgTypes, StateManager } from "@apptane/react-ui-storybook-docs";
+import { Gauge } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Visualization/Gauge"
+  component={Gauge}
+  argTypes={{
+    value: {
+      table: {
+        category: "Data",
+      },
+    },
+    total: {
+      table: {
+        category: "Data",
+      },
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    tooltipHidden: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    formatTooltip: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    width: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    height: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    size: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => <Gauge {...args} />;
+
+# Gauge
+
+<Description of={Gauge} />
+
+<Canvas withSource="none">
+  <Story
+    name="Basic"
+    args={{
+      value: [
+        {
+          label: "Alpha",
+          value: 200,
+          color: "#FB8A47",
+        },
+        {
+          label: "Bravo",
+          value: 400,
+          color: "#5519E8",
+        },
+        {
+          label: "Charlie",
+          value: 100,
+          color: "#FF8389",
+        },
+      ],
+      total: 1000,
+      width: 400,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+<Canvas withSource="none">
+  <Story
+    name="Without total"
+    args={{
+      value: [
+        {
+          label: "Alpha",
+          value: 200,
+          color: "#FB8A47",
+        },
+        {
+          label: "Bravo",
+          value: 400,
+          color: "#5519E8",
+        },
+        {
+          label: "Charlie",
+          value: 100,
+          color: "#FF8389",
+        },
+      ],
+      width: 300,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story
+    name="Hues"
+    args={{
+      value: [
+        {
+          label: "Alpha",
+          value: 200,
+          color: "purple",
+        },
+        {
+          label: "Bravo",
+          value: 400,
+          color: "indigo",
+        },
+        {
+          label: "Charlie",
+          value: 100,
+          color: "blue",
+        },
+        {
+          label: "Delta",
+          value: 200,
+          color: "orange",
+        },
+        {
+          label: "Echo",
+          value: 400,
+          color: "teal",
+        },
+        {
+          label: "Foxtrot",
+          value: 100,
+          color: "red",
+        },
+        {
+          label: "Golf",
+          value: 100,
+          color: "gray",
+        },
+      ],
+      width: 300,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story
+    name="Colormap — 3 values"
+    args={{
+      value: [
+        {
+          label: "Alpha",
+          value: 200,
+        },
+        {
+          label: "Bravo",
+          value: 400,
+        },
+        {
+          label: "Charlie",
+          value: 100,
+        },
+      ],
+      width: 300,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story
+    name="Colormap — 4 values"
+    args={{
+      value: [
+        {
+          label: "Alpha",
+          value: 200,
+        },
+        {
+          label: "Bravo",
+          value: 400,
+        },
+        {
+          label: "Charlie",
+          value: 100,
+        },
+        {
+          label: "Delta",
+          value: 200,
+        },
+      ],
+      width: 300,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story
+    name="Colormap — 5 values"
+    args={{
+      value: [
+        {
+          label: "Alpha",
+          value: 200,
+        },
+        {
+          label: "Bravo",
+          value: 400,
+        },
+        {
+          label: "Charlie",
+          value: 100,
+        },
+        {
+          label: "Delta",
+          value: 200,
+        },
+        {
+          label: "Echo",
+          value: 100,
+        },
+      ],
+      width: 300,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story
+    name="Colormap — 6 value"
+    args={{
+      value: [
+        {
+          label: "Alpha",
+          value: 200,
+        },
+        {
+          label: "Bravo",
+          value: 400,
+        },
+        {
+          label: "Charlie",
+          value: 100,
+        },
+        {
+          label: "Delta",
+          value: 200,
+        },
+        {
+          label: "Echo",
+          value: 400,
+        },
+        {
+          label: "Foxtrot",
+          value: 100,
+        },
+      ],
+      width: 300,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story
+    name="Colormap — 7 values"
+    args={{
+      value: [
+        {
+          label: "Alpha",
+          value: 200,
+        },
+        {
+          label: "Bravo",
+          value: 400,
+        },
+        {
+          label: "Charlie",
+          value: 100,
+        },
+        {
+          label: "Delta",
+          value: 200,
+        },
+        {
+          label: "Echo",
+          value: 400,
+        },
+        {
+          label: "Foxtrot",
+          value: 100,
+        },
+        {
+          label: "Golf",
+          value: 100,
+        },
+      ],
+      width: 300,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />

@@ -1,0 +1,67 @@
+{
+  "name": "@apptane/react-ui-hooks",
+  "description": "React hooks for Apptane React UI framework",
+  "license": "Apache-2.0",
+  "version": "0.0.0",
+  "homepage": "https://github.com/apptane/react-ui/tree/main/packages/hooks#readme",
+  "author": "Oleg Grodzevich <oleg@apptane.com>",
+  "keywords": [
+    "apptane",
+    "ui",
+    "react",
+    "hooks"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apptane/react-ui.git",
+    "directory": "packages/hooks"
+  },
+  "bugs": {
+    "url": "https://github.com/apptane/react-ui/issues"
+  },
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/esm/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "clean": "rimraf dist",
+    "clean-modules": "rimraf node_modules",
+    "build": "concurrently pnpm:build:*",
+    "lint": "concurrently pnpm:lint:*",
+    "build:esm": "cross-env BABEL_ENV=esm babel src --root-mode upward --extensions .ts,.tsx -d dist/esm --source-maps",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src --root-mode upward --extensions .ts,.tsx -d dist/cjs --source-maps",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
+    "lint:src": "eslint src --ext .ts,.tsx --config ../../.eslintrc.yml",
+    "lint:types": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/prop-types": "^15.7.4",
+    "@types/raf": "3.4.0",
+    "@types/react": "17.0.19",
+    "react": "17.0.2"
+  },
+  "dependencies": {
+    "@apptane/react-ui-core": "workspace:^0.0.0",
+    "@babel/runtime": "^7.15.4",
+    "copy-to-clipboard": "3.3.1",
+    "raf": "3.4.1",
+    "resize-observer-polyfill": "1.5.1"
+  }
+}

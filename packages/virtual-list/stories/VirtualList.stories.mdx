@@ -1,0 +1,252 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { MarginArgTypes, PaddingArgTypes, StateManager } from "@apptane/react-ui-storybook-docs";
+import { InputSlider, Pane, RadioButton, Selector, Text, ToggleGroup, VirtualList } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Controls/VirtualList"
+  component={VirtualList}
+  argTypes={{
+    itemCount: {
+      table: {
+        category: "Data",
+      },
+    },
+    itemHeight: {
+      table: {
+        category: "Data",
+      },
+    },
+    estimatedItemHeight: {
+      table: {
+        category: "Data",
+      },
+    },
+    minContentWidth: {
+      table: {
+        category: "Data",
+      },
+    },
+    width: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    height: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    maxWidth: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    maxHeight: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        disable: true,
+      },
+    },
+    shadow: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    keyboardNavigation: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    scrollOffsetX: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    scrollOffsetY: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    scrollIndex: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    scrollAlignment: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    overscan: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    onScroll: {
+      table: {
+        category: "Events",
+      },
+    },
+    onHorizontalScroll: {
+      table: {
+        category: "Events",
+      },
+    },
+    onItemClick: {
+      table: {
+        category: "Events",
+      },
+    },
+    onItemFocus: {
+      table: {
+        category: "Events",
+      },
+    },
+    children: {
+      table: {
+        category: "Content",
+      },
+    },
+    ...MarginArgTypes,
+    ...PaddingArgTypes,
+  }}
+  parameters={{
+    actions: { argTypesRegex: "^on.*" },
+  }}
+/>
+
+export const ItemContent = ({ index, focused, data }) => (
+  <Pane
+    height={data === "content" ? 24 + (index % 5) * 8 : "100%"}
+    orientation="horizontal"
+    verticalAlignment="center"
+    horizontalAlignment="right"
+    border={focused ? "focused" : undefined}
+    background={index % 2 === 0 ? "default" : undefined}>
+    <Text marginRight={32}>{index}</Text>
+  </Pane>
+);
+
+export const Template = (args) => <VirtualList {...args}>{ItemContent}</VirtualList>;
+
+# Virtualized List
+
+<Description of={VirtualList} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ height: 400, itemCount: 1000, itemHeight: 24 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Options
+
+The list supports three modes:
+
+- fixed item height
+- variable item height via callback
+- content-based item height
+
+The first two modes allow the list to switch to virtualized behavior, where only visible items are rendered. In content-based mode all items are rendered and may result in performance degradation or signficant memory usage when list contains large number of items.
+
+#### Fixed Item Height
+
+Enabled when `itemHeight` is seto a numeric value that indicates the fixed height in pixels.
+
+#### Variable Item Height
+
+Enabled when `itemHeight` is set to a function, `(index: number) => number` that returns the height of the item with the specified index. In this mode `estimatedItemHeight` should also be set to a reasonable average height, otherwise default of 40px is used.
+
+List caches item heights internally, should the item require to signal a change to its height, an imperative `invalidate(index: number)` function should be used.
+
+#### Content-Based Item Height
+
+Enabled when `itemHeight` is not set. Items should set their own height and can change it dynamically.
+
+export function variableHeight(index) {
+  return 24 + (index % 3) * 8;
+}
+
+<Canvas>
+  <Story name="Dynamic">
+    <StateManager initialValue={{ count: 100, offset: 0, alignment: "center", mode: "fixed" }}>
+      {({ state, setState }) => (
+        <Pane height={600}>
+          <Pane marginRight={24} marginLeft={24} orientation="horizontal" verticalAlignment="center">
+            <ToggleGroup
+              value={state.mode}
+              onChange={(value) => setState((prevState) => ({ ...prevState, mode: value }))}>
+              <RadioButton value="fixed" label="Fixed" />
+              <RadioButton value="variable" label="Variable" />
+              <RadioButton value="content" label="Content" />
+            </ToggleGroup>
+            <Selector
+              width={200}
+              marginLeft={24}
+              label="Alignment"
+              size="large"
+              value={state.alignment}
+              onChange={(value) => setState((prevState) => ({ ...prevState, alignment: value }))}>
+              <Selector.Item value="auto">Auto</Selector.Item>
+              <Selector.Item value="smart">Smart</Selector.Item>
+              <Selector.Item value="center">Center</Selector.Item>
+              <Selector.Item value="start">Start</Selector.Item>
+              <Selector.Item value="end">End</Selector.Item>
+            </Selector>
+          </Pane>
+          <InputSlider
+            marginTop={56}
+            marginRight={24}
+            marginLeft={24}
+            value={state.count}
+            onChange={(value) => {
+              setState((prevState) => ({ ...prevState, count: value }));
+              return true;
+            }}
+            min={0}
+            max={10000}
+            inputVisible
+          />
+          <InputSlider
+            marginTop={48}
+            marginRight={24}
+            marginBottom={36}
+            marginLeft={24}
+            value={state.offset}
+            onChange={(value) => {
+              setState((prevState) => ({ ...prevState, offset: value }));
+              return true;
+            }}
+            min={0}
+            max={state.count - 1}
+            inputVisible
+          />
+          <VirtualList
+            shadow
+            itemData={state.mode}
+            keyboardNavigation
+            estimatedItemHeight={32}
+            itemHeight={state.mode === "content" ? undefined : state.mode === "fixed" ? 24 : variableHeight}
+            itemCount={state.count}
+            scrollIndex={state.offset}
+            scrollAlignment={state.alignment}>
+            {ItemContent}
+          </VirtualList>
+        </Pane>
+      )}
+    </StateManager>
+  </Story>
+</Canvas>

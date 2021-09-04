@@ -1,0 +1,76 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { InputBoxArgTypes, StateManager } from "@apptane/react-ui-storybook-docs";
+import { InputDate } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Controls/Input — Date"
+  component={InputDate}
+  argTypes={{
+    value: {
+      table: {
+        category: "Interactivity",
+      },
+    },
+    onChange: {
+      table: {
+        category: "Interactivity",
+      },
+    },
+    formatValue: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    rangeStart: {
+      table: {
+        category: "Data",
+      },
+    },
+    rangeEnd: {
+      table: {
+        category: "Data",
+      },
+    },
+    notBefore: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    notAfter: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    weekStartsOnSunday: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    autoFocus: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    ...InputBoxArgTypes,
+  }}
+/>
+
+export const Template = (args) => (
+  <StateManager initialValue={args.value}>
+    {({ state, setState }) => <InputDate {...args} value={state} onChange={setState} />}
+  </StateManager>
+);
+
+# Input — Date
+
+<Description of={InputDate} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ width: 400, value: undefined }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />

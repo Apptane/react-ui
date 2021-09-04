@@ -1,0 +1,260 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { XYChart } from "@apptane/react-ui";
+import {
+  OrdinalDomain,
+  SingleOrdinalSeriesData,
+  DoubleOrdinalSeriesData,
+  DoubleOrdinalSeriesData2,
+  MultiOrdinalSeriesData,
+} from "./data";
+
+<Meta
+  title="Components/Visualization/Chart — Bar"
+  component={XYChart}
+  argTypes={{
+    width: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    height: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    domainType: {
+      table: {
+        category: "Domain",
+      },
+    },
+    domain: {
+      table: {
+        category: "Domain",
+      },
+    },
+    domainNice: {
+      table: {
+        category: "Domain",
+      },
+    },
+    formatDomain: {
+      table: {
+        category: "Domain",
+      },
+    },
+    formatTooltip: {
+      table: {
+        category: "Domain",
+      },
+    },
+    gridXVisible: {
+      table: {
+        category: "Axis X",
+      },
+    },
+    axisXValues: {
+      table: {
+        category: "Axis X",
+      },
+    },
+    axisXVisible: {
+      table: {
+        category: "Axis X",
+      },
+    },
+    axisXTitle: {
+      table: {
+        category: "Axis X",
+      },
+    },
+    axisYWidth: {
+      table: {
+        category: "Axis Y",
+      },
+    },
+    axisPadding: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    emptyText: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    colorScheme: {
+      table: {
+        category: "Appearance",
+      },
+    },
+  }}
+/>
+
+export const DimensionsProps = { width: 600, height: 200 };
+
+export const Template = (args) => (
+  <XYChart {...args}>
+    <XYChart.Bar
+      header="Header"
+      legendVisible
+      legendInteractive
+      domainY={[0, 100]}
+      axisYValues={[0, 20, 40, 60, 80, 100]}
+      data={DoubleOrdinalSeriesData}
+    />
+  </XYChart>
+);
+
+# Bar Chart
+
+<Description of={XYChart} />
+
+<Canvas withSource="none">
+  <Story name="Example" args={{ ...DimensionsProps, domainType: "ordinal", domain: OrdinalDomain, axisYWidth: 40 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story name="Stacked">
+    <XYChart {...DimensionsProps} domainType="ordinal" domain={OrdinalDomain} axisYWidth={40}>
+      <XYChart.Bar
+        header="Stacked"
+        legendVisible
+        legendInteractive
+        stacked
+        domainY={[0, 200]}
+        axisYValues={[0, 40, 80, 120, 160, 200]}
+        data={DoubleOrdinalSeriesData}
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story name="Multiple Panes">
+    <XYChart width={600} height={500} domainType="ordinal" domain={OrdinalDomain} axisYWidth={40}>
+      <XYChart.Bar
+        header="Side-by-side"
+        legendVisible
+        legendInteractive
+        domainY={[0, 100]}
+        axisYValues={[0, 20, 40, 60, 80, 100]}
+        data={DoubleOrdinalSeriesData2}
+      />
+      <XYChart.Bar
+        header="Stacked"
+        legendVisible
+        legendInteractive
+        stacked
+        domainY={[0, 200]}
+        axisYValues={[0, 40, 80, 120, 160, 200]}
+        data={DoubleOrdinalSeriesData2}
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+## Options
+
+<Canvas>
+  <Story name="Header and titles">
+    <XYChart {...DimensionsProps} domainType="ordinal" domain={OrdinalDomain} axisYWidth={40} axisXTitle="X Axis Title">
+      <XYChart.Bar
+        header="Header and titles"
+        legendVisible
+        legendInteractive
+        gridYVisible
+        domainY={[0, 105]}
+        axisYValues={[0, 20, 40, 60, 80, 100]}
+        axisYTitle="Y Axis Title"
+        data={DoubleOrdinalSeriesData}
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="No header, titles, legend">
+    <XYChart {...DimensionsProps} domainType="ordinal" domain={OrdinalDomain} axisYWidth={40} axisXValues={12}>
+      <XYChart.Bar
+        domainY={[, 105]}
+        gridYVisible
+        axisYValues={[0, 20, 40, 60, 80, 100]}
+        data={DoubleOrdinalSeriesData}
+        tooltipTotalVisible
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Multiple series">
+    <XYChart width={600} height={250} domainType="ordinal" domain={OrdinalDomain} axisYWidth={40} axisXValues={12}>
+      <XYChart.Bar
+        header="Multiple series"
+        gridYVisible
+        legendVisible
+        legendInteractive
+        domainY={[, 80]}
+        axisYValues={[0, 20, 40, 60, 80]}
+        data={MultiOrdinalSeriesData}
+        tooltipTotalVisible
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Multiple series — Stacked">
+    <XYChart width={600} height={250} domainType="ordinal" domain={OrdinalDomain} axisYWidth={40} axisXValues={12}>
+      <XYChart.Bar
+        header="Multiple series — Stacked"
+        gridYVisible
+        legendVisible
+        legendInteractive
+        stacked
+        data={MultiOrdinalSeriesData}
+        tooltipTotalVisible
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Range">
+    <XYChart width={600} height={150} domainType="ordinal" domain={OrdinalDomain} axisYWidth={40}>
+      <XYChart.Bar
+        header="%"
+        gridYVisible
+        area
+        legendVisible
+        legendInteractive
+        domainY={[0, 100]}
+        axisYValues={[0, 100]}
+        data={SingleOrdinalSeriesData}
+      />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="No data">
+    <XYChart {...DimensionsProps}>
+      <XYChart.Bar header="Header" emptyText="No performance data available" />
+    </XYChart>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="No data — Domain">
+    <XYChart {...DimensionsProps} domainType="ordinal" domain={OrdinalDomain}>
+      <XYChart.Bar header="Header" emptyText="No data available" />
+    </XYChart>
+  </Story>
+</Canvas>

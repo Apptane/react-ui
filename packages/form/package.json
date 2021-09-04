@@ -1,0 +1,73 @@
+{
+  "name": "@apptane/react-ui-form",
+  "description": "Form layout component in Apptane React UI framework",
+  "license": "Apache-2.0",
+  "version": "0.0.0",
+  "homepage": "https://github.com/apptane/react-ui/tree/main/packages/form#readme",
+  "author": "Oleg Grodzevich <oleg@apptane.com>",
+  "keywords": [
+    "apptane",
+    "ui",
+    "react",
+    "panel",
+    "form",
+    "layout",
+    "input"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apptane/react-ui.git",
+    "directory": "packages/form"
+  },
+  "bugs": {
+    "url": "https://github.com/apptane/react-ui/issues"
+  },
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/esm/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "clean": "rimraf dist",
+    "clean-modules": "rimraf node_modules",
+    "build": "concurrently pnpm:build:*",
+    "lint": "concurrently pnpm:lint:*",
+    "build:esm": "cross-env BABEL_ENV=esm babel src --root-mode upward --extensions .ts,.tsx -d dist/esm --source-maps",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src --root-mode upward --extensions .ts,.tsx -d dist/cjs --source-maps",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
+    "lint:src": "eslint src --ext .ts,.tsx --config ../../.eslintrc.yml",
+    "lint:types": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/prop-types": "^15.7.4",
+    "@types/react": "17.0.19",
+    "react": "17.0.2"
+  },
+  "dependencies": {
+    "@apptane/react-ui-core": "workspace:^0.0.0",
+    "@apptane/react-ui-input": "workspace:^0.0.0",
+    "@apptane/react-ui-pane": "workspace:^0.0.0",
+    "@apptane/react-ui-theme": "workspace:^0.0.0",
+    "@apptane/react-ui-typography": "workspace:^0.0.0",
+    "@babel/runtime": "^7.15.4",
+    "@emotion/core": "11.0.0",
+    "@emotion/react": "11.4.1",
+    "prop-types": "15.7.2"
+  }
+}

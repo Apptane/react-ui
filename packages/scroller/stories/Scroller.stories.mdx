@@ -1,0 +1,161 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { MarginArgTypes, PaddingArgTypes, StateManager } from "@apptane/react-ui-storybook-docs";
+import { Card, InputSlider, Pane, Scroller, Test } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Controls/Scroller"
+  component={Scroller}
+  argTypes={{
+    width: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    height: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    maxWidth: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    maxHeight: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        disable: true,
+      },
+    },
+    shadow: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    scrollOffsetX: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    scrollOffsetY: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    onScrollX: {
+      table: {
+        category: "Events",
+      },
+    },
+    onScrollY: {
+      table: {
+        category: "Events",
+      },
+    },
+    ...MarginArgTypes,
+    ...PaddingArgTypes,
+  }}
+  parameters={{
+    actions: { argTypesRegex: "^on.*" },
+  }}
+/>
+
+export const ScrollerContent = ({ quantity = 20 }) => (
+  <div>
+    {[...Array(quantity).keys()].map((index) => (
+      <Card
+        key={`box-${index}`}
+        interactive
+        inline
+        margin={6}
+        width={250}
+        height={150}
+        verticalAlignment="center"
+        horizontalAlignment="center">
+        <Text>{`box-${index}`}</Text>
+      </Card>
+    ))}
+  </div>
+);
+
+export const Template = (args) => (
+  <Scroller {...args}>
+    <ScrollerContent />
+  </Scroller>
+);
+
+# Scroller
+
+<Description of={Scroller} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ height: 500, width: 530 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Options
+
+With `shadow`
+
+<Canvas withSource="none">
+  <Story name="Shadow" args={{ height: 500, width: 530, shadow: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Use `scrollOffsetX` `scrollOffsetY` to set the scroller position.
+
+<Canvas>
+  <Story name="Dynamic">
+    <StateManager initialValue={{ count: 20, offset: 0 }}>
+      {({ state, setState }) => (
+        <Pane height={600}>
+          <InputSlider
+            marginTop={48}
+            marginRight={24}
+            marginLeft={24}
+            value={state.count}
+            onChange={(value) => {
+              setState((prevState) => ({ ...prevState, count: value }));
+              return true;
+            }}
+            min={0}
+            max={100}
+            inputVisible
+          />
+          <InputSlider
+            marginTop={48}
+            marginRight={24}
+            marginBottom={48}
+            marginLeft={24}
+            value={state.offset}
+            onChange={(value) => {
+              setState((prevState) => ({ ...prevState, offset: value }));
+              return true;
+            }}
+            min={0}
+            max={5000}
+            inputVisible
+          />
+          <Scroller height={500} shadow scrollOffsetY={state.offset}>
+            <ScrollerContent quantity={state.count} />
+          </Scroller>
+        </Pane>
+      )}
+    </StateManager>
+  </Story>
+</Canvas>

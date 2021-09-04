@@ -1,0 +1,99 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { StateManager } from "@apptane/react-ui-storybook-docs";
+import { Divider, Form, InputText, Pane, RadioButton, Selector, ToggleGroup, Validator } from "@apptane/react-ui";
+
+<Meta title="Components/Layout/Form" component={Form} />
+
+# Form
+
+<Description of={Form} />
+
+<Canvas>
+  <Story name="Example">
+    <StateManager initialValue={{ role: "user", group: "default", registration: "no", password1: "", password2: "" }}>
+      {({ state, setState, bind }) => (
+        <Form width={400}>
+          <Form.Field
+            label="User name"
+            hint="Username cannot contain spaces or special characters"
+            value={state.username}
+            onChange={(v) => setState((s) => ({ ...s, username: v }))}>
+            <InputText error={Validator.required.string(state.username, 20, "Name is too long")} />
+          </Form.Field>
+          <Form.Group layout="1fr 1fr">
+            <Form.Field
+              label="First name"
+              value={state.firstName}
+              onChange={(v) => setState((s) => ({ ...s, firstName: v }))}>
+              <InputText />
+            </Form.Field>
+            <Form.Field
+              label="Last name"
+              value={state.lastName}
+              onChange={(v) => setState((s) => ({ ...s, lastName: v }))}>
+              <InputText />
+            </Form.Field>
+          </Form.Group>
+          <Form.Field
+            label="Email"
+            hint="Must be a valid corporate email address"
+            value={state.email}
+            onChange={(v) => setState((s) => ({ ...s, email: v }))}>
+            <InputText type="email" error={Validator.required.email(state.email, "Provide valid email address")} />
+          </Form.Field>
+          <Form.Field
+            label="Password"
+            value={state.password1}
+            onChange={(v) => setState((s) => ({ ...s, password1: v }))}>
+            <InputText type="password" />
+          </Form.Field>
+          <Form.Field
+            label="Repeat password"
+            value={state.password2}
+            onChange={(v) => setState((s) => ({ ...s, password2: v }))}>
+            <InputText
+              type="password"
+              error={state.password1 !== state.password2 ? "Passwords must match" : false}
+              errorAppearance="both"
+            />
+          </Form.Field>
+          <Divider alignment="left">Permissions</Divider>
+          <Form.Group layout="1fr 1fr">
+            <Form.Field value={state.role} onChange={(v) => setState((s) => ({ ...s, role: v }))}>
+              <Selector size="large" label="Role">
+                <Selector.Item value="user">User</Selector.Item>
+                <Selector.Item value="admin">Admin</Selector.Item>
+              </Selector>
+            </Form.Field>
+            <Form.Field value={state.group} onChange={(v) => setState((s) => ({ ...s, group: v }))}>
+              <Selector size="large" label="Group">
+                <Selector.Item value="default">Default</Selector.Item>
+                <Selector.Item value="dev">Development</Selector.Item>
+              </Selector>
+            </Form.Field>
+          </Form.Group>
+          <Form.Field
+            label="Registration"
+            value={state.registration}
+            onChange={(v) => setState((s) => ({ ...s, registration: v }))}>
+            <ToggleGroup orientation="vertical">
+              <RadioButton value="yes" label="Approved" width="100%">
+                {state.registration === "yes" && (
+                  <InputText
+                    marginTop={16}
+                    marginBottom={8}
+                    size="large"
+                    label="Approved by"
+                    value={state.approvedBy}
+                    onChange={(v) => setState((s) => ({ ...s, approvedBy: v }))}
+                  />
+                )}
+              </RadioButton>
+              <RadioButton value="no" label="Not approved" />
+            </ToggleGroup>
+          </Form.Field>
+        </Form>
+      )}
+    </StateManager>
+  </Story>
+</Canvas>

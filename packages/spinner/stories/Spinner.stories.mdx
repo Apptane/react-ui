@@ -1,0 +1,85 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { MarginArgTypes } from "@apptane/react-ui-storybook-docs";
+import { Spinner } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Primitives/Spinner"
+  component={Spinner.type}
+  argTypes={{
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    color: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    inline: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    size: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    ...MarginArgTypes,
+  }}
+/>
+
+export const Template = (args) => <Spinner {...args} />;
+
+# Spinner
+
+<Description of={Spinner.type} />
+
+<Canvas withSource="none">
+  <Story name="Basic">{Template.bind({})}</Story>
+</Canvas>
+
+Different appearances — `clip` `tail` `pulse`.
+
+<Canvas withSource="none">
+  <Story name="Clip" args={{ appearance: "clip" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Tail" args={{ appearance: "tail" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Pulse" args={{ appearance: "pulse" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Custom color.
+
+<Canvas>
+  <Story name="Color">
+    <Spinner color="default" size={24} inline margin={16} />
+    <Spinner color="error" size={24} inline margin={16} />
+    <Spinner color="warning" size={24} appearance="pulse" inline margin={16} />
+    <Spinner color="success" size={24} appearance="pulse" inline margin={16} />
+  </Story>
+</Canvas>
+
+Custom size.
+
+<Canvas>
+  <Story name="Size">
+    <Spinner size={96} inline margin={16} />
+    <Spinner size={96} appearance="tail" inline margin={16} />
+    <Spinner size={96} appearance="pulse" inline margin={16} />
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />

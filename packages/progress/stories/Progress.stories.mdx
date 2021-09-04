@@ -1,0 +1,97 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { MarginArgTypes, SelectorGroupArgTypes, StateManager } from "@apptane/react-ui-storybook-docs";
+import { Badge, IconButton, Pane, Progress } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Controls/Progress"
+  component={Progress}
+  argTypes={{
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        disable: true,
+      },
+    },
+    width: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    offset: {
+      table: {
+        category: "Layout",
+      },
+    },
+    spacing: {
+      table: {
+        category: "Layout",
+      },
+    },
+    alignment: {
+      table: {
+        category: "Layout",
+      },
+    },
+    ...SelectorGroupArgTypes,
+    ...MarginArgTypes,
+  }}
+/>
+
+export const Template = (args) => (
+  <StateManager initialValue={args.value}>
+    {({ state, setState }) => (
+      <Progress {...args} value={state} onChange={setState}>
+        <Progress.Item key="a" value="a" completed>
+          Alpha
+        </Progress.Item>
+        ,<Progress.Item key="b" value="b">
+          Bravo
+        </Progress.Item>,<Progress.Item key="c" value="c" disabled>
+          Charlie
+        </Progress.Item>,<Progress.Item key="d" value="d" error="Something went wrong">
+          Delta
+        </Progress.Item>,
+      </Progress>
+    )}
+  </StateManager>
+);
+
+# Progress
+
+<Description of={Progress} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ value: "b" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Appearance
+
+You can modify `spacing`, `offset` and `alignment` to customize appearance.
+
+<Canvas>
+  <Story name="Appearance">
+    <StateManager initialValue={3}>
+      {({ state, setState }) => (
+        <Progress size="large" value={state} onChange={setState} spacing={32} offset={50} alignment="left">
+          <Progress.Item value={1} completed>
+            One
+          </Progress.Item>
+          <Progress.Item value={2} completed>
+            Two
+          </Progress.Item>
+          <Progress.Item value={3}>Three</Progress.Item>
+        </Progress>
+      )}
+    </StateManager>
+  </Story>
+</Canvas>

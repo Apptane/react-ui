@@ -1,0 +1,247 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { PaneArgTypes } from "@apptane/react-ui-storybook-docs";
+import { Card, Pane, Text } from "@apptane/react-ui";
+
+<Meta title="Components/Layout/Pane" component={Pane} argTypes={PaneArgTypes} />
+
+# Pane
+
+<Description of={Pane} />
+
+<Canvas withSource="none">
+  <Story
+    name="Basic"
+    args={{
+      width: 100,
+      height: 100,
+      background: "default",
+      verticalAlignment: "top",
+      horizontalAlignment: "stretch",
+    }}>
+    {(args) => <Pane {...args} />}
+  </Story>
+</Canvas>
+
+### Content Positioning
+
+This component supports flexbox-based content positioning with more intuitive API. Use `orientation` to specify the direction of the child content. Use `horizontalAlignment` and `verticalAlignment` to align content. These properties work as their names imply regardless of the orientation selected.
+
+export const PaneContentTemplate = (args) => (
+  <div>
+    <Pane width={120} height={120} background="default" padding={5} {...args}>
+      <Pane width={20} height={20} background="contrast" margin={5} />
+      <Pane width={20} height={20} background="contrast" margin={5} />
+    </Pane>
+    <Text size="small" color="muted" marginTop={4}>
+      {args.horizontalAlignment} — {args.verticalAlignment}
+    </Text>
+  </div>
+);
+
+#### Vertical Orientation (Default)
+
+<Canvas withSource="none">
+  <Story
+    name="Vertical Top-Left"
+    args={{
+      verticalAlignment: "top",
+      horizontalAlignment: "left",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Vertical Center-Left"
+    args={{
+      verticalAlignment: "center",
+      horizontalAlignment: "left",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Vertical Bottom-Left"
+    args={{
+      verticalAlignment: "bottom",
+      horizontalAlignment: "left",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Vertical Top-Center"
+    args={{
+      verticalAlignment: "top",
+      horizontalAlignment: "center",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Vertical Center-Center"
+    args={{
+      verticalAlignment: "center",
+      horizontalAlignment: "center",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Vertical Bottom-Center"
+    args={{
+      verticalAlignment: "bottom",
+      horizontalAlignment: "center",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Vertical Top-Right"
+    args={{
+      verticalAlignment: "top",
+      horizontalAlignment: "right",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Vertical Center-Right"
+    args={{
+      verticalAlignment: "center",
+      horizontalAlignment: "right",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Vertical Bottom-Right"
+    args={{
+      verticalAlignment: "bottom",
+      horizontalAlignment: "right",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Vertical Space-Between"
+    args={{
+      verticalAlignment: "space-between",
+      horizontalAlignment: "left",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+</Canvas>
+
+#### Horizontal Orientation
+
+<Canvas withSource="none">
+  <Story
+    name="Horizontal Top-Left"
+    args={{
+      orientation: "horizontal",
+      verticalAlignment: "top",
+      horizontalAlignment: "left",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Horizontal Center-Left"
+    args={{
+      orientation: "horizontal",
+      verticalAlignment: "center",
+      horizontalAlignment: "left",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Horizontal Bottom-Left"
+    args={{
+      orientation: "horizontal",
+      verticalAlignment: "bottom",
+      horizontalAlignment: "left",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Horizontal Top-Center"
+    args={{
+      orientation: "horizontal",
+      verticalAlignment: "top",
+      horizontalAlignment: "center",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Horizontal Center-Center"
+    args={{
+      orientation: "horizontal",
+      verticalAlignment: "center",
+      horizontalAlignment: "center",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Horizontal Bottom-Center"
+    args={{
+      orientation: "horizontal",
+      verticalAlignment: "bottom",
+      horizontalAlignment: "center",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Horizontal Top-Right"
+    args={{
+      orientation: "horizontal",
+      verticalAlignment: "top",
+      horizontalAlignment: "right",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Horizontal Center-Right"
+    args={{
+      orientation: "horizontal",
+      verticalAlignment: "center",
+      horizontalAlignment: "right",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Horizontal Bottom-Right"
+    args={{
+      orientation: "horizontal",
+      verticalAlignment: "bottom",
+      horizontalAlignment: "right",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+  <Story
+    name="Horizontal Space-Between"
+    args={{
+      orientation: "horizontal",
+      verticalAlignment: "top",
+      horizontalAlignment: "space-between",
+    }}>
+    {PaneContentTemplate.bind({})}
+  </Story>
+</Canvas>
+
+Use `margin` and `padding` to create spacing outside and inside the panel. You can also set individual values for individual sides via `marginTop|Right|Bottom|Left` and `paddingTop|Right|Bottom|Left` or using shortcut properties: `m|mt|mr|mb|ml` and `p|pt|pr|pb|pl`.
+
+<Canvas>
+  <Story name="Margin and Padding">
+    <Pane width={360} height={360} background="transparent">
+      <Pane grow={1} background="default" border="default" margin={24} padding={24}>
+        <Pane grow={1} borderStyle="dashed" border="default" />
+      </Pane>
+    </Pane>
+  </Story>
+</Canvas>
+
+### Card
+
+`Card` is a special version of `Pane` with default border and background. Use `interactive` property to enable visual response to mouse and keyboard focus.
+
+<Canvas>
+  <Story name="Card">
+    <Pane width={360} height={360} background="transparent">
+      <Card grow={1} margin={24} interactive />
+    </Pane>
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />

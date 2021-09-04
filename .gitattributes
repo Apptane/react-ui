@@ -1,0 +1,7 @@
+# no manual merging
+yarn.lock           merge=binary
+pnpm-lock.yaml      merge=binary
+shrinkwrap.yaml     merge=binary
+npm-shrinkwrap.json merge=binary
+
+* text=auto eol=lf

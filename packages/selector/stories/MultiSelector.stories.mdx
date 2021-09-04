@@ -1,0 +1,140 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { InputBoxArgTypes, StateManager } from "@apptane/react-ui-storybook-docs";
+import { MultiSelector, Tag } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Controls/Input — MultiSelector"
+  component={MultiSelector}
+  argTypes={{
+    value: {
+      table: {
+        category: "Interactivity",
+      },
+    },
+    onChange: {
+      table: {
+        category: "Interactivity",
+      },
+    },
+    formatValue: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    autoFocus: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    ...InputBoxArgTypes,
+  }}
+/>
+
+export const Template = (args) => (
+  <StateManager initialValue={args.value}>
+    {({ state, setState }) => (
+      <MultiSelector {...args} value={state} onChange={setState}>
+        <MultiSelector.Item value="a">Alpha</MultiSelector.Item>
+        <MultiSelector.Item value="b">Bravo</MultiSelector.Item>
+        <MultiSelector.Item value="c">Charlie</MultiSelector.Item>
+      </MultiSelector>
+    )}
+  </StateManager>
+);
+
+export const Values = { a: "Alpha", b: "Bravo", c: "Charlie" };
+export function formatValue(value) {
+  return value == null || value.length === 0
+    ? "No tags selected"
+    : value.map((v, index) => (
+        <Tag key={v} inline marginLeft={index > 0 ? 8 : 0}>
+          {Values[v]}
+        </Tag>
+      ));
+}
+
+# Dropdown Multi-Selector
+
+<Description of={MultiSelector} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ value: ["a"], width: 300 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Sizes
+
+Supports standard sizes — `large` `medium` `small`.
+
+<Canvas withSource="none">
+  <Story name="Large" args={{ label: "Large", size: "large", value: ["a"] }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium" args={{ label: "Medium", size: "medium", value: ["a"] }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small" args={{ label: "Small", size: "small", value: ["a"] }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Custom Format
+
+Specify `formatValue` function for custom formatting of the value:
+
+<Canvas withSource="none">
+  <Story name="Format" args={{ label: "Tags", value: ["a", "b"], formatValue: formatValue }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## States
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      label: "Large",
+      size: "large",
+      disabled: true,
+      value: ["a"],
+      width: 300,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story
+    name="Error with glyph"
+    args={{
+      label: "Large",
+      size: "large",
+      error: "Please correct the value entered",
+      errorAppearance: "glyph",
+      value: ["a"],
+      width: 300,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="none">
+  <Story
+    name="Error with hint"
+    args={{
+      label: "Large",
+      size: "large",
+      error: "Please correct the value entered",
+      errorAppearance: "hint",
+      value: ["a"],
+      width: 300,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

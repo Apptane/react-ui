@@ -1,0 +1,30 @@
+root: true
+parser: "@typescript-eslint/parser"
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 2019
+  sourceType: module
+extends:
+  - "plugin:react/recommended"
+  - "plugin:mdx/recommended"
+  - "plugin:@typescript-eslint/recommended"
+  - "plugin:prettier/recommended"
+plugins:
+  - react
+  - react-hooks
+  - prettier
+  - "@typescript-eslint"
+  - "@emotion"
+env:
+  browser: true
+settings:
+  react:
+    version: detect
+rules:
+  "react/jsx-uses-react": off
+  "react/react-in-jsx-scope": off
+  "react-hooks/rules-of-hooks": error
+  "react-hooks/exhaustive-deps": error
+  "@typescript-eslint/explicit-function-return-type": off
+  "@typescript-eslint/explicit-module-boundary-types": off

@@ -1,0 +1,541 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { MarginArgTypes, ButtonBaseArgTypes } from "@apptane/react-ui-storybook-docs";
+import { Button, IconButton, Pane } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Controls/Button"
+  component={Button}
+  argTypes={{
+    children: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    badge: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    tooltip: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        category: "Appearance",
+      },
+      options: ["primary", "secondary", "tertiary", "minimal", "inverted", "link"],
+      control: {
+        type: "select",
+      },
+    },
+    intent: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    alignment: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    spinner: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    round: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    width: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    padding: {
+      table: {
+        category: "Dimensions",
+      },
+      control: {
+        type: "range",
+        min: 0,
+        max: 16,
+        step: 1,
+      },
+    },
+    iconSize: {
+      table: {
+        category: "Icon",
+      },
+      control: {
+        type: "range",
+        min: 0,
+        max: 32,
+        step: 1,
+      },
+    },
+    iconName: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconData: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconAfterName: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconAfterData: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconBeforeName: {
+      table: {
+        category: "Icon",
+      },
+    },
+    iconBeforeData: {
+      table: {
+        category: "Icon",
+      },
+    },
+    autoFocus: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    preventDefault: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    ...ButtonBaseArgTypes,
+    ...MarginArgTypes,
+  }}
+  parameters={{
+    actions: { argTypesRegex: "^on.*" },
+  }}
+/>
+
+export const Template = (args) => <Button {...args} />;
+
+# Button
+
+<Description of={Button} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ children: "Action" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Sizes
+
+Supports standard sizes — `large` `medium` `small`.
+
+<Canvas withSource="none">
+  <Story
+    name="Large"
+    args={{
+      children: "Large",
+      size: "large",
+      appearance: "primary",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Medium"
+    args={{
+      children: "Medium",
+      size: "medium",
+      appearance: "primary",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Small"
+    args={{
+      children: "Small",
+      size: "small",
+      appearance: "primary",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Custom `size` and `padding`.
+
+<Canvas withSource="none">
+  <Story
+    name="Custom Size"
+    args={{
+      children: "40px + 12px Padding",
+      size: 40,
+      padding: 12,
+      appearance: "primary",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Appearances
+
+`Primary` appearance.
+
+<Canvas withSource="none">
+  <Story
+    name="Primary — None"
+    args={{
+      children: "None",
+      intent: "none",
+      appearance: "primary",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Primary — Success"
+    args={{
+      children: "Success",
+      intent: "success",
+      appearance: "primary",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Primary — Warning"
+    args={{
+      children: "Warning",
+      intent: "warning",
+      appearance: "primary",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Primary — Danger"
+    args={{
+      children: "Danger",
+      intent: "danger",
+      appearance: "primary",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+`Secondary` appearance.
+
+<Canvas withSource="none">
+  <Story
+    name="Secondary — None"
+    args={{
+      children: "None",
+      intent: "none",
+      appearance: "secondary",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary — Success"
+    args={{
+      children: "Success",
+      intent: "success",
+      appearance: "secondary",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary — Warning"
+    args={{
+      children: "Warning",
+      intent: "warning",
+      appearance: "secondary",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary — Danger"
+    args={{
+      children: "Danger",
+      intent: "danger",
+      appearance: "secondary",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+`Tertiary` appearance, `intent` is not supported.
+
+<Canvas withSource="none">
+  <Story
+    name="Tertiary"
+    args={{
+      children: "Tertiary",
+      appearance: "tertiary",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+`Minimal` appearance, `intent` are supported with active states following `appearance = secondary`.
+
+<Canvas withSource="none">
+  <Story
+    name="Minimal"
+    args={{
+      children: "Minimal",
+      appearance: "minimal",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Minimal — Neutral"
+    args={{
+      children: "Minimal",
+      appearance: "minimal",
+      intent: "neutral",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+`Inverted` appearance, `intent` is not supported.
+
+<Canvas withSource="none">
+  <Story
+    name="Inverted"
+    parameters={{
+      backgrounds: {
+        default: "dark",
+      },
+    }}>
+    <Pane background="contrast" padding={24}>
+      <Button appearance="inverted">Inverted</Button>
+    </Pane>
+  </Story>
+</Canvas>
+
+`Link` appearance, `intent` is not supported.
+
+<Canvas withSource="none">
+  <Story
+    name="Link"
+    parameters={{
+      backgrounds: {
+        default: "dark",
+      },
+    }}
+    args={{
+      children: "Link",
+      appearance: "link",
+      size: "medium",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Icon-only Button
+
+Setting `iconName` property renders renders just the icon and rest of the content is ignored. You can also use `IconButton` component as a shortcut.
+
+<Canvas>
+  <Story name="Icon">
+    <IconButton iconName="i:close" inline margin={16} />
+    <IconButton iconName="i:close" inline margin={16} appearance="secondary" />
+    <IconButton iconName="i:close" inline margin={16} appearance="tertiary" />
+    <IconButton iconName="i:close" inline margin={16} appearance="minimal" />
+    <IconButton iconName="i:close" inline margin={16} appearance="link" />
+    <IconButton iconName="i:close" inline margin={16} spinner="clip" />
+  </Story>
+</Canvas>
+
+### Icon and Content Alignment
+
+Icons can be rendered before and after content via `iconAfterName` and/or `iconBeforeName` properties.
+
+<Canvas>
+  <Story name="Icon and Content">
+    <Pane orientation="horizontal">
+      <Button iconBeforeName="i:bullet-empty" inline margin={16}>
+        Action
+      </Button>
+      <Button iconBeforeName="i:bullet-empty" iconAfterName="i:arrow-down" inline margin={16}>
+        Action
+      </Button>
+      <Button iconAfterName="i:close" inline margin={16}>
+        Close
+      </Button>
+      <Button iconBeforeName="i:bullet-empty" inline margin={16} appearance="tertiary">
+        Action
+      </Button>
+      <Button iconBeforeName="i:bullet-empty" iconAfterName="i:arrow-down" inline margin={16} appearance="tertiary">
+        Action
+      </Button>
+      <Button iconAfterName="i:close" inline margin={16} appearance="tertiary">
+        Close
+      </Button>
+    </Pane>
+  </Story>
+</Canvas>
+
+Additionally `alignment` property controls how icons and content are aligned within the button.
+Default alignment is to center the content.
+
+export const TemplateAlignment = (args) => (
+  <React.Fragment>
+    <Pane orientation="horizontal">
+      <Button inline margin={16} width={200} {...args}>
+        Action
+      </Button>
+      <Button iconBeforeName="i:bullet-empty" inline margin={16} width={200} {...args}>
+        Action
+      </Button>
+      <Button iconBeforeName="i:bullet-empty" iconAfterName="i:arrow-down" inline margin={16} width={200} {...args}>
+        Action
+      </Button>
+      <Button iconAfterName="i:close" inline margin={16} width={200} {...args}>
+        Close
+      </Button>
+    </Pane>
+    <Pane orientation="horizontal">
+      <Button badge={36} inline margin={16} width={200} {...args}>
+        Action
+      </Button>
+      <Button iconBeforeName="i:bullet-empty" badge={36} inline margin={16} width={200} {...args}>
+        Action
+      </Button>
+      <Button
+        iconBeforeName="i:bullet-empty"
+        iconAfterName="i:arrow-down"
+        badge={36}
+        inline
+        margin={16}
+        width={200}
+        {...args}>
+        Action
+      </Button>
+      <Button iconAfterName="i:close" badge={36} inline margin={16} width={200} {...args}>
+        Close
+      </Button>
+    </Pane>
+    <Pane orientation="horizontal">
+      <Button badge={36} inline margin={16} width={200} spinner {...args}>
+        Action
+      </Button>
+      <Button iconBeforeName="i:bullet-empty" badge={36} inline margin={16} width={200} spinner {...args}>
+        Action
+      </Button>
+      <Button
+        iconBeforeName="i:bullet-empty"
+        iconAfterName="i:arrow-down"
+        badge={36}
+        inline
+        margin={16}
+        width={200}
+        spinner
+        {...args}>
+        Action
+      </Button>
+      <Button iconAfterName="i:close" badge={36} inline margin={16} width={200} spinner {...args}>
+        Close
+      </Button>
+    </Pane>
+  </React.Fragment>
+);
+
+<Canvas>
+  <Story name="Alignment — Center">{TemplateAlignment.bind({})}</Story>
+</Canvas>
+
+Content aligned to the `left`.
+
+<Canvas>
+  <Story name="Alignment — Left" args={{ alignment: "left" }}>
+    {TemplateAlignment.bind({})}
+  </Story>
+</Canvas>
+
+Content aligned to the `right`.
+
+<Canvas>
+  <Story name="Alignment — Right" args={{ alignment: "right" }}>
+    {TemplateAlignment.bind({})}
+  </Story>
+</Canvas>
+
+### Spinner
+
+Setting `spinner` to one of the supported spinner appearances, `clip` `tail` `pulse`, disables the button and renders the spinner in place of an icon.
+
+<Canvas>
+  <Story name="Spinner">
+    <Button spinner="clip" inline margin={16}>
+      Primary
+    </Button>
+    <Button spinner="clip" inline margin={16} appearance="secondary">
+      Secondary
+    </Button>
+    <Button spinner="clip" inline margin={16} appearance="tertiary">
+      Tertiary
+    </Button>
+    <Button spinner="clip" inline margin={16} appearance="minimal">
+      Minimal
+    </Button>
+    <Button spinner="clip" inline margin={16} appearance="link">
+      Link
+    </Button>
+  </Story>
+</Canvas>
+
+### Badge
+
+Setting `badge` property renders badge value to the right of the main content.
+
+<Canvas>
+  <Story name="Badge">
+    <Button badge="36" inline margin={16}>
+      Primary
+    </Button>
+    <Button badge="36" inline margin={16} appearance="secondary">
+      Secondary
+    </Button>
+    <Button badge="36" inline margin={16} appearance="tertiary">
+      Tertiary
+    </Button>
+    <Button badge="36" inline margin={16} appearance="minimal">
+      Minimal
+    </Button>
+    <Button badge="36" inline margin={16} appearance="link">
+      Link
+    </Button>
+  </Story>
+</Canvas>

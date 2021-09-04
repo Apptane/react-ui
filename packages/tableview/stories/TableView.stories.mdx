@@ -1,0 +1,332 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { MarginArgTypes, BoxBorderArgTypes, StateManager } from "@apptane/react-ui-storybook-docs";
+import { useCallback, useRef } from "react";
+import {
+  Button,
+  Hyperlink,
+  IconButton,
+  InputCheck,
+  InputSlider,
+  Pane,
+  Selector,
+  TableView,
+  Text,
+  ToggleGroup,
+} from "@apptane/react-ui";
+import DATA from "./data";
+
+<Meta
+  title="Components/Controls/TableView"
+  component={TableView}
+  argTypes={{
+    data: {
+      table: {
+        category: "Data",
+      },
+    },
+    sortKey: {
+      table: {
+        category: "Data",
+      },
+    },
+    sortDir: {
+      table: {
+        category: "Data",
+      },
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        disable: true,
+      },
+    },
+    rowHeight: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    headerHeight: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    estimatedRowHeight: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    rowBorderHidden: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    lastRowBorderVisible: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    empty: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    rowExpanded: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    width: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    height: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    virtualizationDisabled: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    keyboardNavigation: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    scrollOffsetX: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    scrollOffsetY: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    scrollIndex: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    scrollAlignment: {
+      table: {
+        category: "Behavior",
+      },
+    },
+    ...BoxBorderArgTypes,
+    onScroll: {
+      table: {
+        category: "Events",
+      },
+    },
+    onHorizontalScroll: {
+      table: {
+        category: "Events",
+      },
+    },
+    onRowFocus: {
+      table: {
+        category: "Events",
+      },
+    },
+    onRowClick: {
+      table: {
+        category: "Events",
+      },
+    },
+    onSortChanged: {
+      table: {
+        category: "Events",
+      },
+    },
+    ...MarginArgTypes,
+  }}
+  parameters={{
+    actions: { argTypesRegex: "^on.*" },
+  }}
+/>
+
+export const Template = (args) => (
+  <StateManager initialValue={{ sortKey: "name", sortDir: "asc" }}>
+    {({ state, setState }) => (
+      <TableView
+        {...args}
+        data={DATA}
+        sortKey={state.sortKey}
+        sortDir={state.sortDir}
+        onSortChanged={(key, dir) => setState((prevState) => ({ ...prevState, sortKey: key, sortDir: dir }))}>
+        <TableView.Column minWidth={200} header="Name" sortKey="name">
+          {(rowObject) => <Hyperlink ellipsis>{rowObject.fullName}</Hyperlink>}
+        </TableView.Column>
+        <TableView.Column minWidth={200} header="Email" sortKey="email">
+          {(rowObject) => <Text ellipsis>{rowObject.email}</Text>}
+        </TableView.Column>
+        <TableView.Column width={90} header="Age" alignment="right" sortKey="age">
+          {(rowObject) => <Text nowrap>{rowObject.age}</Text>}
+        </TableView.Column>
+        <TableView.Column minWidth={200} header="Company">
+          {(rowObject) => <Text ellipsis>{rowObject.company}</Text>}
+        </TableView.Column>
+      </TableView>
+    )}
+  </StateManager>
+);
+
+# Table View
+
+<Description of={TableView} />
+
+<Canvas withSource="none">
+  <Story
+    name="Basic"
+    args={{
+      height: 240,
+      rowHeight: 40,
+      headerHeight: 40,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Options
+
+Table automatically switches to horizontal scrolling based on combined `width` and `minWidth` of all columns.
+Columns with fixed `width` can be attributed with `fixed` property to create sticky non-scrollable columns.
+
+<Canvas>
+  <Story name="Horizontal Scrolling">
+    <StateManager initialValue={{ sortKey: "name", sortDir: "asc", expansion: new Set(), selection: new Set() }}>
+      {({ state, setState }) => {
+        const tableRef = useRef(null);
+        const rowHeight = useCallback((rowObject, rowIndex) => [40, rowIndex % 3 === 0 ? 120 : 80], []);
+        const rowExpanded = useCallback((rowObject, rowIndex) => state.expansion.has(rowIndex), [state.expansion]);
+        const onSortChanged = useCallback(
+          (key, dir) => setState((prevState) => ({ ...prevState, sortKey: key, sortDir: dir })),
+          [setState]
+        );
+        return (
+          <TableView
+            ref={tableRef}
+            height={320}
+            rowHeight={rowHeight}
+            rowExpanded={rowExpanded}
+            headerHeight={40}
+            data={DATA}
+            keyboardNavigation
+            sortKey={state.sortKey}
+            sortDir={state.sortDir}
+            onSortChanged={onSortChanged}>
+            <TableView.Column fixed width={60} paddingRight={8}>
+              {(_, rowIndex) => (
+                <IconButton
+                  size="small"
+                  appearance="minimal"
+                  intent="neutral"
+                  iconName={state.expansion.has(rowIndex) ? "i:arrow-down" : "i:arrow-left"}
+                  onClick={() => {
+                    setState((prevState) => {
+                      // NB: should use immutable set collection here
+                      const prevValue = prevState.expansion.has(rowIndex);
+                      if (prevValue) prevState.expansion.delete(rowIndex);
+                      else prevState.expansion.add(rowIndex);
+                      if (tableRef.current != null) {
+                        tableRef.current.invalidate(rowIndex);
+                      }
+                      return {
+                        ...prevState,
+                        flag: !prevState.flag,
+                      };
+                    });
+                  }}
+                />
+              )}
+            </TableView.Column>
+            <TableView.Column
+              header={() => (
+                <InputCheck
+                  indeterminateAllowed
+                  value={state.selection.size === 0 ? false : state.selection.size < DATA.length ? null : true}
+                  disabled
+                />
+              )}
+              fixed
+              width={40}
+              alignment="center"
+              padding={8}>
+              {(_, rowIndex) => (
+                <InputCheck
+                  value={state.selection.has(rowIndex)}
+                  onChange={(value) => {
+                    setState((prevState) => {
+                      // NB: should use immutable set collection here
+                      if (value) prevState.selection.add(rowIndex);
+                      else prevState.selection.delete(rowIndex);
+                      return {
+                        ...prevState,
+                        flag: !prevState.flag,
+                      };
+                    });
+                  }}
+                />
+              )}
+            </TableView.Column>
+            <TableView.Column width={301} fixed header="Name" sortKey="name">
+              {(rowObject) => <Hyperlink ellipsis>{rowObject.fullName}</Hyperlink>}
+            </TableView.Column>
+            <TableView.Column minWidth={300} header="Email" sortKey="email">
+              {(rowObject) => <Text ellipsis>{rowObject.email}</Text>}
+            </TableView.Column>
+            <TableView.Column width={90} header="Age" alignment="right" sortKey="age">
+              {(rowObject) => <Text nowrap>{rowObject.age}</Text>}
+            </TableView.Column>
+            <TableView.Column width={80} header="Active" alignment="center">
+              {(rowObject) => <InputCheck disabled value={rowObject.isActive} />}
+            </TableView.Column>
+            <TableView.Column minWidth={300} header="Company">
+              {(rowObject) => <Text ellipsis>{rowObject.company}</Text>}
+            </TableView.Column>
+            <TableView.Column width={100} alignment="right">
+              {() => (
+                <IconButton
+                  appearance="minimal"
+                  intent="neutral"
+                  accessibilityLabel="Menu"
+                  iconName="i:menu"
+                  size="small"
+                />
+              )}
+            </TableView.Column>
+            <TableView.Expansion>
+              <Pane background="transparent" grow={1} height="100%" />
+            </TableView.Expansion>
+          </TableView>
+        );
+      }}
+    </StateManager>
+  </Story>
+</Canvas>
+
+### Empty Content
+
+Use `empty` property to set custom content when the table has no data.
+
+<Canvas>
+  <Story name="Empty">
+    <TableView height={320} headerHeight={40} empty={<Text>There is no data in this table</Text>}>
+      <TableView.Column minWidth={200} header="Name" sortKey="name" />
+      <TableView.Column minWidth={200} header="Email" sortKey="email" />
+      <TableView.Column width={90} header="Age" alignment="right" sortKey="age" />
+      <TableView.Column minWidth={200} header="Company" />
+    </TableView>
+  </Story>
+</Canvas>

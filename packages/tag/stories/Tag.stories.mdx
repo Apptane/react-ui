@@ -1,0 +1,216 @@
+import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
+import { MarginArgTypes } from "@apptane/react-ui-storybook-docs";
+import { Pane, Tag } from "@apptane/react-ui";
+
+<Meta
+  title="Components/Primitives/Tag"
+  component={Tag.type}
+  argTypes={{
+    children: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    tooltip: {
+      table: {
+        category: "Content",
+      },
+      control: "text",
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    appearance: {
+      table: {
+        category: "Appearance",
+      },
+      options: ["primary", "secondary", "neutral"],
+      control: {
+        type: "select",
+      },
+    },
+    hue: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    inactive: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    inline: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    size: {
+      table: {
+        category: "Dimensions",
+      },
+    },
+    onRemove: {
+      table: {
+        category: "Interactivity",
+      },
+    },
+    ...MarginArgTypes,
+  }}
+  parameters={{
+    actions: { argTypesRegex: "^on.*" },
+  }}
+/>
+
+export const Template = (args) => <Tag {...args} />;
+
+# Tag
+
+<Description of={Tag.type} />
+
+<Canvas withSource="none">
+  <Story name="Basic" args={{ children: "Tag 1" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Properties
+
+<ArgsTable story="Basic" />
+
+## Sizes
+
+Supports standard sizes — `large` `medium` `small`.
+
+<Canvas withSource="none">
+  <Story
+    name="Large"
+    args={{
+      children: "Large",
+      size: "large",
+      appearance: "primary",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Medium"
+    args={{
+      children: "Medium",
+      size: "medium",
+      appearance: "primary",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Small"
+    args={{
+      children: "Small",
+      size: "small",
+      appearance: "primary",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Custom `size`.
+
+<Canvas withSource="none">
+  <Story
+    name="Custom Size"
+    args={{
+      children: "40px",
+      size: 40,
+      appearance: "primary",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Appearances
+
+Default appearances — `primary` `secondary` `neutral`.
+
+<Canvas withSource="none">
+  <Story
+    name="Primary"
+    args={{
+      children: "Primary",
+      appearance: "primary",
+      size: "large",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Secondary"
+    args={{
+      children: "Secondary",
+      appearance: "secondary",
+      size: "large",
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Neutral"
+    args={{
+      children: "Neutral",
+      appearance: "neutral",
+      size: "large",
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Set `inactive` to render the tag using special inactive state.
+
+<Canvas withSource="none">
+  <Story
+    name="Inactive — Primary"
+    args={{
+      children: "Primary",
+      appearance: "primary",
+      size: "large",
+      inactive: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Inactive — Secondary"
+    args={{
+      children: "Secondary",
+      appearance: "secondary",
+      size: "large",
+      inactive: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Inactive — Neutral"
+    args={{
+      children: "Neutral",
+      appearance: "neutral",
+      size: "large",
+      inactive: true,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Interactivity
+
+Setting `onRemove` property to a valid callback enables interactive behavior and renders the remove icon.
+
+<Canvas>
+  <Story name="Interactivity">
+    <Tag appearance="primary" size="large" onRemove={() => {}} inline>
+      Tag 1
+    </Tag>
+    <Tag appearance="primary" size="medium" marginLeft={16} onRemove={() => {}} inline>
+      Tag 1
+    </Tag>
+    <Tag appearance="primary" size="small" marginLeft={16} onRemove={() => {}} inline>
+      Tag 1
+    </Tag>
+  </Story>
+</Canvas>
