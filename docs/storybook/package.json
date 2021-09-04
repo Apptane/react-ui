@@ -24,7 +24,7 @@
   "scripts": {
     "storybook": "start-storybook -p 7002",
     "build:storybook": "build-storybook -c .storybook -o .storybook-app",
-    "deploy:storybook": "storybook-to-ghpages"
+    "deploy:storybook": "storybook-to-ghpages -s build:storybook"
   },
   "devDependencies": {
     "@apptane/react-ui": "workspace:^1.0.1",

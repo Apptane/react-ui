@@ -26,6 +26,7 @@
     "prettify": "prettier --write .",
     "storybook": "pnpm run storybook --filter \"@apptane/react-ui-storybook\"",
     "build:storybook": "pnpm run build:storybook --filter \"@apptane/react-ui-storybook\"",
+    "deploy:storybook": "pnpm run deploy:storybook --filter \"@apptane/react-ui-storybook\"",
     "build:tools": "pnpm run build -r --stream --filter ./tooling",
     "publish-pkg": "pnpm publish -r --filter ./packages"
   },
