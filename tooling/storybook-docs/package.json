@@ -3,7 +3,7 @@
   "description": "Apptane React UI Storybook Docs internal tooling",
   "license": "Apache-2.0",
   "version": "1.0.1",
-  "homepage": "https://github.com/apptane/react-ui/tree/main/tooling/storybook-docs#readme",
+  "homepage": "https://github.com/apptane/react-ui/tree/master/tooling/storybook-docs#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
     "apptane",
@@ -56,6 +56,6 @@
     "react": "17.0.2"
   },
   "dependencies": {
-    "@babel/runtime": "^7.15.4"
+    "@babel/runtime": "7.15.4"
   }
 }

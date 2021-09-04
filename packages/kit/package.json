@@ -3,7 +3,7 @@
   "description": "Apptane React UI framework components kit",
   "license": "Apache-2.0",
   "version": "1.0.1",
-  "homepage": "https://github.com/apptane/react-ui/tree/main/packages/kit#readme",
+  "homepage": "https://github.com/apptane/react-ui/tree/master/packages/kit#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
     "apptane",
@@ -92,7 +92,7 @@
     "@apptane/react-ui-tooltip": "workspace:^1.0.1",
     "@apptane/react-ui-typography": "workspace:^1.0.1",
     "@apptane/react-ui-virtual-list": "workspace:^1.0.1",
-    "@babel/runtime": "^7.15.4"
+    "@babel/runtime": "7.15.4"
   },
   "devDependencies": {
     "@types/react": "17.0.19",

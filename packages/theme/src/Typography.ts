@@ -70,112 +70,121 @@ const font = (
   ...props,
 });
 
-const DefaultTypography: Typography = {
+/**
+ * Creates theme typography definition with the default sizes and specified fonts.
+ */
+export const createThemeTypography = (
+  fontRegular: TypographyFont,
+  fontMedium?: TypographyFont,
+  fontBold?: TypographyFont
+): Typography => ({
   content: {
-    font: DefaultFontRegular,
+    font: fontRegular,
     xsmall: {
-      regular: font(DefaultFontRegular, content.xs),
-      medium: font(DefaultFontMedium, content.xs),
-      bold: font(DefaultFontBold, content.xs),
+      regular: font(fontRegular, content.xs),
+      medium: font(fontMedium ?? fontRegular, content.xs),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, content.xs),
     },
     small: {
-      regular: font(DefaultFontRegular, content.s),
-      medium: font(DefaultFontMedium, content.s),
-      bold: font(DefaultFontBold, content.s),
+      regular: font(fontRegular, content.s),
+      medium: font(fontMedium ?? fontRegular, content.s),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, content.s),
     },
     medium: {
-      regular: font(DefaultFontRegular, content.m),
-      medium: font(DefaultFontMedium, content.m),
-      bold: font(DefaultFontBold, content.m),
+      regular: font(fontRegular, content.m),
+      medium: font(fontMedium ?? fontRegular, content.m),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, content.m),
     },
     large: {
-      regular: font(DefaultFontRegular, content.l),
-      medium: font(DefaultFontMedium, content.l),
-      bold: font(DefaultFontBold, content.l),
+      regular: font(fontRegular, content.l),
+      medium: font(fontMedium ?? fontRegular, content.l),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, content.l),
     },
     xlarge: {
-      regular: font(DefaultFontRegular, content.xl),
-      medium: font(DefaultFontMedium, content.xl),
-      bold: font(DefaultFontBold, content.xl),
+      regular: font(fontRegular, content.xl),
+      medium: font(fontMedium ?? fontRegular, content.xl),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, content.xl),
     },
     xxlarge: {
-      regular: font(DefaultFontRegular, content.xxl),
-      medium: font(DefaultFontMedium, content.xxl),
-      bold: font(DefaultFontBold, content.xxl),
+      regular: font(fontRegular, content.xxl),
+      medium: font(fontMedium ?? fontRegular, content.xxl),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, content.xxl),
     },
   },
   numeric: {
-    font: DefaultFontRegular,
+    font: fontRegular,
     xsmall: {
-      regular: font(DefaultFontRegular, content.xs, numerals),
-      medium: font(DefaultFontMedium, content.xs, numerals),
-      bold: font(DefaultFontBold, content.xs, numerals),
+      regular: font(fontRegular, content.xs, numerals),
+      medium: font(fontMedium ?? fontRegular, content.xs, numerals),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, content.xs, numerals),
     },
     small: {
-      regular: font(DefaultFontRegular, content.s, numerals),
-      medium: font(DefaultFontMedium, content.s, numerals),
-      bold: font(DefaultFontBold, content.s, numerals),
+      regular: font(fontRegular, content.s, numerals),
+      medium: font(fontMedium ?? fontRegular, content.s, numerals),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, content.s, numerals),
     },
     medium: {
-      regular: font(DefaultFontRegular, content.m, numerals),
-      medium: font(DefaultFontMedium, content.m, numerals),
-      bold: font(DefaultFontBold, content.m, numerals),
+      regular: font(fontRegular, content.m, numerals),
+      medium: font(fontMedium ?? fontRegular, content.m, numerals),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, content.m, numerals),
     },
     large: {
-      regular: font(DefaultFontRegular, content.l, numerals),
-      medium: font(DefaultFontMedium, content.l, numerals),
-      bold: font(DefaultFontBold, content.l, numerals),
+      regular: font(fontRegular, content.l, numerals),
+      medium: font(fontMedium ?? fontRegular, content.l, numerals),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, content.l, numerals),
     },
     xlarge: {
-      regular: font(DefaultFontRegular, content.xl, numerals),
-      medium: font(DefaultFontMedium, content.xl, numerals),
-      bold: font(DefaultFontBold, content.xl, numerals),
+      regular: font(fontRegular, content.xl, numerals),
+      medium: font(fontMedium ?? fontRegular, content.xl, numerals),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, content.xl, numerals),
     },
     xxlarge: {
-      regular: font(DefaultFontRegular, content.xxl, numerals),
-      medium: font(DefaultFontMedium, content.xxl, numerals),
-      bold: font(DefaultFontBold, content.xxl, numerals),
+      regular: font(fontRegular, content.xxl, numerals),
+      medium: font(fontMedium ?? fontRegular, content.xxl, numerals),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, content.xxl, numerals),
     },
   },
   control: {
-    font: DefaultFontRegular,
+    font: fontRegular,
     small: {
-      regular: font(DefaultFontRegular, control.s),
-      medium: font(DefaultFontMedium, control.s),
-      bold: font(DefaultFontBold, control.s),
+      regular: font(fontRegular, control.s),
+      medium: font(fontMedium ?? fontRegular, control.s),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, control.s),
     },
     medium: {
-      regular: font(DefaultFontRegular, control.m),
-      medium: font(DefaultFontMedium, control.m),
-      bold: font(DefaultFontBold, control.m),
+      regular: font(fontRegular, control.m),
+      medium: font(fontMedium ?? fontRegular, control.m),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, control.m),
     },
     large: {
-      regular: font(DefaultFontRegular, control.l),
-      medium: font(DefaultFontMedium, control.l),
-      bold: font(DefaultFontBold, control.l),
+      regular: font(fontRegular, control.l),
+      medium: font(fontMedium ?? fontRegular, control.l),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, control.l),
     },
   },
   header: {
-    font: DefaultFontBold,
+    font: fontBold ?? fontMedium ?? fontRegular,
     xsmall: {
-      bold: font(DefaultFontMedium, header.xs, {
+      bold: font(fontMedium ?? fontRegular, header.xs, {
         spacing: "0.05em",
       }),
     },
     small: {
-      bold: font(DefaultFontBold, header.s),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, header.s),
     },
     medium: {
-      bold: font(DefaultFontBold, header.m),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, header.m),
     },
     large: {
-      bold: font(DefaultFontBold, header.l),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, header.l),
     },
     xlarge: {
-      bold: font(DefaultFontBold, header.xl),
+      bold: font(fontBold ?? fontMedium ?? fontRegular, header.xl),
     },
   },
-};
+});
+
+const DefaultTypography = createThemeTypography(DefaultFontRegular, DefaultFontMedium, DefaultFontBold);
 
 /**
  * Default theme: typography

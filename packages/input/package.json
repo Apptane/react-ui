@@ -3,7 +3,7 @@
   "description": "Input components in Apptane React UI framework",
   "license": "Apache-2.0",
   "version": "1.0.1",
-  "homepage": "https://github.com/apptane/react-ui/tree/main/packages/input#readme",
+  "homepage": "https://github.com/apptane/react-ui/tree/master/packages/input#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
     "apptane",
@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "@types/lodash": "4.14.172",
-    "@types/prop-types": "^15.7.4",
+    "@types/prop-types": "15.7.4",
     "@types/raf": "3.4.0",
     "@types/react": "17.0.19",
     "react": "17.0.2"
@@ -75,7 +75,7 @@
     "@apptane/react-ui-theme": "workspace:^1.0.1",
     "@apptane/react-ui-tooltip": "workspace:^1.0.1",
     "@apptane/react-ui-typography": "workspace:^1.0.1",
-    "@babel/runtime": "^7.15.4",
+    "@babel/runtime": "7.15.4",
     "@emotion/core": "11.0.0",
     "@emotion/react": "11.4.1",
     "lodash": "4.17.21",

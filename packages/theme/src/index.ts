@@ -6,3 +6,4 @@ export * from "./ZIndex.types";
 export * from "./ThemeProvider";
 export * from "./ColorModeProvider";
 export * from "./Theming";
+export { createThemeTypography } from "./Typography";

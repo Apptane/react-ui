@@ -3,7 +3,7 @@
   "description": "Progress component in Apptane React UI framework",
   "license": "Apache-2.0",
   "version": "1.0.1",
-  "homepage": "https://github.com/apptane/react-ui/tree/main/packages/progress#readme",
+  "homepage": "https://github.com/apptane/react-ui/tree/master/packages/progress#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
     "apptane",
@@ -54,7 +54,7 @@
     "react": ">=16.8.0"
   },
   "devDependencies": {
-    "@types/prop-types": "^15.7.4",
+    "@types/prop-types": "15.7.4",
     "@types/react": "17.0.19",
     "react": "17.0.2"
   },
@@ -65,7 +65,7 @@
     "@apptane/react-ui-pane": "workspace:^1.0.1",
     "@apptane/react-ui-theme": "workspace:^1.0.1",
     "@apptane/react-ui-typography": "workspace:^1.0.1",
-    "@babel/runtime": "^7.15.4",
+    "@babel/runtime": "7.15.4",
     "@emotion/core": "11.0.0",
     "@emotion/react": "11.4.1",
     "prop-types": "15.7.2"
