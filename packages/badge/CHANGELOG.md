@@ -1,5 +1,16 @@
 # @apptane/react-ui-badge
 
+## 1.0.2
+
+### Patch Changes
+
+- 196e5ee: Fixed package homepage field. Small enhancement to Theme typography customization.
+- Updated dependencies [196e5ee]
+  - @apptane/react-ui-bullet@1.0.2
+  - @apptane/react-ui-core@1.0.2
+  - @apptane/react-ui-theme@1.0.2
+  - @apptane/react-ui-typography@1.0.2
+
 ## 1.0.1
 
 ### Patch Changes

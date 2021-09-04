@@ -130,16 +130,16 @@ importers:
 
   packages/avatar:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-tooltip': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-tooltip': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
       '@types/md5': 2.3.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       md5: 2.3.0
       prop-types: 15.7.2
@@ -165,14 +165,14 @@ importers:
 
   packages/badge:
     specifiers:
-      '@apptane/react-ui-bullet': workspace:^1.0.1
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-bullet': workspace:^1.0.2
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -192,16 +192,16 @@ importers:
 
   packages/banner:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-icon': workspace:^1.0.1
-      '@apptane/react-ui-layout': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-icon': workspace:^1.0.2
+      '@apptane/react-ui-layout': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -223,13 +223,13 @@ importers:
 
   packages/behaviors:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-hooks': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-hooks': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       '@types/react-dom': 17.0.9
       '@types/react-transition-group': 4.4.2
@@ -258,12 +258,12 @@ importers:
 
   packages/bullet:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -281,17 +281,17 @@ importers:
 
   packages/button:
     specifiers:
-      '@apptane/react-ui-badge': workspace:^1.0.1
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-icon': workspace:^1.0.1
-      '@apptane/react-ui-spinner': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-tooltip': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-badge': workspace:^1.0.2
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-icon': workspace:^1.0.2
+      '@apptane/react-ui-spinner': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-tooltip': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -314,16 +314,16 @@ importers:
 
   packages/calendar:
     specifiers:
-      '@apptane/react-ui-button': workspace:^1.0.1
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-input': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-button': workspace:^1.0.2
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-input': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       date-fns: 2.23.0
       prop-types: 15.7.2
@@ -347,12 +347,12 @@ importers:
 
   packages/charts:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-tooltip': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-tooltip': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
       '@types/d3-force': 3.0.3
@@ -363,7 +363,7 @@ importers:
       '@types/d3-time': 3.0.0
       '@types/d3-time-format': 4.0.0
       '@types/lodash': 4.14.172
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       d3-force: 3.0.0
       d3-interpolate: 3.0.1
@@ -410,12 +410,12 @@ importers:
 
   packages/core:
     specifiers:
-      '@babel/runtime': ^7.15.4
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
       '@types/lodash': 4.14.172
       '@types/memoizee': 0.4.6
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       hsluv: 0.1.0
       lodash: 4.17.21
@@ -439,16 +439,16 @@ importers:
 
   packages/cue:
     specifiers:
-      '@apptane/react-ui-behaviors': workspace:^1.0.1
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-icon': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-tooltip': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-behaviors': workspace:^1.0.2
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-icon': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-tooltip': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -470,17 +470,17 @@ importers:
 
   packages/dialog:
     specifiers:
-      '@apptane/react-ui-behaviors': workspace:^1.0.1
-      '@apptane/react-ui-button': workspace:^1.0.1
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-spinner': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-behaviors': workspace:^1.0.2
+      '@apptane/react-ui-button': workspace:^1.0.2
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-spinner': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -503,13 +503,13 @@ importers:
 
   packages/divider:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -528,15 +528,15 @@ importers:
 
   packages/form:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-input': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-input': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -557,14 +557,14 @@ importers:
 
   packages/gauge:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-hooks': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-tooltip': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-hooks': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-tooltip': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -584,8 +584,8 @@ importers:
 
   packages/glyphs:
     specifiers:
-      '@babel/runtime': ^7.15.4
-      '@types/prop-types': ^15.7.4
+      '@babel/runtime': 7.15.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       react: 17.0.2
     dependencies:
@@ -597,9 +597,9 @@ importers:
 
   packages/hooks:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
-      '@types/prop-types': ^15.7.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
+      '@types/prop-types': 15.7.4
       '@types/raf': 3.4.0
       '@types/react': 17.0.19
       copy-to-clipboard: 3.3.1
@@ -620,13 +620,13 @@ importers:
 
   packages/icon:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-glyphs': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-glyphs': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -645,22 +645,22 @@ importers:
 
   packages/input:
     specifiers:
-      '@apptane/react-ui-behaviors': workspace:^1.0.1
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-cue': workspace:^1.0.1
-      '@apptane/react-ui-hooks': workspace:^1.0.1
-      '@apptane/react-ui-icon': workspace:^1.0.1
-      '@apptane/react-ui-layout': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-tag': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-tooltip': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-behaviors': workspace:^1.0.2
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-cue': workspace:^1.0.2
+      '@apptane/react-ui-hooks': workspace:^1.0.2
+      '@apptane/react-ui-icon': workspace:^1.0.2
+      '@apptane/react-ui-layout': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-tag': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-tooltip': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
       '@types/lodash': 4.14.172
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/raf': 3.4.0
       '@types/react': 17.0.19
       lodash: 4.17.21
@@ -694,45 +694,45 @@ importers:
 
   packages/kit:
     specifiers:
-      '@apptane/react-ui-avatar': workspace:^1.0.1
-      '@apptane/react-ui-badge': workspace:^1.0.1
-      '@apptane/react-ui-banner': workspace:^1.0.1
-      '@apptane/react-ui-behaviors': workspace:^1.0.1
-      '@apptane/react-ui-bullet': workspace:^1.0.1
-      '@apptane/react-ui-button': workspace:^1.0.1
-      '@apptane/react-ui-calendar': workspace:^1.0.1
-      '@apptane/react-ui-charts': workspace:^1.0.1
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-cue': workspace:^1.0.1
-      '@apptane/react-ui-dialog': workspace:^1.0.1
-      '@apptane/react-ui-divider': workspace:^1.0.1
-      '@apptane/react-ui-form': workspace:^1.0.1
-      '@apptane/react-ui-gauge': workspace:^1.0.1
-      '@apptane/react-ui-glyphs': workspace:^1.0.1
-      '@apptane/react-ui-hooks': workspace:^1.0.1
-      '@apptane/react-ui-icon': workspace:^1.0.1
-      '@apptane/react-ui-input': workspace:^1.0.1
-      '@apptane/react-ui-layout': workspace:^1.0.1
-      '@apptane/react-ui-media': workspace:^1.0.1
-      '@apptane/react-ui-menu': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-progress': workspace:^1.0.1
-      '@apptane/react-ui-scroller': workspace:^1.0.1
-      '@apptane/react-ui-selector': workspace:^1.0.1
-      '@apptane/react-ui-side-panel': workspace:^1.0.1
-      '@apptane/react-ui-sidebar': workspace:^1.0.1
-      '@apptane/react-ui-skeleton': workspace:^1.0.1
-      '@apptane/react-ui-spinner': workspace:^1.0.1
-      '@apptane/react-ui-tableview': workspace:^1.0.1
-      '@apptane/react-ui-tabs': workspace:^1.0.1
-      '@apptane/react-ui-tag': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-toaster': workspace:^1.0.1
-      '@apptane/react-ui-toggle-group': workspace:^1.0.1
-      '@apptane/react-ui-tooltip': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@apptane/react-ui-virtual-list': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-avatar': workspace:^1.0.2
+      '@apptane/react-ui-badge': workspace:^1.0.2
+      '@apptane/react-ui-banner': workspace:^1.0.2
+      '@apptane/react-ui-behaviors': workspace:^1.0.2
+      '@apptane/react-ui-bullet': workspace:^1.0.2
+      '@apptane/react-ui-button': workspace:^1.0.2
+      '@apptane/react-ui-calendar': workspace:^1.0.2
+      '@apptane/react-ui-charts': workspace:^1.0.2
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-cue': workspace:^1.0.2
+      '@apptane/react-ui-dialog': workspace:^1.0.2
+      '@apptane/react-ui-divider': workspace:^1.0.2
+      '@apptane/react-ui-form': workspace:^1.0.2
+      '@apptane/react-ui-gauge': workspace:^1.0.2
+      '@apptane/react-ui-glyphs': workspace:^1.0.2
+      '@apptane/react-ui-hooks': workspace:^1.0.2
+      '@apptane/react-ui-icon': workspace:^1.0.2
+      '@apptane/react-ui-input': workspace:^1.0.2
+      '@apptane/react-ui-layout': workspace:^1.0.2
+      '@apptane/react-ui-media': workspace:^1.0.2
+      '@apptane/react-ui-menu': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-progress': workspace:^1.0.2
+      '@apptane/react-ui-scroller': workspace:^1.0.2
+      '@apptane/react-ui-selector': workspace:^1.0.2
+      '@apptane/react-ui-side-panel': workspace:^1.0.2
+      '@apptane/react-ui-sidebar': workspace:^1.0.2
+      '@apptane/react-ui-skeleton': workspace:^1.0.2
+      '@apptane/react-ui-spinner': workspace:^1.0.2
+      '@apptane/react-ui-tableview': workspace:^1.0.2
+      '@apptane/react-ui-tabs': workspace:^1.0.2
+      '@apptane/react-ui-tag': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-toaster': workspace:^1.0.2
+      '@apptane/react-ui-toggle-group': workspace:^1.0.2
+      '@apptane/react-ui-tooltip': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@apptane/react-ui-virtual-list': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@types/react': 17.0.19
       react: 17.0.2
     dependencies:
@@ -781,13 +781,13 @@ importers:
 
   packages/layout:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-scroller': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-scroller': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -806,12 +806,12 @@ importers:
 
   packages/media:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       react: 17.0.2
     dependencies:
@@ -827,17 +827,17 @@ importers:
 
   packages/menu:
     specifiers:
-      '@apptane/react-ui-badge': workspace:^1.0.1
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-icon': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-scroller': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-badge': workspace:^1.0.2
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-icon': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-scroller': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -860,12 +860,12 @@ importers:
 
   packages/pane:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -883,16 +883,16 @@ importers:
 
   packages/progress:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-cue': workspace:^1.0.1
-      '@apptane/react-ui-icon': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-cue': workspace:^1.0.2
+      '@apptane/react-ui-icon': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -914,13 +914,13 @@ importers:
 
   packages/scroller:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-hooks': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-hooks': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -939,18 +939,18 @@ importers:
 
   packages/selector:
     specifiers:
-      '@apptane/react-ui-behaviors': workspace:^1.0.1
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-hooks': workspace:^1.0.1
-      '@apptane/react-ui-input': workspace:^1.0.1
-      '@apptane/react-ui-menu': workspace:^1.0.1
-      '@apptane/react-ui-tag': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-behaviors': workspace:^1.0.2
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-hooks': workspace:^1.0.2
+      '@apptane/react-ui-input': workspace:^1.0.2
+      '@apptane/react-ui-menu': workspace:^1.0.2
+      '@apptane/react-ui-tag': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -974,15 +974,15 @@ importers:
 
   packages/side-panel:
     specifiers:
-      '@apptane/react-ui-behaviors': workspace:^1.0.1
-      '@apptane/react-ui-button': workspace:^1.0.1
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-behaviors': workspace:^1.0.2
+      '@apptane/react-ui-button': workspace:^1.0.2
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -1003,20 +1003,20 @@ importers:
 
   packages/sidebar:
     specifiers:
-      '@apptane/react-ui-avatar': workspace:^1.0.1
-      '@apptane/react-ui-badge': workspace:^1.0.1
-      '@apptane/react-ui-bullet': workspace:^1.0.1
-      '@apptane/react-ui-button': workspace:^1.0.1
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-icon': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-tooltip': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-avatar': workspace:^1.0.2
+      '@apptane/react-ui-badge': workspace:^1.0.2
+      '@apptane/react-ui-bullet': workspace:^1.0.2
+      '@apptane/react-ui-button': workspace:^1.0.2
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-icon': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-tooltip': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -1042,12 +1042,12 @@ importers:
 
   packages/skeleton:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -1065,12 +1065,12 @@ importers:
 
   packages/spinner:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -1088,16 +1088,16 @@ importers:
 
   packages/tableview:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-icon': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@apptane/react-ui-virtual-list': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-icon': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@apptane/react-ui-virtual-list': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -1119,14 +1119,14 @@ importers:
 
   packages/tabs:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -1146,14 +1146,14 @@ importers:
 
   packages/tag:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-tooltip': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-tooltip': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -1173,12 +1173,12 @@ importers:
 
   packages/theme:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
       '@types/memoizee': 0.4.6
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       memoizee: 0.4.15
       react: 17.0.2
@@ -1196,18 +1196,18 @@ importers:
 
   packages/toaster:
     specifiers:
-      '@apptane/react-ui-button': workspace:^1.0.1
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-hooks': workspace:^1.0.1
-      '@apptane/react-ui-icon': workspace:^1.0.1
-      '@apptane/react-ui-layout': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-button': workspace:^1.0.2
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-hooks': workspace:^1.0.2
+      '@apptane/react-ui-icon': workspace:^1.0.2
+      '@apptane/react-ui-layout': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       '@types/react-dom': 17.0.9
       '@types/react-transition-group': 4.4.2
@@ -1239,13 +1239,13 @@ importers:
 
   packages/toggle-group:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-pane': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-pane': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -1264,14 +1264,14 @@ importers:
 
   packages/tooltip:
     specifiers:
-      '@apptane/react-ui-behaviors': workspace:^1.0.1
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@apptane/react-ui-typography': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-behaviors': workspace:^1.0.2
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@apptane/react-ui-typography': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -1291,13 +1291,13 @@ importers:
 
   packages/typography:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-icon': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-icon': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -1316,14 +1316,14 @@ importers:
 
   packages/virtual-list:
     specifiers:
-      '@apptane/react-ui-core': workspace:^1.0.1
-      '@apptane/react-ui-hooks': workspace:^1.0.1
-      '@apptane/react-ui-scroller': workspace:^1.0.1
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-core': workspace:^1.0.2
+      '@apptane/react-ui-hooks': workspace:^1.0.2
+      '@apptane/react-ui-scroller': workspace:^1.0.2
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       '@emotion/core': 11.0.0
       '@emotion/react': 11.4.1
-      '@types/prop-types': ^15.7.4
+      '@types/prop-types': 15.7.4
       '@types/react': 17.0.19
       prop-types: 15.7.2
       react: 17.0.2
@@ -1343,8 +1343,8 @@ importers:
 
   tooling/storybook-dark-mode:
     specifiers:
-      '@apptane/react-ui-theme': workspace:^1.0.1
-      '@babel/runtime': ^7.15.4
+      '@apptane/react-ui-theme': workspace:^1.0.2
+      '@babel/runtime': 7.15.4
       react: 17.0.2
     dependencies:
       '@apptane/react-ui-theme': link:../../packages/theme
@@ -1354,7 +1354,7 @@ importers:
 
   tooling/storybook-docs:
     specifiers:
-      '@babel/runtime': ^7.15.4
+      '@babel/runtime': 7.15.4
       react: 17.0.2
     dependencies:
       '@babel/runtime': 7.15.4

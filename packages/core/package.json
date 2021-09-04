@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-core",
   "description": "Core components and types for Apptane React UI",
   "license": "Apache-2.0",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/apptane/react-ui/tree/master/packages/core#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [

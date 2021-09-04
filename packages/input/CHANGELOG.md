@@ -1,5 +1,23 @@
 # @apptane/react-ui-input
 
+## 1.0.2
+
+### Patch Changes
+
+- 196e5ee: Fixed package homepage field. Small enhancement to Theme typography customization.
+- Updated dependencies [196e5ee]
+  - @apptane/react-ui-behaviors@1.0.2
+  - @apptane/react-ui-core@1.0.2
+  - @apptane/react-ui-cue@1.0.2
+  - @apptane/react-ui-hooks@1.0.2
+  - @apptane/react-ui-icon@1.0.2
+  - @apptane/react-ui-layout@1.0.2
+  - @apptane/react-ui-pane@1.0.2
+  - @apptane/react-ui-tag@1.0.2
+  - @apptane/react-ui-theme@1.0.2
+  - @apptane/react-ui-tooltip@1.0.2
+  - @apptane/react-ui-typography@1.0.2
+
 ## 1.0.1
 
 ### Patch Changes
