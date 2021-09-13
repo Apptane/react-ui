@@ -1,5 +1,16 @@
 # @apptane/react-ui-gauge
 
+## 1.0.3
+
+### Patch Changes
+
+- 2b170c0: Updated global prefix name. Minor fix to Gauge component.
+- Updated dependencies [2b170c0]
+  - @apptane/react-ui-core@1.0.3
+  - @apptane/react-ui-hooks@1.0.3
+  - @apptane/react-ui-theme@1.0.3
+  - @apptane/react-ui-tooltip@1.0.3
+
 ## 1.0.2
 
 ### Patch Changes

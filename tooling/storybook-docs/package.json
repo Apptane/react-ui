@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-storybook-docs",
   "description": "Apptane React UI Storybook Docs internal tooling",
   "license": "Apache-2.0",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/apptane/react-ui/tree/master/tooling/storybook-docs#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [

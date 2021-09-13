@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook-docs
 
+## 1.0.3
+
+### Patch Changes
+
+- 2b170c0: Updated global prefix name. Minor fix to Gauge component.
+
 ## 1.0.2
 
 ### Patch Changes

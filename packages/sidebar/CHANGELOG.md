@@ -1,5 +1,22 @@
 # @apptane/react-ui-sidebar
 
+## 1.0.3
+
+### Patch Changes
+
+- 2b170c0: Updated global prefix name. Minor fix to Gauge component.
+- Updated dependencies [2b170c0]
+  - @apptane/react-ui-avatar@1.0.3
+  - @apptane/react-ui-badge@1.0.3
+  - @apptane/react-ui-bullet@1.0.3
+  - @apptane/react-ui-button@1.0.3
+  - @apptane/react-ui-core@1.0.3
+  - @apptane/react-ui-icon@1.0.3
+  - @apptane/react-ui-pane@1.0.3
+  - @apptane/react-ui-theme@1.0.3
+  - @apptane/react-ui-tooltip@1.0.3
+  - @apptane/react-ui-typography@1.0.3
+
 ## 1.0.2
 
 ### Patch Changes
