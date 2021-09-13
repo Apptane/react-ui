@@ -15,6 +15,9 @@ import { GaugeProps, GaugePropTypes, GaugeValue } from "./Gauge.types";
 const StyleContainer = (width?: number) => css`
   position: relative;
   width: ${width ? `${width}px` : "100%"};
+  > svg {
+    display: block;
+  }
 `;
 
 const StyleChunk = css`
@@ -37,7 +40,7 @@ type MeasuredGaugeValue = GaugeValue & { width: number; offset: number };
 /**
  * `Gauge` component — supports one or more values.
  */
-function Gauge({ value, total, width, height = 24, tooltipHidden, formatTooltip, size = 4, colorMode }: GaugeProps) {
+function Gauge({ value, total, width, height = 4, tooltipHidden, formatTooltip, size = 4, colorMode }: GaugeProps) {
   const theme = useTheme();
   const actualColorMode = useColorMode(colorMode);
   const palette = theme.palette[actualColorMode];
