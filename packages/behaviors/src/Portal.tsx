@@ -29,7 +29,7 @@ const Portal = forwardRef((props: PortalProps, ref: React.Ref<HTMLDivElement>) =
     ? ReactDOM.createPortal(
         trapEvents ? (
           <div
-            data-eb-trap
+            data-apptane-trap
             ref={ref}
             onFocus={trapEvent}
             onBlur={trapEvent}

@@ -9,11 +9,11 @@ let glyphsRoot: HTMLElement | null;
 function initGlyphsRoot(): HTMLElement {
   if (!glyphsRoot) {
     // check if the root already exists in DOM and create new one if not
-    glyphsRoot = document.getElementById("eb-glyphs-root");
+    glyphsRoot = document.getElementById("--apptane-glyphs-root");
     if (!glyphsRoot) {
       glyphsRoot = document.createElement("div");
-      glyphsRoot.setAttribute("id", "eb-glyphs-root");
-      glyphsRoot.setAttribute("eb-glyphs-root", "");
+      glyphsRoot.setAttribute("id", "--apptane-glyphs-root");
+      glyphsRoot.setAttribute("apptane-glyphs-root", "");
       glyphsRoot.style.display = "none";
       document.body.appendChild(glyphsRoot);
 

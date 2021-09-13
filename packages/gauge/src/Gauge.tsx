@@ -85,7 +85,7 @@ function Gauge({ value, total, width, height = 24, tooltipHidden, formatTooltip,
   // rounding radius
   const rr = size / 2;
   const chunkOffsetY = (containerHeight - size) / 2;
-  const filterId = `--eb-round-corner-${size}-${containerWidth}`;
+  const filterId = `--apptane-round-corner-${size}-${containerWidth}`;
 
   return (
     <div ref={containerRef} css={StyleContainer(width)}>

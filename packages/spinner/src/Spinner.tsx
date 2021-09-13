@@ -36,14 +36,14 @@ const AnimatedClipSpinner = ({ color, size }: AnimatedSpinnerProps) => (
 const AnimatedTailSpinner = ({ color, size }: AnimatedSpinnerProps) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24">
     <defs>
-      <linearGradient x1="8%" y1="0%" x2="66%" y2="24%" id="--eb-spinner-tail-a">
+      <linearGradient x1="8%" y1="0%" x2="66%" y2="24%" id="--apptane-spinner-tail-a">
         <stop stopColor={color} stopOpacity="0" offset="0%" />
         <stop stopColor={color} stopOpacity=".6" offset="60%" />
         <stop stopColor={color} offset="100%" />
       </linearGradient>
     </defs>
     <g strokeWidth="2" strokeLinecap="round" fill="none" fillRule="evenodd">
-      <path d="M12 2c5.523 0 10 4.477 10 10" stroke="url(#--eb-spinner-tail-a)">
+      <path d="M12 2c5.523 0 10 4.477 10 10" stroke="url(#--apptane-spinner-tail-a)">
         <animateTransform
           attributeName="transform"
           type="rotate"

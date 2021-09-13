@@ -141,11 +141,11 @@ let toastRoot: HTMLElement | null;
 function getToastRoot() {
   if (!toastRoot) {
     // check if the root already exists in DOM and create new one if not
-    toastRoot = document.getElementById("eb-toast-root");
+    toastRoot = document.getElementById("--apptane-toast-root");
     if (!toastRoot) {
       toastRoot = document.createElement("div");
-      toastRoot.setAttribute("id", "eb-toast-root");
-      toastRoot.setAttribute("eb-toast-root", "");
+      toastRoot.setAttribute("id", "--apptane-toast-root");
+      toastRoot.setAttribute("apptane-toast-root", "");
       document.body.appendChild(toastRoot);
     }
   }

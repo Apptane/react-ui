@@ -12,11 +12,11 @@ function getPortalRoot(): HTMLElement {
   if (!portalRoot) {
     // check if the root already exists in DOM and create
     // new one if not
-    portalRoot = document.getElementById("eb-portal-root");
+    portalRoot = document.getElementById("--apptane-portal-root");
     if (!portalRoot) {
       portalRoot = document.createElement("div");
-      portalRoot.setAttribute("id", "eb-portal-root");
-      portalRoot.setAttribute("eb-portal-root", "");
+      portalRoot.setAttribute("id", "--apptane-portal-root");
+      portalRoot.setAttribute("apptane-portal-root", "");
       document.body.appendChild(portalRoot);
     }
   }
