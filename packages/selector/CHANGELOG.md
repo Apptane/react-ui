@@ -1,5 +1,20 @@
 # @apptane/react-ui-selector
 
+## 1.0.4
+
+### Patch Changes
+
+- f40a912: Added missing peer dependency for react-dom, updated packages (patch).
+- Updated dependencies [f40a912]
+  - @apptane/react-ui-behaviors@1.0.4
+  - @apptane/react-ui-core@1.0.4
+  - @apptane/react-ui-hooks@1.0.4
+  - @apptane/react-ui-input@1.0.4
+  - @apptane/react-ui-menu@1.0.4
+  - @apptane/react-ui-tag@1.0.4
+  - @apptane/react-ui-theme@1.0.4
+  - @apptane/react-ui-typography@1.0.4
+
 ## 1.0.3
 
 ### Patch Changes

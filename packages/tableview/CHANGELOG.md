@@ -1,5 +1,18 @@
 # @apptane/react-ui-tableview
 
+## 1.0.4
+
+### Patch Changes
+
+- f40a912: Added missing peer dependency for react-dom, updated packages (patch).
+- Updated dependencies [f40a912]
+  - @apptane/react-ui-core@1.0.4
+  - @apptane/react-ui-icon@1.0.4
+  - @apptane/react-ui-pane@1.0.4
+  - @apptane/react-ui-theme@1.0.4
+  - @apptane/react-ui-typography@1.0.4
+  - @apptane/react-ui-virtual-list@1.0.4
+
 ## 1.0.3
 
 ### Patch Changes

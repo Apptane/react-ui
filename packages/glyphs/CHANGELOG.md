@@ -1,5 +1,11 @@
 # @apptane/react-ui-glyphs
 
+## 1.0.4
+
+### Patch Changes
+
+- f40a912: Added missing peer dependency for react-dom, updated packages (patch).
+
 ## 1.0.3
 
 ### Patch Changes
