@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook
 
+## 1.0.4
+
+### Patch Changes
+
+- a617b44: Moved react-related type definitions from devDependencies to dependencies. Fixed button spinner property behavior.
+
 ## 1.0.3
 
 ### Patch Changes

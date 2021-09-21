@@ -1,5 +1,18 @@
 # @apptane/react-ui-tableview
 
+## 1.0.5
+
+### Patch Changes
+
+- a617b44: Moved react-related type definitions from devDependencies to dependencies. Fixed button spinner property behavior.
+- Updated dependencies [a617b44]
+  - @apptane/react-ui-core@1.0.5
+  - @apptane/react-ui-icon@1.0.5
+  - @apptane/react-ui-pane@1.0.5
+  - @apptane/react-ui-theme@1.0.5
+  - @apptane/react-ui-typography@1.0.5
+  - @apptane/react-ui-virtual-list@1.0.5
+
 ## 1.0.4
 
 ### Patch Changes

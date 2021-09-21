@@ -1,5 +1,17 @@
 # @apptane/react-ui-side-panel
 
+## 1.0.5
+
+### Patch Changes
+
+- a617b44: Moved react-related type definitions from devDependencies to dependencies. Fixed button spinner property behavior.
+- Updated dependencies [a617b44]
+  - @apptane/react-ui-behaviors@1.0.5
+  - @apptane/react-ui-button@1.0.5
+  - @apptane/react-ui-core@1.0.5
+  - @apptane/react-ui-pane@1.0.5
+  - @apptane/react-ui-theme@1.0.5
+
 ## 1.0.4
 
 ### Patch Changes

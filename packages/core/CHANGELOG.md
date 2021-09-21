@@ -1,5 +1,11 @@
 # @apptane/react-ui-core
 
+## 1.0.5
+
+### Patch Changes
+
+- a617b44: Moved react-related type definitions from devDependencies to dependencies. Fixed button spinner property behavior.
+
 ## 1.0.4
 
 ### Patch Changes
