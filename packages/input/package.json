@@ -31,7 +31,6 @@
   "typings": "dist/types/index.d.ts",
   "exports": {
     ".": {
-      "development": "./index.ts",
       "require": "./dist/cjs/index.js",
       "default": "./dist/esm/index.js"
     }
@@ -80,7 +79,7 @@
     "@emotion/core": "11.0.0",
     "@emotion/react": "11.4.1",
     "@types/prop-types": "15.7.4",
-    "@types/react": "17.0.22",
+    "@types/react": "17.0.24",
     "lodash": "4.17.21",
     "prop-types": "15.7.2",
     "raf": "3.4.1"

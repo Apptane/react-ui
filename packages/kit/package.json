@@ -28,7 +28,6 @@
   "typings": "dist/types/index.d.ts",
   "exports": {
     ".": {
-      "development": "./index.ts",
       "require": "./dist/cjs/index.js",
       "default": "./dist/esm/index.js"
     }
@@ -95,8 +94,8 @@
     "@apptane/react-ui-typography": "workspace:^1.0.6",
     "@apptane/react-ui-virtual-list": "workspace:^1.0.6",
     "@babel/runtime": "7.15.4",
-    "@types/react": "17.0.22",
-    "@types/prop-types": "15.7.4"
+    "@types/prop-types": "15.7.4",
+    "@types/react": "17.0.24"
   },
   "devDependencies": {
     "react": "17.0.2",
