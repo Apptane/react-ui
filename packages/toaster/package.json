@@ -29,6 +29,7 @@
   "typings": "dist/types/index.d.ts",
   "exports": {
     ".": {
+      "development": "./index.ts",
       "require": "./dist/cjs/index.js",
       "default": "./dist/esm/index.js"
     }
