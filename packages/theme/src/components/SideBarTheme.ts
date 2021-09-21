@@ -40,7 +40,7 @@ const DefaultSideBarTheme: SideBarTheme = {
     function: easeInOutCubic,
   },
   appearance: memoize((palette, mode, appearance) => ({
-    back: resolveColor(palette, appearance === "default" ? "accent:50:40" : "accent:900:40"),
+    back: resolveColor(palette, appearance === "default" ? "accent:100:20" : "accent:800:20"),
     text: appearance === "default" ? palette.text[800] : palette.text[100],
     [SideBarVisualState.Default]: {
       text: appearance === "default" ? palette.text[700] : palette.text[200],
@@ -50,13 +50,13 @@ const DefaultSideBarTheme: SideBarTheme = {
     [SideBarVisualState.Focused]: {
       text: appearance === "default" ? palette.black : palette.white,
       icon: appearance === "default" ? palette.black : palette.white,
-      back: resolveColor(palette, appearance === "default" ? "accent:100:20" : "accent:800:20"),
+      back: resolveColor(palette, appearance === "default" ? "accent:200:20" : "accent:700:20"),
       badge: "primary",
     },
     [SideBarVisualState.Toggled]: {
       text: appearance === "default" ? palette.black : palette.white,
       icon: appearance === "default" ? palette.black : palette.white,
-      back: resolveColor(palette, appearance === "default" ? "accent:200:20" : "accent:700:20"),
+      back: resolveColor(palette, appearance === "default" ? "accent:300:20" : "accent:600:20"),
       badge: "primary",
     },
     [SideBarVisualState.Disabled]: {

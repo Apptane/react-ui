@@ -27,7 +27,7 @@ const StyleSideBar = (
 ) => css`
   z-index: ${zindex};
   display: flex;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: stretch;
