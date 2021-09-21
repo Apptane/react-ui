@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook
 
+## 1.0.5
+
+### Patch Changes
+
+- 5a92333: Fixed SideBar theme and sizing.
+
 ## 1.0.4
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @apptane/react-ui-banner
 
+## 1.0.6
+
+### Patch Changes
+
+- 5a92333: Fixed SideBar theme and sizing.
+- Updated dependencies [5a92333]
+  - @apptane/react-ui-theme@1.0.6
+  - @apptane/react-ui-core@1.0.6
+  - @apptane/react-ui-icon@1.0.6
+  - @apptane/react-ui-layout@1.0.6
+  - @apptane/react-ui-pane@1.0.6
+  - @apptane/react-ui-typography@1.0.6
+
 ## 1.0.5
 
 ### Patch Changes

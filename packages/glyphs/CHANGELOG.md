@@ -1,5 +1,11 @@
 # @apptane/react-ui-glyphs
 
+## 1.0.6
+
+### Patch Changes
+
+- 5a92333: Fixed SideBar theme and sizing.
+
 ## 1.0.5
 
 ### Patch Changes
