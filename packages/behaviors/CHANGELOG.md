@@ -1,5 +1,15 @@
 # @apptane/react-ui-behaviors
 
+## 1.0.7
+
+### Patch Changes
+
+- d8f21fd: Reverted export change. Updated React types package.
+- Updated dependencies [d8f21fd]
+  - @apptane/react-ui-core@1.0.7
+  - @apptane/react-ui-hooks@1.0.7
+  - @apptane/react-ui-theme@1.0.7
+
 ## 1.0.6
 
 ### Patch Changes

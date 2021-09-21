@@ -1,5 +1,11 @@
 # @apptane/react-ui-glyphs
 
+## 1.0.7
+
+### Patch Changes
+
+- d8f21fd: Reverted export change. Updated React types package.
+
 ## 1.0.6
 
 ### Patch Changes
