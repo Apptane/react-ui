@@ -212,7 +212,7 @@ function Button<T extends ItemValue>({
   const effectiveAppearance = typeof appearance !== "function" ? appearance : "primary";
 
   // button is disabled automatically when spinner is visible
-  disabled = disabled || spinner != null;
+  disabled = disabled || (spinner != null && spinner !== false);
 
   // NB: we are using somewhat hack-ish approach to control
   // embedded icon color (fill) to support focus/hover via

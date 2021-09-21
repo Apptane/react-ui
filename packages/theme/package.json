@@ -54,8 +54,6 @@
   },
   "devDependencies": {
     "@types/memoizee": "0.4.6",
-    "@types/prop-types": "15.7.4",
-    "@types/react": "17.0.22",
     "react": "17.0.2"
   },
   "dependencies": {
@@ -63,6 +61,8 @@
     "@babel/runtime": "7.15.4",
     "@emotion/core": "11.0.0",
     "@emotion/react": "11.4.1",
+    "@types/prop-types": "15.7.4",
+    "@types/react": "17.0.22",
     "memoizee": "0.4.15"
   }
 }
