@@ -1,5 +1,13 @@
 # @apptane/react-ui-form
 
+## 1.0.8
+
+### Patch Changes
+
+- 3c2b8a9: Added placement algorithm to TileLayout. Added flex property to InputBox. Fixed TabItem export.
+- Updated dependencies [3c2b8a9]
+  - @apptane/react-ui-input@1.0.8
+
 ## 1.0.7
 
 ### Patch Changes

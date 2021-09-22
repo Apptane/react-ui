@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-input",
   "description": "Input components in Apptane React UI framework",
   "license": "Apache-2.0",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "homepage": "https://github.com/apptane/react-ui/tree/master/packages/input#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
@@ -69,7 +69,7 @@
     "@apptane/react-ui-cue": "workspace:^1.0.7",
     "@apptane/react-ui-hooks": "workspace:^1.0.7",
     "@apptane/react-ui-icon": "workspace:^1.0.7",
-    "@apptane/react-ui-layout": "workspace:^1.0.7",
+    "@apptane/react-ui-layout": "workspace:^1.0.8",
     "@apptane/react-ui-pane": "workspace:^1.0.7",
     "@apptane/react-ui-tag": "workspace:^1.0.7",
     "@apptane/react-ui-theme": "workspace:^1.0.7",

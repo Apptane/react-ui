@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-calendar",
   "description": "Calendar component in Apptane React UI framework",
   "license": "Apache-2.0",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "homepage": "https://github.com/apptane/react-ui/tree/master/packages/calendar#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
@@ -61,7 +61,7 @@
   "dependencies": {
     "@apptane/react-ui-button": "workspace:^1.0.7",
     "@apptane/react-ui-core": "workspace:^1.0.7",
-    "@apptane/react-ui-input": "workspace:^1.0.7",
+    "@apptane/react-ui-input": "workspace:^1.0.8",
     "@apptane/react-ui-pane": "workspace:^1.0.7",
     "@apptane/react-ui-theme": "workspace:^1.0.7",
     "@apptane/react-ui-typography": "workspace:^1.0.7",

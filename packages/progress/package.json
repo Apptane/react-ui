@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-progress",
   "description": "Progress component in Apptane React UI framework",
   "license": "Apache-2.0",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "homepage": "https://github.com/apptane/react-ui/tree/master/packages/progress#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [

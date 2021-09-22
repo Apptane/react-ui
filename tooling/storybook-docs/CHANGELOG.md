@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook-docs
 
+## 1.0.4
+
+### Patch Changes
+
+- 3c2b8a9: Added placement algorithm to TileLayout. Added flex property to InputBox. Fixed TabItem export.
+
 ## 1.0.3
 
 ### Patch Changes
