@@ -89,6 +89,6 @@ export const TabsPropTypes = {
 
 export const TabItemPropTypes = {
   children: PropTypes.any,
-  value: PropTypeItemValue.isRequired,
+  value: PropTypeItemValue,
   disabled: PropTypes.bool,
 };

@@ -162,7 +162,7 @@ function Tabs<T extends ItemValue>({
               },
             ]}
             value={item.props.value}
-            onClick={onClick.bind(null, item.props.value)}
+            onClick={item.props.value != null ? onClick.bind(null, item.props.value) : undefined}
             disabled={itemDisabled}>
             <div css={StyleTextBase(resolveFont(theme.typography, visualStyle.font))}>{item.props.children}</div>
           </button>
