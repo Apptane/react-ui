@@ -153,7 +153,7 @@ function MultiSelector<T extends ItemValue>({
  * `MultiSelectorItem` component — item with value and content.
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function MultiSelectorItem<T extends ItemValue>(props: MultiSelectorItemProps<T>) {
+export function MultiSelectorItem<T extends ItemValue>(props: MultiSelectorItemProps<T>) {
   return null;
 }
 

@@ -66,7 +66,7 @@ export interface TabItemProps<T extends ItemValue> {
   /**
    * Value associated with the tab item.
    */
-  value: T;
+  value?: T;
 
   /**
    * Indicates whether tab must be rendered in a disabled state.

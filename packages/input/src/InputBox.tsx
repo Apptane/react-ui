@@ -326,6 +326,7 @@ const InputBox = forwardRef((props: InputBoxProps, ref: React.Ref<HTMLDivElement
     appearance = "default",
     size = "default",
     width,
+    flex,
     alignment = "left",
     cursor,
     disabled,
@@ -436,6 +437,7 @@ const InputBox = forwardRef((props: InputBoxProps, ref: React.Ref<HTMLDivElement
         {
           height: size === "auto" ? "auto" : actualHeight,
           width: width,
+          flex: flex,
         },
       ]}>
       {(iconBeforeData || iconBeforeName) && (

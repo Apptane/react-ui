@@ -1,6 +1,8 @@
 import { MarginProps, MarginPropTypes, PaddingProps, PaddingPropTypes } from "@apptane/react-ui-core";
 import PropTypes from "prop-types";
 
+export type TileLayoutPlacement = "fill" | "fit";
+
 export interface TileLayoutProps extends MarginProps, PaddingProps {
   /**
    * Content.
@@ -33,6 +35,11 @@ export interface TileLayoutProps extends MarginProps, PaddingProps {
    * Minimum width of the tile.
    */
   minTileWidth: number;
+
+  /**
+   * Tile grid placement. Defaults to `fill`.
+   */
+  placement?: TileLayoutPlacement;
 }
 
 export const TileLayoutPropTypes = {
@@ -43,4 +50,5 @@ export const TileLayoutPropTypes = {
   shadow: PropTypes.bool,
   tileGap: PropTypes.number,
   minTileWidth: PropTypes.number.isRequired,
+  placement: PropTypes.oneOf(["fill", "fit"]),
 };

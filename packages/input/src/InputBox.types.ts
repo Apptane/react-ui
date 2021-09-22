@@ -45,6 +45,11 @@ export interface InputBoxProps extends MarginProps, AppearanceProps<InputBoxVisu
   width?: number | string;
 
   /**
+   * Flex layout behavior.
+   */
+  flex?: string;
+
+  /**
    * Content alignment. Defaults to `left`.
    */
   alignment?: ContentAlignment;
@@ -147,6 +152,7 @@ export const InputBoxPropTypes = {
     PropTypes.number,
   ]),
   width: PropTypeNumberOrString,
+  flex: PropTypes.string,
   alignment: PropTypeContentAlignment,
   cursor: PropTypes.string,
   disabled: PropTypes.bool,

@@ -70,6 +70,11 @@ export const InputBoxArgTypes = {
       category: "Dimensions",
     },
   },
+  flex: {
+    table: {
+      category: "Dimensions",
+    },
+  },
   inline: {
     table: {
       category: "Dimensions",
