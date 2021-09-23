@@ -48,4 +48,16 @@ module.exports = {
     storiesPath("typography"),
     storiesPath("virtual-list"),
   ],
+  webpackFinal: (config) => {
+    return {
+      ...config,
+      module: {
+        ...config.module,
+      },
+      resolve: {
+        ...config.resolve,
+        exportsFields: ["devExports", "exports"],
+      },
+    };
+  },
 };

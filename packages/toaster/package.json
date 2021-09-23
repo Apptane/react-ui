@@ -33,6 +33,9 @@
       "default": "./dist/esm/index.js"
     }
   },
+  "devExports": {
+    ".": "./index.ts"
+  },
   "files": [
     "dist"
   ],
