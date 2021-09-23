@@ -1,4 +1,4 @@
-import { StyleMargin, StyleOutlineReset } from "@apptane/react-ui-core";
+import { Color, resolveTextColor, StyleMargin, StyleOutlineReset } from "@apptane/react-ui-core";
 import { Icon } from "@apptane/react-ui-icon";
 import { HyperlinkVisualAppearance, resolveFont, useVisualAppearance } from "@apptane/react-ui-theme";
 import { ClassNames, css } from "@emotion/react";
@@ -36,9 +36,9 @@ const StyleDecorated = css`
  * is an overkill we override via CSS
  * NOTE: THIS DOESN'T WORK FOR STROKE-BASED SVGs :-\
  */
-const StyleNormalIcon = (appearance: HyperlinkVisualAppearance) => css`
+const StyleNormalIcon = (appearance: HyperlinkVisualAppearance, color?: Color) => css`
   svg {
-    fill: ${appearance.default.icon};
+    fill: ${color ?? appearance.default.icon};
   }
 
   &:hover,
@@ -72,6 +72,8 @@ function Hyperlink({
   iconAfterData,
   iconBeforeName,
   iconBeforeData,
+  color,
+  mono,
   block,
   margin,
   marginTop,
@@ -85,7 +87,11 @@ function Hyperlink({
   ml,
   ...other
 }: HyperlinkProps) {
-  const [visualAppearance, theme] = useVisualAppearance<HyperlinkVisualAppearance>("hyperlink", colorMode, appearance);
+  const [visualAppearance, theme, actualColorMode] = useVisualAppearance<HyperlinkVisualAppearance>(
+    "hyperlink",
+    colorMode,
+    appearance
+  );
   const visualStyle = theme.components.hyperlink.style;
   const font = useMemo(
     () =>
@@ -95,17 +101,25 @@ function Hyperlink({
         weight: weight,
         lineHeight: lineHeight,
         spacing: spacing,
+        mono: mono,
       }),
-    [theme.typography, category, size, weight, lineHeight, spacing]
+    [theme.typography, category, size, weight, lineHeight, spacing, mono]
   );
+
+  const palette = theme.palette[actualColorMode];
+  const overrideColor = color ? resolveTextColor(palette, color) : undefined;
 
   const marginProps = { margin, marginTop, marginRight, marginBottom, marginLeft, m, mt, mr, mb, ml };
   const style = [
     StyleContainer(block),
     !disabled && StyleLink(visualAppearance),
-    !disabled && StyleNormalIcon(visualAppearance),
+    !disabled && StyleNormalIcon(visualAppearance, overrideColor),
     !disabled && decorated && StyleDecorated,
-    StyleText(font, disabled ? visualAppearance.disabled.text : visualAppearance.default.text, alignment),
+    StyleText(
+      font,
+      disabled ? visualAppearance.disabled.text : overrideColor ?? visualAppearance.default.text,
+      alignment
+    ),
     StyleMargin(marginProps),
     nowrap && StyleTextNowrap,
     ellipsis && StyleTextEllipsis,
@@ -142,7 +156,7 @@ function Hyperlink({
           marginRight={visualStyle.iconSpacing}
         />
       )}
-      {children}
+      <span>{children}</span>
       {(iconAfterName || iconAfterData) && (
         <Icon
           color={disabled ? visualAppearance.disabled.icon : "none"}

@@ -32,7 +32,7 @@ const DefaultInputCheckTheme: InputCheckTheme = {
       [InputCheckVisualState.Default]: {
         borderWidth: 1,
         border: palette.text[300],
-        back: palette.white,
+        back: palette.light,
       },
       [InputCheckVisualState.Hover]: {
         borderWidth: 2,
@@ -55,7 +55,7 @@ const DefaultInputCheckTheme: InputCheckTheme = {
         borderWidth: 1,
         border: palette.pigments[palette.mapping.accent][500],
         back: palette.pigments[palette.mapping.accent][500],
-        glyph: palette.white,
+        glyph: palette.light,
       },
       [InputCheckVisualState.Hover]: {
         borderWidth: 2,
@@ -73,7 +73,7 @@ const DefaultInputCheckTheme: InputCheckTheme = {
         borderWidth: 1,
         border: palette.pigments[palette.mapping.accent][200],
         back: palette.pigments[palette.mapping.accent][200],
-        glyph: palette.white,
+        glyph: palette.light,
       },
     },
   })),

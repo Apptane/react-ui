@@ -170,7 +170,7 @@ function Menu({
       paddingBottom={padding.b ?? padding.t}
       paddingLeft={padding.l}
       cornerRadius={visualStyle.borderRadius}
-      background={background ?? (appearance === "inverted" ? "black" : "white")}
+      background={background ?? (appearance === "inverted" ? "dark" : "light")}
       elevation={visualStyle.elevation}
       {...other}>
       {menu}

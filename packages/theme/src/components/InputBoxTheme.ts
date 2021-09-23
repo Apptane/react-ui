@@ -111,7 +111,7 @@ const DefaultInputBoxTheme: InputBoxTheme = {
       icon: resolveTextColor(palette, "muted"),
       glyph: resolveTextColor(palette, "default"),
       label: resolveTextColor(palette, "muted"),
-      back: appearance === "embedded" ? undefined : palette.white,
+      back: appearance === "embedded" ? undefined : palette.light,
       border: appearance === "embedded" ? undefined : palette.text[300],
       borderWidth: appearance === "embedded" ? 0 : 1,
     },

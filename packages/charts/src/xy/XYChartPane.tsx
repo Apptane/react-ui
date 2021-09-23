@@ -68,6 +68,7 @@ export function XYChartPane<X extends DomainXValue, Y extends DomainYValue, Data
   legendInteractive,
   defs,
   overlays,
+  background,
 }: React.PropsWithChildren<XYChartPanePropsBase<X, Y, Data> & XYChartPanePropsBaseEx<X, Y, Data>>) {
   const visualAppearance = theme.charts.xy.appearance(theme.palette[colorMode], colorMode, undefined, "none");
 
@@ -161,7 +162,7 @@ export function XYChartPane<X extends DomainXValue, Y extends DomainYValue, Data
         <svg xmlns="http://www.w3.org/2000/svg" role="img" height={extentY} width={width}>
           <defs>
             <filter x={0} y={0} width={1.2} height={1} id={`${componentId}-axis-label-back`}>
-              <feFlood floodColor={visualAppearance.back} result="bg" />
+              <feFlood floodColor={background ?? visualAppearance.back} result="bg" />
               <feMerge>
                 <feMergeNode in="bg" />
                 <feMergeNode in="SourceGraphic" />
@@ -226,6 +227,7 @@ export function XYChartPane<X extends DomainXValue, Y extends DomainYValue, Data
           <ChartEmptyBlock
             theme={theme}
             colorMode={colorMode}
+            background={background}
             width={extentX}
             height={extentY}
             top={headerHeight}

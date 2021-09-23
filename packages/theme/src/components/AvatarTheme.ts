@@ -1,4 +1,4 @@
-import { resolveBackgroundColor, resolveTextColor } from "@apptane/react-ui-core";
+import { resolveTextColor } from "@apptane/react-ui-core";
 import memoize from "memoizee";
 import { AvatarTheme } from "./AvatarTheme.types";
 
@@ -45,19 +45,19 @@ const DefaultAvatarTheme: AvatarTheme = {
       case "default":
         return {
           outline: palette.pigments[palette.mapping.accent][600],
-          back: palette.white,
+          back: palette.light,
         };
       case "initials":
         return {
           outline: palette.pigments[palette.mapping.accent][600],
           back: palette.pigments.purple[500],
-          text: palette.white,
+          text: palette.light,
           weight: 500,
         };
       case "overflow":
         return {
           outline: palette.pigments[palette.mapping.accent][600],
-          back: resolveBackgroundColor(palette, "default"),
+          back: palette.light,
           border: palette.text[300],
           text: resolveTextColor(palette, "default"),
         };

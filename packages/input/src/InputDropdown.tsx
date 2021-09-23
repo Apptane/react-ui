@@ -49,7 +49,7 @@ function InputDropdown<T>({ formatValue, value, onChange, control, width, ...oth
           paddingBottom={padding.b ?? padding.t}
           paddingLeft={padding.l}
           cornerRadius={visualStyle.borderRadius}
-          background="white"
+          background="light"
           border
           elevation={0}>
           {control(value, onChange, close)}

@@ -41,7 +41,7 @@ const DefaultInputToggleTheme: InputToggleTheme = {
       [InputToggleVisualState.Default]: {
         borderWidth: 1,
         border: palette.text[300],
-        back: palette.white,
+        back: palette.light,
         glyph: palette.text[300],
       },
       [InputToggleVisualState.Hover]: {
@@ -68,7 +68,7 @@ const DefaultInputToggleTheme: InputToggleTheme = {
         borderWidth: 1,
         border: palette.pigments[palette.mapping.accent][500],
         back: palette.pigments[palette.mapping.accent][500],
-        glyph: palette.white,
+        glyph: palette.light,
       },
       [InputToggleVisualState.Hover]: {
         borderWidth: 2,

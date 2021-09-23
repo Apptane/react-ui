@@ -75,7 +75,7 @@ const DefaultTagTheme: TagTheme = {
           },
           [TagVisualState.Inactive]: {
             text: palette.pigments[palette.mapping.accent][500],
-            back: palette.white,
+            back: palette.light,
             border: palette.pigments[palette.mapping.accent][200],
             textWeight: 500,
             borderWeight: 200,
@@ -97,7 +97,7 @@ const DefaultTagTheme: TagTheme = {
           },
           [TagVisualState.Inactive]: {
             text: palette.pigments.purple[500],
-            back: palette.white,
+            back: palette.light,
             border: palette.pigments.purple[200],
             textWeight: 500,
             borderWeight: 200,
@@ -119,7 +119,7 @@ const DefaultTagTheme: TagTheme = {
           },
           [TagVisualState.Inactive]: {
             text: palette.text[500],
-            back: palette.white,
+            back: palette.light,
             border: palette.text[200],
             textWeight: 500,
             borderWeight: 200,

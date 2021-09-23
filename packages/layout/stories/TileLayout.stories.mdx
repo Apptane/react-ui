@@ -48,7 +48,9 @@ export const Content = ({ quantity = 30 }) => (
     {[...Array(quantity).keys()].map((index) => (
       <Card
         key={`card-${index}`}
-        interactive
+        background="light"
+        interactivity="border"
+        focusable
         inline
         height={150}
         verticalAlignment="center"

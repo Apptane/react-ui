@@ -1,4 +1,4 @@
-import { ColorMode } from "@apptane/react-ui-core";
+import { Color, ColorMode } from "@apptane/react-ui-core";
 import { Theme } from "@apptane/react-ui-theme";
 
 export interface ChartEmptyBlockProps {
@@ -11,6 +11,11 @@ export interface ChartEmptyBlockProps {
    * Color mode.
    */
   colorMode: ColorMode;
+
+  /**
+   * Background color.
+   */
+  background?: Color;
 
   /**
    * Content.

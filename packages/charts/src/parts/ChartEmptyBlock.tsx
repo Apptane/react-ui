@@ -18,7 +18,16 @@ const StyleContent = css`
 /**
  * `EmptyBlock` component — a placeholder for missing data.
  */
-export function ChartEmptyBlock({ theme, colorMode, children, width, height, top, left }: ChartEmptyBlockProps) {
+export function ChartEmptyBlock({
+  theme,
+  colorMode,
+  background,
+  children,
+  width,
+  height,
+  top,
+  left,
+}: ChartEmptyBlockProps) {
   const visualStyle = theme.charts.xy.style;
   const palette = theme.palette[colorMode];
   const visualAppearance = theme.charts.xy.appearance(palette, colorMode, undefined, "none");
@@ -38,7 +47,9 @@ export function ChartEmptyBlock({ theme, colorMode, children, width, height, top
     );
 
   return (
-    <div css={StyleContainer(visualAppearance.back)} style={{ top: top, left: left, width: width, height: height }}>
+    <div
+      css={StyleContainer(background ?? visualAppearance.back)}
+      style={{ top: top, left: left, width: width, height: height }}>
       <div css={StyleContent}>{content}</div>
     </div>
   );

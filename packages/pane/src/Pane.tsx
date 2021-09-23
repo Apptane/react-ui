@@ -30,11 +30,19 @@ const StyleContainer = (overflow: string, inline?: boolean, scrollOnOverflow?: b
   outline: none;
 `;
 
-const StyleInteractive = (elevation?: ElevationStyle) => css`
+const StyleInteractiveShadow = (elevation?: ElevationStyle) => css`
   &:focus,
   &:hover {
     cursor: pointer;
     ${elevation};
+  }
+`;
+
+const StyleInteractiveBorder = (border?: Color) => css`
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    border-color: ${border};
   }
 `;
 
@@ -189,7 +197,8 @@ function Pane({
   inline,
   zIndex,
   animated,
-  interactive,
+  interactivity,
+  focusable,
   transitionDuration,
   scrollOnOverflow,
   overflow = "visible",
@@ -257,6 +266,7 @@ function Pane({
   const landscape = orientation === "horizontal";
   return (
     <div
+      tabIndex={focusable ? 0 : undefined}
       {...other}
       role={accessibilityRole}
       css={[
@@ -264,7 +274,10 @@ function Pane({
         StyleMargin(marginProps),
         StylePadding(paddingProps),
         animated && StyleTransition(theme.components.pane.animation, transitionDuration),
-        interactive && StyleInteractive(theme.elevation(visualAppearance.elevation)),
+        (interactivity === "shadow" || interactivity === "border+shadow") &&
+          StyleInteractiveShadow(theme.elevation(visualAppearance.interactivity.elevation)),
+        (interactivity === "border" || interactivity === "border+shadow") &&
+          StyleInteractiveBorder(visualAppearance.interactivity.border),
         styleBackground,
         styleBorder,
         styleBorderRadius,

@@ -47,8 +47,8 @@ export type PaletteBorderSlot = "default" | "accent" | "contrast" | "focused" | 
  * References color in the palette.
  */
 export type PaletteReference =
-  | [PaletteHue | "gray" | "text" | "white" | "black" | "accent", PaletteWeight]
-  | [PaletteHue | "gray" | "text" | "white" | "black" | "accent", PaletteWeight, number];
+  | [PaletteHue | "gray" | "text" | "white" | "black" | "light" | "dark" | "accent", PaletteWeight]
+  | [PaletteHue | "gray" | "text" | "white" | "black" | "light" | "dark" | "accent", PaletteWeight, number];
 
 export type PaletteMappingVariants<K extends string | symbol, V> = {
   [key in K]: V;
@@ -113,6 +113,16 @@ export interface Palette {
   black: Color;
 
   /**
+   * Light (off-white) color.
+   */
+  light: Color;
+
+  /**
+   * Dark (off-black) color.
+   */
+  dark: Color;
+
+  /**
    * Mapping from semantic colors to palette colors.
    */
   mapping: PaletteMapping;
@@ -132,6 +142,10 @@ export function resolvePaletteReference(palette: Palette, reference: PaletteRefe
       return palette.white;
     case "black":
       return palette.black;
+    case "light":
+      return palette.light;
+    case "dark":
+      return palette.dark;
     case "accent":
       pigment = palette.pigments[palette.mapping.accent];
       break;
@@ -156,7 +170,7 @@ export function resolvePaletteReference(palette: Palette, reference: PaletteRefe
  * - rgb[a](...)
  * - hsl[a](...)
  * - hue:weight[:saturation]
- * - white|black
+ * - white|black|light|dark
  */
 export function resolveColor(palette: Palette, color: string): Color {
   switch (color) {
@@ -164,6 +178,10 @@ export function resolveColor(palette: Palette, color: string): Color {
       return palette.white;
     case "black":
       return palette.black;
+    case "light":
+      return palette.light;
+    case "dark":
+      return palette.dark;
     default:
       const tokens = color.split(":");
       if (tokens.length > 1) {
@@ -315,6 +333,8 @@ export function reversePalette(palette: Palette): Palette {
     text: reverse(palette.text),
     white: palette.black,
     black: palette.white,
+    light: palette.dark,
+    dark: palette.light,
     colormap: cloneDeep(palette.colormap),
     mapping: cloneDeep(palette.mapping),
     pigments: {},

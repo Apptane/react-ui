@@ -1,4 +1,4 @@
-import { resolveBackgroundColor, resolveBorderColor } from "@apptane/react-ui-core";
+import { resolveBorderColor } from "@apptane/react-ui-core";
 import memoize from "memoizee";
 import { DefaultAnimation, easeInCubic } from "../Animation";
 import { SidePanelTheme } from "./SidePanelTheme.types";
@@ -20,7 +20,7 @@ const DefaultSidePanelTheme: SidePanelTheme = {
   },
   appearance: memoize((palette) => ({
     border: resolveBorderColor(palette, "default"),
-    background: resolveBackgroundColor(palette, "default"),
+    background: palette.light,
     elevation: 2,
   })),
 };

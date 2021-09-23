@@ -32,7 +32,7 @@ const DefaultRadioButtonTheme: RadioButtonTheme = {
       [RadioButtonVisualState.Default]: {
         borderWidth: 1,
         border: palette.text[300],
-        back: palette.white,
+        back: palette.light,
       },
       [RadioButtonVisualState.Hover]: {
         borderWidth: 2,
@@ -55,7 +55,7 @@ const DefaultRadioButtonTheme: RadioButtonTheme = {
         borderWidth: 1,
         glyph: palette.pigments[palette.mapping.accent][500],
         border: palette.pigments[palette.mapping.accent][500],
-        back: palette.white,
+        back: palette.light,
       },
       [RadioButtonVisualState.Hover]: {
         borderWidth: 2,
@@ -73,7 +73,7 @@ const DefaultRadioButtonTheme: RadioButtonTheme = {
         borderWidth: 1,
         glyph: palette.pigments[palette.mapping.accent][200],
         border: palette.pigments[palette.mapping.accent][200],
-        back: palette.white,
+        back: palette.light,
       },
     },
   })),

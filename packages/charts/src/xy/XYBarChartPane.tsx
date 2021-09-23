@@ -215,7 +215,7 @@ export function XYBarChartPane<Data = void>(props: XYBarChartPaneProps<Data>) {
       {computed && (
         <XYBarLayer<Data>
           componentId={componentId}
-          background={p.theme.charts.xy.appearance(p.palette, p.colorMode, undefined, "none").back}
+          background={p.background ?? p.theme.charts.xy.appearance(p.palette, p.colorMode, undefined, "none").back}
           offset={offset}
           data={computed}
           stacked={!!props.stacked}

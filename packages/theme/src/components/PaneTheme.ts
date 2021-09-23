@@ -14,7 +14,10 @@ const DefaultPaneTheme: PaneTheme = {
   },
   appearance: memoize((palette) => ({
     border: resolveBorderColor(palette, "default"),
-    elevation: 1,
+    interactivity: {
+      elevation: 1,
+      border: resolveBorderColor(palette, "accent"),
+    },
   })),
 };
 

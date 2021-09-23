@@ -28,7 +28,7 @@ const DefaultInputSliderTheme: InputSliderTheme = {
       rail: resolveBackgroundColor(palette, "readonly"),
       gauge: palette.pigments[palette.mapping.accent][500],
       thumbBorder: palette.pigments[palette.mapping.accent][500],
-      thumbBack: palette.white,
+      thumbBack: palette.light,
     },
     [InputSliderVisualState.Hover]: {
       text: resolveTextColor(palette, "default"),
@@ -49,7 +49,7 @@ const DefaultInputSliderTheme: InputSliderTheme = {
       rail: resolveBackgroundColor(palette, "readonly"),
       gauge: palette.text[400],
       thumbBorder: palette.text[400],
-      thumbBack: palette.white,
+      thumbBack: palette.light,
     },
   })),
 };

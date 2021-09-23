@@ -1,4 +1,4 @@
-import { resolveColor, resolveTextColor } from "@apptane/react-ui-core";
+import { resolveTextColor } from "@apptane/react-ui-core";
 import memoize from "memoizee";
 import DefaultAnimation from "../Animation";
 import { ChartXYTheme } from "./ChartXYTheme.types";
@@ -87,8 +87,8 @@ const DefaultChartXYTheme: ChartXYTheme = {
     duration: DefaultAnimation.duration * 0.5,
     function: DefaultAnimation.function,
   },
-  appearance: memoize((palette, colorMode) => ({
-    back: colorMode === "dark" ? resolveColor(palette, "accent:50:20") : palette.white,
+  appearance: memoize((palette) => ({
+    back: palette.light,
     header: resolveTextColor(palette, "default"),
     legend: resolveTextColor(palette, "default"),
     empty: resolveTextColor(palette, "muted"),

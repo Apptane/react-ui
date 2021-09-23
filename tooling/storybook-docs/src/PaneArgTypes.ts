@@ -26,7 +26,12 @@ export const PaneArgTypes = {
       category: "Behavior",
     },
   },
-  interactive: {
+  interactivity: {
+    table: {
+      category: "Behavior",
+    },
+  },
+  focusable: {
     table: {
       category: "Behavior",
     },

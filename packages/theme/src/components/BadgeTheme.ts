@@ -123,7 +123,7 @@ const DefaultBadgeTheme: BadgeTheme = {
       case "inverted":
         return {
           text: resolveTextColor(palette, "default"),
-          back: palette.white,
+          back: palette.light,
           bulletVisible: false,
         };
     }

@@ -210,6 +210,11 @@ export interface XYChartPropsBase<X extends DomainXValue> {
    * Pane overlays.
    */
   overlays?: XYChartOverlay<X>[];
+
+  /**
+   * Overrides the default background color.
+   */
+  background?: Color;
 }
 
 export interface XYTimeChartProps extends XYChartPropsBase<Date> {
@@ -427,6 +432,15 @@ export type XYChartPaneProps<Data = void> =
   | XYBubbleChartPaneProps<Data>
   | XYScatterChartPaneProps<Data>;
 
+export const PropTypeOverlay = PropTypes.shape({
+  id: PropTypes.string,
+  title: PropTypes.string,
+  titleAlignment: PropTypes.oneOf(["top-left", "top-right", "bottom-left", "bottom-right"]),
+  x0: PropTypeDomainValue,
+  x1: PropTypeDomainValue,
+  color: PropTypes.string,
+});
+
 export const XYChartPropTypes = {
   children: PropTypes.any,
   width: PropTypes.number.isRequired,
@@ -445,6 +459,8 @@ export const XYChartPropTypes = {
   axisPadding: PropTypes.number,
   emptyText: PropTypes.string,
   colorMode: PropTypeColorMode,
+  overlays: PropTypes.arrayOf(PropTypeOverlay),
+  background: PropTypes.string,
 };
 
 export const XYChartPaneProps = {
@@ -491,6 +507,7 @@ export const XYChartPaneProps = {
   emptyText: PropTypes.any,
   legendVisible: PropTypes.bool,
   legendInteractive: PropTypes.bool,
+  overlays: PropTypes.arrayOf(PropTypeOverlay),
 };
 
 export type XYChartPanePropsExBase = {
@@ -508,6 +525,11 @@ export type XYChartPanePropsExBase = {
    * Color mode.
    */
   colorMode: ColorMode;
+
+  /**
+   * Background color.
+   */
+  background: Color;
 
   /**
    * Palette,

@@ -150,6 +150,7 @@ const XYChartPanes = <X extends DomainXValue>({
   formatTooltip,
   emptyText,
   overlays,
+  background,
 }: XYChartPanes<X>) => {
   const { totalPaneHeight, dynamicPaneCount } = computePaneHeights(children, paneGap);
 
@@ -193,6 +194,7 @@ const XYChartPanes = <X extends DomainXValue>({
           key: child.key ?? `pane-${panes.length}`,
           theme: theme,
           palette: palette,
+          background: background,
           colorMode: colorMode,
           colorScheme: child.props.colorScheme ?? colorScheme,
           emptyText: child.props.emptyText ?? emptyText,
@@ -452,7 +454,7 @@ function XYChart(props: XYChartProps) {
     theme: theme,
     colorMode: colorMode,
     palette: palette,
-    background: visualAppearance.back,
+    background: props.background ?? visualAppearance.back,
     extent: props.width - axisYWidth, // viewport extent for data series, i.e. X domain
     axisYWidth: axisYWidth,
     paneGap: visualStyle.gap,
@@ -498,7 +500,14 @@ function XYChart(props: XYChartProps) {
     }
 
     chart = (
-      <ChartEmptyBlock theme={theme} colorMode={colorMode} width={props.width} height={height} top={0} left={0}>
+      <ChartEmptyBlock
+        theme={theme}
+        colorMode={colorMode}
+        background={props.background}
+        width={props.width}
+        height={height}
+        top={0}
+        left={0}>
         {props.emptyText}
       </ChartEmptyBlock>
     );
@@ -506,7 +515,11 @@ function XYChart(props: XYChartProps) {
 
   return (
     <ChartSliceContext.Provider value={slice}>
-      <div css={[StyleContainer(visualAppearance.back, visualStyle.gap), { width: props.width, height: props.height }]}>
+      <div
+        css={[
+          StyleContainer(props.background ?? visualAppearance.back, visualStyle.gap),
+          { width: props.width, height: props.height },
+        ]}>
         {chart}
       </div>
     </ChartSliceContext.Provider>

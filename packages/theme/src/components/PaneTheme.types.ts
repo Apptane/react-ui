@@ -14,9 +14,19 @@ export type PaneVisualAppearance = {
   border: Color;
 
   /**
-   * Elevation style. Applied in interactive state.
+   * Interactive state styles.
    */
-  elevation: Elevation;
+  interactivity: {
+    /**
+     * Applied when "shadow" interactivity is selected.
+     */
+    elevation: Elevation;
+
+    /**
+     * Applied when "border" interactivity is selected.
+     */
+    border: Color;
+  };
 };
 
 /**

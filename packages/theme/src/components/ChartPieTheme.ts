@@ -58,7 +58,7 @@ const DefaultChartPieTheme: ChartPieTheme = {
     },
   },
   appearance: memoize((palette) => ({
-    back: palette.white,
+    back: palette.light,
     value: resolveTextColor(palette, "default"),
     title: resolveTextColor(palette, "muted"),
     empty: resolveTextColor(palette, "muted"),

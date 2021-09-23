@@ -1,4 +1,4 @@
-import { resolveBackgroundColor, resolveTextColor } from "@apptane/react-ui-core";
+import { resolveTextColor } from "@apptane/react-ui-core";
 import memoize from "memoizee";
 import { DefaultAnimation, easeInOutCubic } from "../Animation";
 import { DialogTheme } from "./DialogTheme.types";
@@ -80,7 +80,7 @@ const DefaultDialogTheme: DialogTheme = {
     function: easeInOutCubic,
   },
   appearance: memoize((palette) => ({
-    background: resolveBackgroundColor(palette, "default"),
+    background: palette.light,
     elevation: 3,
     text: resolveTextColor(palette, "default"),
     description: resolveTextColor(palette, "muted"),

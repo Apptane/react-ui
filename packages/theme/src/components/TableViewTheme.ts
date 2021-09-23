@@ -22,13 +22,13 @@ const DefaultTableViewTheme: TableViewTheme = {
   appearance: memoize((palette) => ({
     header: {
       text: resolveTextColor(palette, "default"),
-      back: palette.white,
+      back: palette.light,
       highlight: resolveBackgroundColor(palette, "highlight"),
       border: palette.text[100],
     },
     row: {
       text: resolveTextColor(palette, "default"),
-      back: palette.white,
+      back: palette.light,
       highlight: resolveBackgroundColor(palette, "highlight"),
       border: palette.text[100],
     },

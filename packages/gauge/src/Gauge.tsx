@@ -131,7 +131,7 @@ function Gauge({ value, total, width, height = 4, tooltipHidden, formatTooltip, 
                   y1={offsetY - 0.5}
                   x2={offsetX}
                   y2={size + offsetY + 1}
-                  stroke={palette.white}
+                  stroke={palette.light}
                   strokeWidth={2}
                 />
               )}

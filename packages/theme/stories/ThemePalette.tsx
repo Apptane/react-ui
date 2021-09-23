@@ -9,6 +9,7 @@ import {
   PalettePigment,
   PaletteReference,
   PaletteWeight,
+  resolveColor,
   resolvePaletteReference,
 } from "@apptane/react-ui-core";
 import { contrast } from "@apptane/react-ui-storybook-docs";
@@ -127,6 +128,7 @@ const styleContrast = css`
     padding: 4px;
     z-index: 1;
   }
+
   &::before {
     content: "";
     border-color: #c3c6d2;
@@ -247,6 +249,23 @@ export const ThemeColorSemanticPalette = ({ mode = "light" }: { mode: ColorMode 
         <ThemeColorReferenceMapping palette={palette} name="text" variants={palette.mapping.text} />
         <ThemeColorReferenceMapping palette={palette} name="back" variants={palette.mapping.back} />
         <ThemeColorReferenceMapping palette={palette} name="border" variants={palette.mapping.border} />
+      </tbody>
+    </table>
+  );
+};
+
+export const ThemeColorSpecialPalette = () => {
+  const theme = useTheme();
+  const palette = theme.palette.light;
+  return (
+    <table css={styleColorTable}>
+      <tbody>
+        <tr>
+          <ThemeSemanticColor palette={palette} name="Black" color={resolveColor(palette, "black")} />
+          <ThemeSemanticColor palette={palette} name="Dark" color={resolveColor(palette, "dark")} />
+          <ThemeSemanticColor palette={palette} name="White" color={resolveColor(palette, "white")} />
+          <ThemeSemanticColor palette={palette} name="Light" color={resolveColor(palette, "light")} />
+        </tr>
       </tbody>
     </table>
   );

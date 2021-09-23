@@ -140,6 +140,8 @@ const DefaultPalette: Palette = {
 
   white: "#FFFFFF",
   black: "#000000",
+  light: "#FAFBFC", // "#F9F9FA",
+  dark: "#0F1115",
 
   colormap: [
     {

@@ -20,6 +20,8 @@ import {
 import { PaneVisualAppearance } from "@apptane/react-ui-theme";
 import PropTypes from "prop-types";
 
+export type PaneInteractivity = "none" | "shadow" | "border" | "border+shadow";
+
 export interface PaneProps
   extends MarginProps,
     PaddingProps,
@@ -65,9 +67,15 @@ export interface PaneProps
   animated?: boolean;
 
   /**
-   * Indicates whether pane can be interacted with (via mouse or keyboard).
+   * Indicates whether pane can be interacted with (via mouse or keyboard)
+   * and the visual appearance of the interactive state.
    */
-  interactive?: boolean;
+  interactivity?: PaneInteractivity;
+
+  /**
+   * Indicates whether pane can receive focus.
+   */
+  focusable?: boolean;
 
   /**
    * Duration of the animated transition in milliseconds.
@@ -109,7 +117,8 @@ export const PanePropTypes = {
   inline: PropTypes.bool,
   zIndex: PropTypes.number,
   animated: PropTypes.bool,
-  interactive: PropTypes.bool,
+  interactivity: PropTypes.oneOf(["none", "shadow", "border", "border+shadow"]),
+  focusable: PropTypes.bool,
   transitionDuration: PropTypes.number,
   scrollOnOverflow: PropTypes.bool,
   overflow: PropTypes.string,

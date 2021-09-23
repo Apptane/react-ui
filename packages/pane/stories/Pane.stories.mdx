@@ -232,12 +232,13 @@ Use `margin` and `padding` to create spacing outside and inside the panel. You c
 
 ### Card
 
-`Card` is a special version of `Pane` with default border and background. Use `interactive` property to enable visual response to mouse and keyboard focus.
+`Card` is a special version of `Pane` with default border and background. Use `interactivity` property to enable visual response to mouse and keyboard focus.
+Use `focusable` property to allow the card to receive focus.
 
 <Canvas>
   <Story name="Card">
     <Pane width={360} height={360} background="transparent">
-      <Card grow={1} margin={24} interactive />
+      <Card grow={1} margin={24} interactivity="border+shadow" focusable />
     </Pane>
   </Story>
 </Canvas>

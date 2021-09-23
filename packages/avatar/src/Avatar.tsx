@@ -245,7 +245,7 @@ function Avatar({
           actualSize,
           color,
           appearance === "overflow" ? 1 : 2,
-          border ? palette.white : undefined,
+          border ? palette.light : undefined,
           square,
           inline
         ),
