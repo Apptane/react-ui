@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook-docs
 
+## 1.0.5
+
+### Patch Changes
+
+- 5469252: Added dark/light colors to palette (with better contrast). Improved Pane interactivity support. Improved Hyperlink styles.
+
 ## 1.0.4
 
 ### Patch Changes

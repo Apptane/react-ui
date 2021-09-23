@@ -1,5 +1,18 @@
 # @apptane/react-ui-tableview
 
+## 1.0.8
+
+### Patch Changes
+
+- 5469252: Added dark/light colors to palette (with better contrast). Improved Pane interactivity support. Improved Hyperlink styles.
+- Updated dependencies [5469252]
+  - @apptane/react-ui-core@1.0.8
+  - @apptane/react-ui-icon@1.0.8
+  - @apptane/react-ui-pane@1.0.8
+  - @apptane/react-ui-theme@1.0.8
+  - @apptane/react-ui-typography@1.0.8
+  - @apptane/react-ui-virtual-list@1.0.8
+
 ## 1.0.7
 
 ### Patch Changes

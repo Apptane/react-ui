@@ -1,5 +1,11 @@
 # @apptane/react-ui-core
 
+## 1.0.8
+
+### Patch Changes
+
+- 5469252: Added dark/light colors to palette (with better contrast). Improved Pane interactivity support. Improved Hyperlink styles.
+
 ## 1.0.7
 
 ### Patch Changes

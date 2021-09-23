@@ -1,5 +1,23 @@
 # @apptane/react-ui-input
 
+## 1.0.9
+
+### Patch Changes
+
+- 5469252: Added dark/light colors to palette (with better contrast). Improved Pane interactivity support. Improved Hyperlink styles.
+- Updated dependencies [5469252]
+  - @apptane/react-ui-behaviors@1.0.8
+  - @apptane/react-ui-core@1.0.8
+  - @apptane/react-ui-cue@1.0.8
+  - @apptane/react-ui-hooks@1.0.8
+  - @apptane/react-ui-icon@1.0.8
+  - @apptane/react-ui-layout@1.0.9
+  - @apptane/react-ui-pane@1.0.8
+  - @apptane/react-ui-tag@1.0.8
+  - @apptane/react-ui-theme@1.0.8
+  - @apptane/react-ui-tooltip@1.0.8
+  - @apptane/react-ui-typography@1.0.8
+
 ## 1.0.8
 
 ### Patch Changes
