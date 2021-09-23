@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook
 
+## 1.0.8
+
+### Patch Changes
+
+- a6b4888: Fixed TableView props to be compatible with Pane.
+
 ## 1.0.7
 
 ### Patch Changes

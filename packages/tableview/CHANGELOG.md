@@ -1,5 +1,11 @@
 # @apptane/react-ui-tableview
 
+## 1.0.9
+
+### Patch Changes
+
+- a6b4888: Fixed TableView props to be compatible with Pane.
+
 ## 1.0.8
 
 ### Patch Changes

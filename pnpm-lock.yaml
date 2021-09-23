@@ -66,7 +66,7 @@ importers:
 
   docs/storybook:
     specifiers:
-      '@apptane/react-ui': workspace:^1.0.9
+      '@apptane/react-ui': workspace:^1.0.10
       '@apptane/react-ui-storybook-dark-mode': workspace:^1.0.3
       '@apptane/react-ui-storybook-docs': workspace:^1.0.5
       '@babel/core': 7.15.5
@@ -745,7 +745,7 @@ importers:
       '@apptane/react-ui-sidebar': workspace:^1.0.8
       '@apptane/react-ui-skeleton': workspace:^1.0.8
       '@apptane/react-ui-spinner': workspace:^1.0.8
-      '@apptane/react-ui-tableview': workspace:^1.0.8
+      '@apptane/react-ui-tableview': workspace:^1.0.9
       '@apptane/react-ui-tabs': workspace:^1.0.9
       '@apptane/react-ui-tag': workspace:^1.0.8
       '@apptane/react-ui-theme': workspace:^1.0.8
