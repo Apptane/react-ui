@@ -1,5 +1,10 @@
 import { Canvas, Meta, Story, Description, ArgsTable } from "@storybook/addon-docs";
-import { MarginArgTypes, BoxBorderArgTypes, StateManager } from "@apptane/react-ui-storybook-docs";
+import {
+  MarginArgTypes,
+  BoxBorderArgTypes,
+  BoxDimensionsArgTypes,
+  StateManager,
+} from "@apptane/react-ui-storybook-docs";
 import { useCallback, useRef } from "react";
 import {
   Button,
@@ -79,16 +84,6 @@ import DATA from "./data";
         category: "Appearance",
       },
     },
-    width: {
-      table: {
-        category: "Dimensions",
-      },
-    },
-    height: {
-      table: {
-        category: "Dimensions",
-      },
-    },
     virtualizationDisabled: {
       table: {
         category: "Behavior",
@@ -119,6 +114,7 @@ import DATA from "./data";
         category: "Behavior",
       },
     },
+    ...BoxDimensionsArgTypes,
     ...BoxBorderArgTypes,
     onScroll: {
       table: {

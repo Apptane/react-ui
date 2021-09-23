@@ -3,6 +3,8 @@ import {
   AppearancePropTypes,
   BoxBorderProps,
   BoxBorderPropTypes,
+  BoxDimensionsProps,
+  BoxDimensionsPropTypes,
   MarginProps,
   MarginPropTypes,
 } from "@apptane/react-ui-core";
@@ -16,7 +18,11 @@ export type SortChangedHandler = (sortKey: string, sortDir?: SortDirection | nul
 
 export type TableViewRowHeight = number | [number, number];
 
-export interface TableViewProps<T> extends MarginProps, BoxBorderProps, AppearanceProps<TableViewVisualAppearance> {
+export interface TableViewProps<T>
+  extends MarginProps,
+    BoxBorderProps,
+    BoxDimensionsProps,
+    AppearanceProps<TableViewVisualAppearance> {
   /**
    * Content.
    */
@@ -26,16 +32,6 @@ export interface TableViewProps<T> extends MarginProps, BoxBorderProps, Appearan
    * An array of items to render.
    */
   data?: ArrayLike<T>;
-
-  /**
-   * Fixed width of the table in pixels.
-   */
-  width?: number;
-
-  /**
-   * Fixed height of the table in pixels.
-   */
-  height?: number;
 
   /**
    * Height of the row in pixels as a fixed value or as
@@ -173,13 +169,15 @@ export interface TableViewProps<T> extends MarginProps, BoxBorderProps, Appearan
   lastRowBorderVisible?: boolean;
 }
 
+const PropTypeNumberOrString = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
 export const TableViewPropTypes = {
   ...MarginPropTypes,
   ...BoxBorderPropTypes,
+  ...BoxDimensionsPropTypes,
   ...AppearancePropTypes,
   data: PropTypes.array,
-  width: PropTypes.number,
-  height: PropTypes.number,
+  width: PropTypeNumberOrString,
+  height: PropTypeNumberOrString,
   rowHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.func, PropTypes.any]),
   estimatedRowHeight: PropTypes.number,
   rowExpanded: PropTypes.func,
