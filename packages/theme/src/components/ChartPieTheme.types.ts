@@ -26,7 +26,7 @@ export type ChartPieVisualStyle = {
     itemPadding: number;
 
     /**
-     * Spacing between marker and labe.
+     * Spacing between marker and label.
      */
     markerSpacing: number;
   };

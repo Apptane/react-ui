@@ -159,6 +159,11 @@ export interface TableViewProps<T>
   empty?: React.ReactNode;
 
   /**
+   * Overrides default padding for the first and last columns.
+   */
+  sidePadding?: number;
+
+  /**
    * Indicates that border between rows should be hidden.
    */
   rowBorderHidden?: boolean;
@@ -196,6 +201,7 @@ export const TableViewPropTypes = {
   onHorizontalScroll: PropTypes.func,
   keyboardNavigation: PropTypes.bool,
   empty: PropTypes.node,
+  sidePadding: PropTypes.number,
   rowBorderHidden: PropTypes.bool,
   lastRowBorderVisible: PropTypes.bool,
 };

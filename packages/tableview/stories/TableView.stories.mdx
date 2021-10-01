@@ -64,6 +64,11 @@ import DATA from "./data";
         category: "Appearance",
       },
     },
+    sidePadding: {
+      table: {
+        category: "Appearance",
+      },
+    },
     rowBorderHidden: {
       table: {
         category: "Appearance",
@@ -163,7 +168,7 @@ export const Template = (args) => (
         <TableView.Column minWidth={200} header="Email" sortKey="email">
           {(rowObject) => <Text ellipsis>{rowObject.email}</Text>}
         </TableView.Column>
-        <TableView.Column width={90} header="Age" alignment="right" sortKey="age">
+        <TableView.Column width={105} header="Age" alignment="right" sortKey="age">
           {(rowObject) => <Text nowrap>{rowObject.age}</Text>}
         </TableView.Column>
         <TableView.Column minWidth={200} header="Company">
@@ -282,7 +287,7 @@ Columns with fixed `width` can be attributed with `fixed` property to create sti
             <TableView.Column minWidth={300} header="Email" sortKey="email">
               {(rowObject) => <Text ellipsis>{rowObject.email}</Text>}
             </TableView.Column>
-            <TableView.Column width={90} header="Age" alignment="right" sortKey="age">
+            <TableView.Column width={105} header="Age" alignment="right" sortKey="age">
               {(rowObject) => <Text nowrap>{rowObject.age}</Text>}
             </TableView.Column>
             <TableView.Column width={80} header="Active" alignment="center">
@@ -312,6 +317,33 @@ Columns with fixed `width` can be attributed with `fixed` property to create sti
   </Story>
 </Canvas>
 
+### Non-Virtualized
+
+<Canvas>
+  <Story name="Non-virtualized">
+    <TableView
+      data={DATA.slice(0, 9)}
+      sidePadding={32}
+      height={320}
+      headerHeight={32}
+      rowHeight={32}
+      virtualizationDisabled>
+      <TableView.Column minWidth={200} header="Name" sortKey="name">
+        {(rowObject) => <Hyperlink ellipsis>{rowObject.fullName}</Hyperlink>}
+      </TableView.Column>
+      <TableView.Column minWidth={200} header="Email" sortKey="email">
+        {(rowObject) => <Text ellipsis>{rowObject.email}</Text>}
+      </TableView.Column>
+      <TableView.Column width={105} header="Age" alignment="right" sortKey="age">
+        {(rowObject) => <Text nowrap>{rowObject.age}</Text>}
+      </TableView.Column>
+      <TableView.Column minWidth={200} header="Company">
+        {(rowObject) => <Text ellipsis>{rowObject.company}</Text>}
+      </TableView.Column>
+    </TableView>
+  </Story>
+</Canvas>
+
 ### Empty Content
 
 Use `empty` property to set custom content when the table has no data.
@@ -321,7 +353,7 @@ Use `empty` property to set custom content when the table has no data.
     <TableView height={320} headerHeight={40} empty={<Text>There is no data in this table</Text>}>
       <TableView.Column minWidth={200} header="Name" sortKey="name" />
       <TableView.Column minWidth={200} header="Email" sortKey="email" />
-      <TableView.Column width={90} header="Age" alignment="right" sortKey="age" />
+      <TableView.Column width={105} header="Age" alignment="right" sortKey="age" />
       <TableView.Column minWidth={200} header="Company" />
     </TableView>
   </Story>

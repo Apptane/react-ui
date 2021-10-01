@@ -7,7 +7,7 @@ import { ChartEmptyBlock } from "../parts/ChartEmptyBlock";
 import { ChartHeader } from "../parts/ChartHeader";
 import { ChartLegend } from "../parts/ChartLegend";
 import { ChartSliceContext } from "../parts/ChartSliceContext";
-import { XYChartPanePropsBase, XYChartPanePropsBaseEx } from "./XYChart.types";
+import { XYChartDatum, XYChartPanePropsBase, XYChartPanePropsBaseEx } from "./XYChart.types";
 import { XYChartOverlay } from "./XYChartOverlay";
 import { XYChartTooltip } from "./XYChartTooltip";
 
@@ -79,7 +79,7 @@ export function XYChartPane<X extends DomainXValue, Y extends DomainYValue, Data
 
   const legend =
     computed != null && legendVisible ? (
-      <ChartLegend<Data>
+      <ChartLegend<XYChartDatum<X, Y, Data>, Data>
         theme={theme}
         colorMode={colorMode}
         data={computed}
@@ -230,6 +230,7 @@ export function XYChartPane<X extends DomainXValue, Y extends DomainYValue, Data
             background={background}
             width={extentX}
             height={extentY}
+            position="absolute"
             top={headerHeight}
             left={axisYWidth}>
             {emptyText}

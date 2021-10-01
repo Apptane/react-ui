@@ -23,9 +23,9 @@ export type TableViewVisualStyle = {
   cellSidePadding: number;
 
   /**
-   * Left padding adjustment for the header cell with sort glyph.
+   * Adjustment for the header cell with sort glyph.
    */
-  cellSortPadding: number;
+  cellSortShift: number;
 
   /**
    * Sort icon spacing in pixels.

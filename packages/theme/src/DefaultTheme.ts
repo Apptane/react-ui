@@ -7,6 +7,7 @@ import DefaultBannerTheme from "./components/BannerTheme";
 import DefaultBulletTheme from "./components/BulletTheme";
 import DefaultButtonTheme from "./components/ButtonTheme";
 import DefaultCalendarTheme from "./components/CalendarTheme";
+import DefaultChartGaugeTheme from "./components/ChartGaugeTheme";
 import DefaultChartHexBinTheme from "./components/ChartHexBinTheme";
 import DefaultChartPieTheme from "./components/ChartPieTheme";
 import DefaultChartXYTheme from "./components/ChartXYTheme";
@@ -84,6 +85,7 @@ const DefaultTheme: Theme = {
   },
 
   charts: {
+    gauge: DefaultChartGaugeTheme,
     hexbin: DefaultChartHexBinTheme,
     xy: DefaultChartXYTheme,
     pie: DefaultChartPieTheme,

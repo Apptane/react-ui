@@ -83,7 +83,7 @@ export type DomainYValue = Exclude<DomainValue, Date>;
  */
 export type DomainType = "time" | "numeric" | "ordinal" | "none";
 
-export type MouseEventCallback<Data = void> = (datum: Datum<Data>, event: React.MouseEvent) => void;
+export type MouseEventCallback<T extends Datum<Data>, Data = void> = (datum: T, event: React.MouseEvent) => void;
 
 export const PropTypeDatum = {
   id: PropTypes.string,

@@ -1,6 +1,7 @@
 import { Text } from "@apptane/react-ui-typography";
 import { css } from "@emotion/react";
 import { useCallback } from "react";
+import { Datum } from "../common/Types";
 import { ChartLegendItemProps } from "./ChartLegendItem.types";
 import { ChartMarker } from "./ChartMarker";
 
@@ -16,13 +17,13 @@ const StyleInteractive = css`
 /**
  * Chart legend item component.
  */
-export function ChartLegendItem<Data = void>({
+export function ChartLegendItem<T extends Datum<Data>, Data = void>({
   datum,
   onMouseEnter,
   onMouseLeave,
   onClick,
   ...other
-}: ChartLegendItemProps<Data>) {
+}: ChartLegendItemProps<T, Data>) {
   const handleMouseEnter = useCallback(
     (event: React.MouseEvent) => {
       if (typeof onMouseEnter === "function") {

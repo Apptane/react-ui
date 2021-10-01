@@ -105,6 +105,7 @@ export function TableViewColumnHeader<T>({
       {interactive && (
         <Icon
           marginLeft={visualStyle.sortIconSpacing}
+          marginRight={visualStyle.cellSortShift}
           color={sortDir ? appearance.sort.active : appearance.sort.default}
           size={visualStyle.sortIconSize}
           name={sortDir === "desc" ? "i:sort-down" : sortDir === "asc" ? "i:sort-up" : "i:sort-updown"}

@@ -6,6 +6,7 @@ import { BannerTheme } from "./components/BannerTheme.types";
 import { BulletTheme } from "./components/BulletTheme.types";
 import { ButtonTheme } from "./components/ButtonTheme.types";
 import { CalendarTheme } from "./components/CalendarTheme.types";
+import { ChartGaugeTheme } from "./components/ChartGaugeTheme.types";
 import { ChartHexBinTheme } from "./components/ChartHexBinTheme.types";
 import { ChartPieTheme } from "./components/ChartPieTheme.types";
 import { ChartXYTheme } from "./components/ChartXYTheme.types";
@@ -77,6 +78,7 @@ export interface Theme {
     tooltip: TooltipTheme;
   };
   charts: {
+    gauge: ChartGaugeTheme;
     hexbin: ChartHexBinTheme;
     xy: ChartXYTheme;
     pie: ChartPieTheme;

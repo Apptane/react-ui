@@ -142,9 +142,9 @@ const StyleExpansion = (
 function parseColumnProps<T>(
   props: TableViewColumnProps,
   style: TableViewVisualStyle,
+  sidePadding?: number,
   lead?: boolean,
-  tail?: boolean,
-  sort?: boolean
+  tail?: boolean
 ): TableViewCellProps<T> {
   const w = parseFlexWidth(props.width);
   return {
@@ -152,11 +152,10 @@ function parseColumnProps<T>(
     flex: w.flex,
     width: w.width,
     minWidth: props.minWidth,
-    paddingLeft: props.paddingLeft ?? props.padding ?? (lead ? style.cellSidePadding : style.cellPadding),
+    paddingLeft:
+      props.paddingLeft ?? props.padding ?? (lead ? sidePadding ?? style.cellSidePadding : style.cellPadding),
     paddingRight:
-      props.paddingRight ??
-      props.padding ??
-      (tail ? style.cellSidePadding : style.cellPadding) + (sort ? style.cellSortPadding : 0),
+      props.paddingRight ?? props.padding ?? (tail ? sidePadding ?? style.cellSidePadding : style.cellPadding),
   };
 }
 
@@ -167,6 +166,7 @@ function getColumnMinWidth(value?: number) {
 
 type TableContextData<T> = {
   data: ArrayLike<T>;
+  sidePadding: TableViewProps<T>["sidePadding"];
   rowHeight: TableViewProps<T>["rowHeight"];
   rowExpanded: TableViewProps<T>["rowExpanded"];
   rowBorderHidden: TableViewProps<T>["rowBorderHidden"];
@@ -187,6 +187,7 @@ type RowProps<T> = {
 function Row<T>({ index, focused, data }: RowProps<T>) {
   const {
     data: rowObjects,
+    sidePadding,
     rowHeight,
     rowExpanded,
     rowBorderHidden,
@@ -216,8 +217,9 @@ function Row<T>({ index, focused, data }: RowProps<T>) {
         const columnProps = parseColumnProps<T>(
           column.props,
           visualStyle,
+          sidePadding,
           columnIndex === 0,
-          columnIndex === columnCount
+          columnIndex === columnCount - 1
         );
 
         const cell = (
@@ -329,6 +331,7 @@ export const TableView: React.ForwardRefExoticComponent<
     onHorizontalScroll,
     keyboardNavigation,
     empty,
+    sidePadding,
     rowBorderHidden,
     lastRowBorderVisible,
     ...other
@@ -402,6 +405,7 @@ export const TableView: React.ForwardRefExoticComponent<
   const contextData = useMemo<TableContextData<T>>(
     () => ({
       data: data ?? [],
+      sidePadding,
       rowHeight,
       rowExpanded,
       rowBorderHidden,
@@ -415,6 +419,7 @@ export const TableView: React.ForwardRefExoticComponent<
     [
       children,
       data,
+      sidePadding,
       rowHeight,
       rowExpanded,
       interactive,
@@ -437,9 +442,9 @@ export const TableView: React.ForwardRefExoticComponent<
           const columnProps = parseColumnProps<T>(
             column.props,
             visualStyle,
+            sidePadding,
             columnIndex === 0,
-            columnIndex === columnCount,
-            column.props.sortKey != null
+            columnIndex === columnCount - 1
           );
 
           const header = (
@@ -464,7 +469,18 @@ export const TableView: React.ForwardRefExoticComponent<
       });
     }
     return [fixedHeaders, otherHeaders];
-  }, [children, headerHeight, sortKey, sortDir, onSortChanged, theme, visualStyle, visualAppearance, columnCount]);
+  }, [
+    children,
+    sidePadding,
+    headerHeight,
+    sortKey,
+    sortDir,
+    onSortChanged,
+    theme,
+    visualStyle,
+    visualAppearance,
+    columnCount,
+  ]);
 
   // keep track of the scroll position
   const firstVisibleRow = useRef<number>(0);
@@ -539,6 +555,9 @@ export const TableView: React.ForwardRefExoticComponent<
       ? rowHeight
       : rowHeight[0];
 
+  const [hasScrollBar, setHasScrollBar] = useState(false);
+  const onScrollBarChanged = useCallback((v: boolean) => setHasScrollBar(v), [setHasScrollBar]);
+
   // [!] use style to set marginLeft on the header Pane, since the value
   // changes dynamically and should not be captured by the CSS rule
   // [!] use zIndex on the outer pane to create local stacking context
@@ -561,7 +580,7 @@ export const TableView: React.ForwardRefExoticComponent<
           grow={0}
           shrink={0}
           paddingLeft={otherHeaders.length > 0 ? fixedWidth : 0}
-          paddingRight={theme.components.scroller.style.thumbSize}
+          paddingRight={hasScrollBar ? theme.components.scroller.style.thumbSize : 0}
           background={visualAppearance.header.back}
           borderBottom={visualAppearance.header.border}
           style={{
@@ -581,7 +600,7 @@ export const TableView: React.ForwardRefExoticComponent<
             height={headerHeight}
             grow={0}
             shrink={0}
-            paddingRight={otherHeaders.length === 0 ? theme.components.scroller.style.thumbSize : 0}
+            paddingRight={otherHeaders.length === 0 && hasScrollBar ? theme.components.scroller.style.thumbSize : 0}
             background={visualAppearance.header.back}
             borderBottom={visualAppearance.header.border}
             borderRight={visualAppearance.header.border}
@@ -605,6 +624,7 @@ export const TableView: React.ForwardRefExoticComponent<
           scrollOffsetY={scrollOffsetY}
           scrollAlignment={scrollAlignment}
           onScroll={onScrollCore}
+          onScrollBarVisibilityChanged={onScrollBarChanged}
           onHorizontalScroll={onHorizontalScrollCore}
           minContentWidth={totalWidth}
           onItemClick={onRowClickCore}

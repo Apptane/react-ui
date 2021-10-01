@@ -9,6 +9,7 @@ import {
   useCallback,
   useEffect,
   useImperativeHandle,
+  useLayoutEffect,
   useReducer,
   useRef,
 } from "react";
@@ -218,6 +219,7 @@ export const VirtualList = forwardRef(
       scrollIndex,
       scrollAlignment = "smart",
       onScroll,
+      onScrollBarVisibilityChanged,
       onHorizontalScroll,
       keyboardNavigation,
       onItemFocus,
@@ -388,6 +390,18 @@ export const VirtualList = forwardRef(
       },
       [keyboardNavigation, itemCount, itemsPerPage, onItemFocus, onItemClick, state.focusedIndex, pageSize]
     );
+
+    const hasVScrollBar =
+      scrollerRef.current != null && scrollerRef.current.scrollHeight > scrollerRef.current.clientHeight;
+
+    const hasHScrollBar =
+      scrollerRef.current != null && scrollerRef.current.scrollWidth > scrollerRef.current.clientWidth;
+
+    useLayoutEffect(() => {
+      if (onScrollBarVisibilityChanged != null) {
+        onScrollBarVisibilityChanged(hasVScrollBar, hasHScrollBar);
+      }
+    }, [onScrollBarVisibilityChanged, hasVScrollBar, hasHScrollBar]);
 
     return (
       <Scroller

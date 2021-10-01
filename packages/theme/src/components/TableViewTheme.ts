@@ -8,7 +8,7 @@ const DefaultTableViewTheme: TableViewTheme = {
     fixedBorderWidth: 2,
     cellPadding: 16,
     cellSidePadding: 24,
-    cellSortPadding: -8,
+    cellSortShift: -8,
     sortIconSpacing: 4,
     sortIconSize: 20,
     font: {

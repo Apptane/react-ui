@@ -21,12 +21,14 @@ import { XYChartPane } from "./XYChartPane";
 type XYScatterChartPaneBasePropsEx<X extends DomainXValue, Data = void> = XYScatterChartPanePropsBase<X, Data> &
   XYChartPanePropsExBase & {
     context: ChartData<X>;
-    pointSize: number;
+    minPointSize: number;
+    maxPointSize: number;
   };
 
 function XYScatterChartPaneBase<X extends DomainXValue, Data = void>({
   context,
-  pointSize,
+  minPointSize,
+  maxPointSize,
   ...props
 }: XYScatterChartPaneBasePropsEx<X, Data>) {
   const p = props as XYChartPanePropsBase<X, number, Data> & XYChartPanePropsEx<X>;
@@ -48,7 +50,8 @@ function XYScatterChartPaneBase<X extends DomainXValue, Data = void>({
     scaleY,
     compareY,
     "numeric",
-    pointSize,
+    minPointSize,
+    maxPointSize,
     p,
     p.domainXType === "numeric"
   );
@@ -96,7 +99,7 @@ function XYScatterChartPaneBase<X extends DomainXValue, Data = void>({
       invertY={scaleY.invert}
       findDatum={props.legendInteractive ? findDatum : undefined}
       {...context}
-      tooltipOffset={pointSize * 0.5}>
+      tooltipOffset={maxPointSize * 0.5}>
       {axisY}
       {gridY}
       {props.gridXVisible && p.gridX(p)}
@@ -107,7 +110,8 @@ function XYScatterChartPaneBase<X extends DomainXValue, Data = void>({
 }
 
 type XYScatterChartPanePropsEx = XYChartPanePropsExBase & {
-  pointSize: number;
+  minPointSize: number;
+  maxPointSize: number;
 };
 
 function XYNumericScatterChartPane<Data = void>(
@@ -142,7 +146,8 @@ export function XYScatterChartPane<Data = void>(props: XYScatterChartPaneProps<D
     gridXVisible,
     legendInteractive,
     tooltipVisible,
-    pointSize: props.pointSize ?? 0.05 * Math.min(p.extentX, p.extentY),
+    minPointSize: props.minPointSize ?? 4,
+    maxPointSize: props.maxPointSize ?? 0.05 * Math.min(p.extentX, p.extentY),
     axisYWidth: axisYVisible ? p.axisYWidth : 0,
   };
 

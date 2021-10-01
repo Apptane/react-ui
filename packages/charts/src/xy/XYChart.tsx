@@ -455,7 +455,7 @@ function XYChart(props: XYChartProps) {
     colorMode: colorMode,
     palette: palette,
     background: props.background ?? visualAppearance.back,
-    extent: props.width - axisYWidth, // viewport extent for data series, i.e. X domain
+    extent: Math.max(0, props.width - axisYWidth), // viewport extent for data series, i.e. X domain
     axisYWidth: axisYWidth,
     paneGap: visualStyle.gap,
     axisXHeight: visualStyle.xAxis.height,

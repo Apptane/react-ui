@@ -33,6 +33,11 @@ export interface ChartEmptyBlockProps {
   height: number | string;
 
   /**
+   * Position.
+   */
+  position?: "absolute" | "relative";
+
+  /**
    * Left offset.
    */
   left?: number;

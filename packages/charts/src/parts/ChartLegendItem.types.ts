@@ -1,24 +1,24 @@
 import { Datum, MouseEventCallback } from "../common/Types";
 import { ChartMarkerProps } from "./ChartMarker.types";
 
-export interface ChartLegendItemProps<Data = void> extends Omit<ChartMarkerProps, "color"> {
+export interface ChartLegendItemProps<T extends Datum<Data>, Data = void> extends Omit<ChartMarkerProps, "color"> {
   /**
    * Datum.
    */
-  datum: Datum<Data>;
+  datum: T;
 
   /**
    * Callback invoked when the mouse enters the component.
    */
-  onMouseEnter?: MouseEventCallback<Data>;
+  onMouseEnter?: MouseEventCallback<T, Data>;
 
   /**
    * Callback invoked when the mouse leaves the component.
    */
-  onMouseLeave?: MouseEventCallback<Data>;
+  onMouseLeave?: MouseEventCallback<T, Data>;
 
   /**
    * Callback invoked when the component is clicked.
    */
-  onClick?: MouseEventCallback<Data>;
+  onClick?: MouseEventCallback<T, Data>;
 }

@@ -71,7 +71,6 @@
     "@apptane/react-ui-dialog": "workspace:^1.0.8",
     "@apptane/react-ui-divider": "workspace:^1.0.8",
     "@apptane/react-ui-form": "workspace:^1.0.9",
-    "@apptane/react-ui-gauge": "workspace:^1.0.8",
     "@apptane/react-ui-glyphs": "workspace:^1.0.8",
     "@apptane/react-ui-hooks": "workspace:^1.0.8",
     "@apptane/react-ui-icon": "workspace:^1.0.8",
@@ -98,7 +97,7 @@
     "@apptane/react-ui-virtual-list": "workspace:^1.0.8",
     "@babel/runtime": "7.15.4",
     "@types/prop-types": "15.7.4",
-    "@types/react": "17.0.24"
+    "@types/react": "17.0.26"
   },
   "devDependencies": {
     "react": "17.0.2",

@@ -25,7 +25,6 @@ module.exports = {
     storiesPath("dialog"),
     storiesPath("divider"),
     storiesPath("form"),
-    storiesPath("gauge"),
     storiesPath("icon"),
     storiesPath("input"),
     storiesPath("layout"),

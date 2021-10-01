@@ -381,10 +381,16 @@ export interface XYLineChartPanePropsBase<X extends DomainXValue, Data = void>
 export interface XYScatterChartPanePropsBase<X extends DomainXValue, Data = void>
   extends XYChartPanePropsBase<X, number, Data> {
   /**
+   * Minimum size to use for scaling points.
+   * Defaults to `4`.
+   */
+  minPointSize?: number;
+
+  /**
    * Maximum size to use for scaling points.
    * Defaults to `0.05 × min(width, height)`.
    */
-  pointSize?: number;
+  maxPointSize?: number;
 }
 
 export interface XYTimeLineChartPaneProps<Data = void> extends XYLineChartPanePropsBase<Date, Data> {
@@ -405,6 +411,12 @@ export interface XYBarChartPaneProps<Data = void> extends XYChartPanePropsBase<s
 
 export interface XYBubbleChartPaneProps<Data = void> extends XYChartPanePropsBase<string, string, Data> {
   readonly domainXType?: "ordinal";
+
+  /**
+   * Minimum size to use for scaling bubbles.
+   * Defaults to `4`.
+   */
+  minBubbleSize?: number;
 }
 
 export interface XYNumericScatterChartPaneProps<Data = void> extends XYScatterChartPanePropsBase<number, Data> {

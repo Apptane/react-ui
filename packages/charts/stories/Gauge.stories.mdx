@@ -6,29 +6,9 @@ import { Gauge } from "@apptane/react-ui";
   title="Components/Visualization/Gauge"
   component={Gauge}
   argTypes={{
-    value: {
+    data: {
       table: {
         category: "Data",
-      },
-    },
-    total: {
-      table: {
-        category: "Data",
-      },
-    },
-    colorMode: {
-      table: {
-        category: "Appearance",
-      },
-    },
-    tooltipHidden: {
-      table: {
-        category: "Appearance",
-      },
-    },
-    formatTooltip: {
-      table: {
-        category: "Appearance",
       },
     },
     width: {
@@ -46,6 +26,46 @@ import { Gauge } from "@apptane/react-ui";
         category: "Dimensions",
       },
     },
+    total: {
+      table: {
+        category: "Data",
+      },
+    },
+    colorMode: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    colorScheme: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    color: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    formatValue: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    tooltipVisible: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    legendVisible: {
+      table: {
+        category: "Appearance",
+      },
+    },
+    onClick: {
+      table: {
+        category: "Events",
+      },
+    },
   }}
 />
 
@@ -59,7 +79,7 @@ export const Template = (args) => <Gauge {...args} />;
   <Story
     name="Basic"
     args={{
-      value: [
+      data: [
         {
           label: "Alpha",
           value: 200,
@@ -77,7 +97,8 @@ export const Template = (args) => <Gauge {...args} />;
         },
       ],
       total: 1000,
-      width: 400,
+      height: 12,
+      legendVisible: true,
     }}>
     {Template.bind({})}
   </Story>
@@ -91,7 +112,8 @@ export const Template = (args) => <Gauge {...args} />;
   <Story
     name="Without total"
     args={{
-      value: [
+      onClick: (d) => {},
+      data: [
         {
           label: "Alpha",
           value: 200,
@@ -118,7 +140,7 @@ export const Template = (args) => <Gauge {...args} />;
   <Story
     name="Hues"
     args={{
-      value: [
+      data: [
         {
           label: "Alpha",
           value: 200,
@@ -165,7 +187,7 @@ export const Template = (args) => <Gauge {...args} />;
   <Story
     name="Colormap — 3 values"
     args={{
-      value: [
+      data: [
         {
           label: "Alpha",
           value: 200,
@@ -189,7 +211,7 @@ export const Template = (args) => <Gauge {...args} />;
   <Story
     name="Colormap — 4 values"
     args={{
-      value: [
+      data: [
         {
           label: "Alpha",
           value: 200,
@@ -217,7 +239,7 @@ export const Template = (args) => <Gauge {...args} />;
   <Story
     name="Colormap — 5 values"
     args={{
-      value: [
+      data: [
         {
           label: "Alpha",
           value: 200,
@@ -249,7 +271,7 @@ export const Template = (args) => <Gauge {...args} />;
   <Story
     name="Colormap — 6 value"
     args={{
-      value: [
+      data: [
         {
           label: "Alpha",
           value: 200,
@@ -285,7 +307,7 @@ export const Template = (args) => <Gauge {...args} />;
   <Story
     name="Colormap — 7 values"
     args={{
-      value: [
+      data: [
         {
           label: "Alpha",
           value: 200,
@@ -320,7 +342,3 @@ export const Template = (args) => <Gauge {...args} />;
     {Template.bind({})}
   </Story>
 </Canvas>
-
-## Properties
-
-<ArgsTable story="Basic" />

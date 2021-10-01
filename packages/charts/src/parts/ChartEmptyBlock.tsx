@@ -4,8 +4,8 @@ import { css } from "@emotion/react";
 import { hex2rgba } from "../common/ColorScheme";
 import { ChartEmptyBlockProps } from "./ChartEmptyBlock.types";
 
-const StyleContainer = (background: Color) => css`
-  position: absolute;
+const StyleContainer = (position: string, background: Color) => css`
+  position: ${position};
   display: grid;
   place-items: center;
   background: ${hex2rgba(background, 0.7)};
@@ -25,6 +25,7 @@ export function ChartEmptyBlock({
   children,
   width,
   height,
+  position = "relative",
   top,
   left,
 }: ChartEmptyBlockProps) {
@@ -48,7 +49,7 @@ export function ChartEmptyBlock({
 
   return (
     <div
-      css={StyleContainer(background ?? visualAppearance.back)}
+      css={StyleContainer(position, background ?? visualAppearance.back)}
       style={{ top: top, left: left, width: width, height: height }}>
       <div css={StyleContent}>{content}</div>
     </div>

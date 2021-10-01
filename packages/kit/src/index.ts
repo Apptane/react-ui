@@ -11,7 +11,6 @@ export * from "@apptane/react-ui-cue";
 export * from "@apptane/react-ui-dialog";
 export * from "@apptane/react-ui-divider";
 export * from "@apptane/react-ui-form";
-export * from "@apptane/react-ui-gauge";
 export * from "@apptane/react-ui-glyphs";
 export * from "@apptane/react-ui-hooks";
 export * from "@apptane/react-ui-icon";

@@ -49,6 +49,12 @@ export interface ListBaseProps<T extends ListItemData = void> {
   onScroll?: (offset: number, indexFirst: number, indexLast: number) => void;
 
   /**
+   * Callback invoked when the visibility of horizontal or
+   * vertical scrollbar changes.
+   */
+  onScrollBarVisibilityChanged?: (verticalVisible: boolean, horizontalVisible: boolean) => void;
+
+  /**
    * Callback invoked when the horizontal scroll offset changes.
    * Passed the horizontal scroll offset in pixels.
    */
