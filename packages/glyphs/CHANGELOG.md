@@ -1,5 +1,11 @@
 # @apptane/react-ui-glyphs
 
+## 1.0.9
+
+### Patch Changes
+
+- 109853c: Fixed TableView layout. Fixed bugs and minor improvement to chart presentation. Consolidated Gauge component into `charts` package.
+
 ## 1.0.8
 
 ### Patch Changes

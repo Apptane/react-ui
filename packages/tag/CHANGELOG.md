@@ -1,5 +1,16 @@
 # @apptane/react-ui-tag
 
+## 1.0.9
+
+### Patch Changes
+
+- 109853c: Fixed TableView layout. Fixed bugs and minor improvement to chart presentation. Consolidated Gauge component into `charts` package.
+- Updated dependencies [109853c]
+  - @apptane/react-ui-core@1.0.9
+  - @apptane/react-ui-theme@1.0.9
+  - @apptane/react-ui-tooltip@1.0.9
+  - @apptane/react-ui-typography@1.0.9
+
 ## 1.0.8
 
 ### Patch Changes

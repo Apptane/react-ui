@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook-docs
 
+## 1.0.6
+
+### Patch Changes
+
+- 109853c: Fixed TableView layout. Fixed bugs and minor improvement to chart presentation. Consolidated Gauge component into `charts` package.
+
 ## 1.0.5
 
 ### Patch Changes
