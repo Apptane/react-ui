@@ -66,7 +66,7 @@ importers:
 
   docs/storybook:
     specifiers:
-      '@apptane/react-ui': workspace:^1.0.12
+      '@apptane/react-ui': workspace:^1.0.13
       '@apptane/react-ui-storybook-dark-mode': workspace:^1.0.3
       '@apptane/react-ui-storybook-docs': workspace:^1.0.6
       '@babel/core': 7.15.5
@@ -696,7 +696,7 @@ importers:
       '@apptane/react-ui-bullet': workspace:^1.0.9
       '@apptane/react-ui-button': workspace:^1.0.9
       '@apptane/react-ui-calendar': workspace:^1.0.10
-      '@apptane/react-ui-charts': workspace:^1.0.10
+      '@apptane/react-ui-charts': workspace:^1.0.11
       '@apptane/react-ui-core': workspace:^1.0.9
       '@apptane/react-ui-cue': workspace:^1.0.9
       '@apptane/react-ui-dialog': workspace:^1.0.9
@@ -714,7 +714,7 @@ importers:
       '@apptane/react-ui-scroller': workspace:^1.0.9
       '@apptane/react-ui-selector': workspace:^1.0.10
       '@apptane/react-ui-side-panel': workspace:^1.0.9
-      '@apptane/react-ui-sidebar': workspace:^1.0.9
+      '@apptane/react-ui-sidebar': workspace:^1.0.10
       '@apptane/react-ui-skeleton': workspace:^1.0.9
       '@apptane/react-ui-spinner': workspace:^1.0.9
       '@apptane/react-ui-tableview': workspace:^1.0.11

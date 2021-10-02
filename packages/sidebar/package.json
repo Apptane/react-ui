@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-sidebar",
   "description": "Sidebar component in Apptane React UI framework",
   "license": "Apache-2.0",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "homepage": "https://github.com/apptane/react-ui/tree/master/packages/sidebar#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [

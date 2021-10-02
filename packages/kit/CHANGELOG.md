@@ -1,5 +1,14 @@
 # @apptane/react-ui
 
+## 1.0.13
+
+### Patch Changes
+
+- 9190bf0: Added domainZ support in Bubble/Scatter charts, made SideBar non-flex.
+- Updated dependencies [9190bf0]
+  - @apptane/react-ui-charts@1.0.11
+  - @apptane/react-ui-sidebar@1.0.10
+
 ## 1.0.12
 
 ### Patch Changes
