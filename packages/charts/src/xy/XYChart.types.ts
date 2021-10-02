@@ -413,6 +413,11 @@ export interface XYBubbleChartPaneProps<Data = void> extends XYChartPanePropsBas
   readonly domainXType?: "ordinal";
 
   /**
+   * Value domain (Z).
+   */
+  domainZ?: number[];
+
+  /**
    * Minimum size to use for scaling bubbles.
    * Defaults to `4`.
    */
@@ -421,10 +426,20 @@ export interface XYBubbleChartPaneProps<Data = void> extends XYChartPanePropsBas
 
 export interface XYNumericScatterChartPaneProps<Data = void> extends XYScatterChartPanePropsBase<number, Data> {
   readonly domainXType?: "numeric";
+
+  /**
+   * Value domain (Z).
+   */
+  domainZ?: number[];
 }
 
 export interface XYOrdinalScatterChartPaneProps<Data = void> extends XYScatterChartPanePropsBase<string, Data> {
   readonly domainXType?: "ordinal";
+
+  /**
+   * Value domain (Z).
+   */
+  domainZ?: number[];
 }
 
 export type XYLineChartPaneProps<Data = void> =

@@ -19,6 +19,7 @@ export function XYBubbleChartPane<Data = void>(props: XYBubbleChartPaneProps<Dat
     legendInteractive = true,
     tooltipVisible = true,
     minBubbleSize = 4,
+    domainZ,
     ...p
   } = props as XYBubbleChartPaneProps<Data> & XYChartPanePropsEx<string>; // see XYChartPanes
 
@@ -30,6 +31,7 @@ export function XYBubbleChartPane<Data = void>(props: XYBubbleChartPaneProps<Dat
     legendInteractive,
     tooltipVisible,
     minBubbleSize,
+    domainZ,
     axisYWidth: axisYVisible ? p.axisYWidth : 0,
   };
 
@@ -71,6 +73,8 @@ export function XYBubbleChartPane<Data = void>(props: XYBubbleChartPaneProps<Dat
     scaleYp,
     compareY,
     "ordinal",
+    domainZ ? domainZ[0] : undefined,
+    domainZ ? domainZ[1] : undefined,
     minBubbleSize,
     bandwidth,
     {

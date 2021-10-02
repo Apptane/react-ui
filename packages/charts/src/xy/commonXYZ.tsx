@@ -54,6 +54,8 @@ function useComputedData<X extends DomainXValue, Y extends DomainYValue, Data = 
   scaleY: (v: Y) => number | undefined,
   compareY: ((a: Y, b: Y) => number) | undefined,
   domainYType: DomainType,
+  minDomainZ: number | undefined,
+  maxDomainZ: number | undefined,
   minExtentZ: number,
   maxExtentZ: number,
   { data, palette, colorMode, colorScheme, color: colorFn }: XYChartPanePropsBase<X, Y, Data> & XYChartPanePropsExBase,
@@ -153,7 +155,7 @@ function useComputedData<X extends DomainXValue, Y extends DomainYValue, Data = 
 
     const scaleZ = scaleLinear()
       .rangeRound([minExtentZ, Math.round(maxExtentZ / Math.sqrt(data.length))])
-      .domain([minZ ?? 0, maxZ ?? 0]);
+      .domain([minDomainZ ?? minZ ?? 0, maxDomainZ ?? maxZ ?? 0]);
 
     // second pass to generate node sizes
     computed.forEach((datum) =>
@@ -218,6 +220,8 @@ function useComputedData<X extends DomainXValue, Y extends DomainYValue, Data = 
     data,
     minExtentZ,
     maxExtentZ,
+    minDomainZ,
+    maxDomainZ,
     scaleX,
     compareX,
     domainXType,
@@ -240,6 +244,8 @@ export function useXYZPaneData<X extends DomainXValue, Y extends DomainYValue, D
   scaleY: (v: Y) => number | undefined,
   compareY: ((a: Y, b: Y) => number) | undefined,
   domainYType: DomainType,
+  minDomainZ: number | undefined,
+  maxDomainZ: number | undefined,
   minExtentZ: number,
   maxExtentZ: number,
   props: XYChartPanePropsBase<X, Y, Data> & XYChartPanePropsEx<X>,
@@ -258,6 +264,8 @@ export function useXYZPaneData<X extends DomainXValue, Y extends DomainYValue, D
     scaleY,
     compareY,
     domainYType,
+    minDomainZ,
+    maxDomainZ,
     minExtentZ,
     maxExtentZ,
     props,

@@ -21,12 +21,14 @@ import { XYChartPane } from "./XYChartPane";
 type XYScatterChartPaneBasePropsEx<X extends DomainXValue, Data = void> = XYScatterChartPanePropsBase<X, Data> &
   XYChartPanePropsExBase & {
     context: ChartData<X>;
+    domainZ?: number[];
     minPointSize: number;
     maxPointSize: number;
   };
 
 function XYScatterChartPaneBase<X extends DomainXValue, Data = void>({
   context,
+  domainZ,
   minPointSize,
   maxPointSize,
   ...props
@@ -50,6 +52,8 @@ function XYScatterChartPaneBase<X extends DomainXValue, Data = void>({
     scaleY,
     compareY,
     "numeric",
+    domainZ ? domainZ[0] : undefined,
+    domainZ ? domainZ[1] : undefined,
     minPointSize,
     maxPointSize,
     p,
@@ -136,6 +140,7 @@ export function XYScatterChartPane<Data = void>(props: XYScatterChartPaneProps<D
     gridXVisible = true,
     legendInteractive = true,
     tooltipVisible = true,
+    domainZ,
     ...p
   } = props as XYScatterChartPaneProps<Data> & XYChartPanePropsExBase; // see XYChartPanes
 
@@ -146,6 +151,7 @@ export function XYScatterChartPane<Data = void>(props: XYScatterChartPaneProps<D
     gridXVisible,
     legendInteractive,
     tooltipVisible,
+    domainZ,
     minPointSize: props.minPointSize ?? 4,
     maxPointSize: props.maxPointSize ?? 0.05 * Math.min(p.extentX, p.extentY),
     axisYWidth: axisYVisible ? p.axisYWidth : 0,
