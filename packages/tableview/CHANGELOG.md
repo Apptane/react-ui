@@ -1,5 +1,11 @@
 # @apptane/react-ui-tableview
 
+## 1.0.11
+
+### Patch Changes
+
+- d561cd8: Fixed visual bugs.
+
 ## 1.0.10
 
 ### Patch Changes

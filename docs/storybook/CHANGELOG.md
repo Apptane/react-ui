@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook
 
+## 1.0.10
+
+### Patch Changes
+
+- d561cd8: Fixed visual bugs.
+
 ## 1.0.9
 
 ### Patch Changes

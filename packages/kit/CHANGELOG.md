@@ -1,5 +1,14 @@
 # @apptane/react-ui
 
+## 1.0.12
+
+### Patch Changes
+
+- d561cd8: Fixed visual bugs.
+- Updated dependencies [d561cd8]
+  - @apptane/react-ui-charts@1.0.10
+  - @apptane/react-ui-tableview@1.0.11
+
 ## 1.0.11
 
 ### Patch Changes

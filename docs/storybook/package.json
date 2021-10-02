@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-storybook",
   "description": "Apptane UI Framework Storybook Documentation",
   "license": "Apache-2.0",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": true,
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
@@ -27,7 +27,7 @@
     "deploy:storybook": "storybook-to-ghpages -s build:storybook"
   },
   "devDependencies": {
-    "@apptane/react-ui": "workspace:^1.0.11",
+    "@apptane/react-ui": "workspace:^1.0.12",
     "@apptane/react-ui-storybook-dark-mode": "workspace:^1.0.3",
     "@apptane/react-ui-storybook-docs": "workspace:^1.0.6",
     "@babel/core": "7.15.5",
