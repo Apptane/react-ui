@@ -71,8 +71,8 @@ export function XYBubbleChartPane<Data = void>(props: XYBubbleChartPaneProps<Dat
     scaleYp,
     compareY,
     "ordinal",
-    bandwidth,
     minBubbleSize,
+    bandwidth,
     {
       ...p,
       ...propsEx,

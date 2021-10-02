@@ -5,6 +5,7 @@ import {
   getColorMap,
   resolveMappedColor,
   resolvePaletteReference,
+  useComponentId,
 } from "@apptane/react-ui-core";
 import { useComponentClientSize } from "@apptane/react-ui-hooks";
 import { Pane } from "@apptane/react-ui-pane";
@@ -20,6 +21,8 @@ import { Datum } from "../common/Types";
 import { ChartLegend } from "../parts/ChartLegend";
 import { ChartMarker } from "../parts/ChartMarker";
 import { GaugeDatum, GaugeProps, GaugePropTypes } from "./Gauge.types";
+
+const MIN_TOOLTIP_WIDTH = 120;
 
 const StyleContainer = (width?: number) => css`
   position: relative;
@@ -144,10 +147,12 @@ function Gauge<Data = void>({
     return chunks;
   }, [total, data, containerWidth, colorScheme, color, palette]);
 
+  const componentId = useComponentId("--apptane-gauge");
+
   // rounding radius
   const rr = size / 2;
   const y = (containerHeight - size) / 2;
-  const filterId = `--apptane-round-corner-${size}-${containerWidth}`;
+  const filterId = `${componentId}-rc-${size}-${containerWidth}`;
 
   const [current, setCurrent] = useState<SliceData<Data> | undefined>(undefined);
 
@@ -209,7 +214,7 @@ function Gauge<Data = void>({
         })}
       </svg>
       {legendVisible && (
-        <div style={{ marginTop: visualStyle.legend.margin }}>
+        <div style={{ marginTop: Math.max(0, visualStyle.legend.margin - (containerHeight - size) * 0.5) }}>
           <ChartLegend<SliceData<Data>, Data>
             theme={theme}
             colorMode={actualColorMode}
@@ -225,7 +230,11 @@ function Gauge<Data = void>({
         <div
           css={StyleTooltip(theme.animation)}
           style={{ top: containerHeight / 2, width: containerWidth, height: containerHeight }}>
-          <div style={{ top: 0, left: Math.max(0, current.x + current.w * 0.5) }}>
+          <div
+            style={{
+              top: 0,
+              left: Math.min(Math.max(0, current.x + current.w * 0.5), containerWidth - MIN_TOOLTIP_WIDTH),
+            }}>
             <Tooltip colorMode={actualColorMode}>
               <Pane verticalAlignment="center" orientation="horizontal">
                 <ChartMarker theme={theme} colorMode={actualColorMode} color={current.color} />

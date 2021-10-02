@@ -153,9 +153,9 @@ function parseColumnProps<T>(
     width: w.width,
     minWidth: props.minWidth,
     paddingLeft:
-      props.paddingLeft ?? props.padding ?? (lead ? sidePadding ?? style.cellSidePadding : style.cellPadding),
+      props.paddingLeft ?? (lead ? sidePadding ?? style.cellSidePadding : props.padding ?? style.cellPadding),
     paddingRight:
-      props.paddingRight ?? props.padding ?? (tail ? sidePadding ?? style.cellSidePadding : style.cellPadding),
+      props.paddingRight ?? (tail ? sidePadding ?? style.cellSidePadding : props.padding ?? style.cellPadding),
   };
 }
 
