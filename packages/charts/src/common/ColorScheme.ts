@@ -128,20 +128,6 @@ export function rgba2rgb(rgba: string): string {
   }
 }
 
-/**
- * Converts an rgba() color to a string usable as gradient key.
- * @param {string} rgba - color in 'rgba(rr,gg,bb,a.aa)' format
- */
-export function rgba2id(rgba: string): string {
-  const m = /rgba\(([^)]+)\)/.exec(rgba);
-  if (m != null) {
-    const [r, g, b] = m[1].split(",");
-    return `rgb${r}${g}${b}`;
-  } else {
-    throw new Error(`Invalid rgba color format: ${rgba}`);
-  }
-}
-
 const Gamma = 1.5;
 const GammaInv = 1 / Gamma;
 
