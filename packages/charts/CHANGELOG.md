@@ -1,5 +1,11 @@
 # @apptane/react-ui-charts
 
+## 1.0.12
+
+### Patch Changes
+
+- c5bfa32: Exported ColorScheme-related types.
+
 ## 1.0.11
 
 ### Patch Changes

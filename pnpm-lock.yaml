@@ -696,7 +696,7 @@ importers:
       '@apptane/react-ui-bullet': workspace:^1.0.9
       '@apptane/react-ui-button': workspace:^1.0.9
       '@apptane/react-ui-calendar': workspace:^1.0.10
-      '@apptane/react-ui-charts': workspace:^1.0.11
+      '@apptane/react-ui-charts': workspace:^1.0.12
       '@apptane/react-ui-core': workspace:^1.0.9
       '@apptane/react-ui-cue': workspace:^1.0.9
       '@apptane/react-ui-dialog': workspace:^1.0.9
