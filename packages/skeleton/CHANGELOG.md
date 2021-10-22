@@ -1,5 +1,14 @@
 # @apptane/react-ui-skeleton
 
+## 1.0.11
+
+### Patch Changes
+
+- 5a927de: Improved presentation styles for Hyperlink, FieldLabel, MultiSelector. Moved Gauage's tooltip into Portal.
+- Updated dependencies [5a927de]
+  - @apptane/react-ui-core@1.0.11
+  - @apptane/react-ui-theme@1.0.11
+
 ## 1.0.10
 
 ### Patch Changes

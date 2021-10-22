@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook
 
+## 1.0.13
+
+### Patch Changes
+
+- 5a927de: Improved presentation styles for Hyperlink, FieldLabel, MultiSelector. Moved Gauage's tooltip into Portal.
+
 ## 1.0.12
 
 ### Patch Changes

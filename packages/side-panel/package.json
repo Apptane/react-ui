@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-side-panel",
   "description": "Side panel component in Apptane React UI framework",
   "license": "Apache-2.0",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "homepage": "https://github.com/apptane/react-ui/tree/master/packages/side-panel#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
@@ -62,11 +62,11 @@
     "react-dom": "17.0.2"
   },
   "dependencies": {
-    "@apptane/react-ui-behaviors": "workspace:^1.0.10",
-    "@apptane/react-ui-button": "workspace:^1.0.10",
-    "@apptane/react-ui-core": "workspace:^1.0.10",
-    "@apptane/react-ui-pane": "workspace:^1.0.10",
-    "@apptane/react-ui-theme": "workspace:^1.0.10",
+    "@apptane/react-ui-behaviors": "workspace:^1.0.11",
+    "@apptane/react-ui-button": "workspace:^1.0.11",
+    "@apptane/react-ui-core": "workspace:^1.0.11",
+    "@apptane/react-ui-pane": "workspace:^1.0.11",
+    "@apptane/react-ui-theme": "workspace:^1.0.11",
     "@babel/runtime": "7.15.4",
     "@emotion/core": "11.0.0",
     "@emotion/react": "11.5.0",

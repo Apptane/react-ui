@@ -1,5 +1,19 @@
 # @apptane/react-ui-dialog
 
+## 1.0.11
+
+### Patch Changes
+
+- 5a927de: Improved presentation styles for Hyperlink, FieldLabel, MultiSelector. Moved Gauage's tooltip into Portal.
+- Updated dependencies [5a927de]
+  - @apptane/react-ui-behaviors@1.0.11
+  - @apptane/react-ui-button@1.0.11
+  - @apptane/react-ui-core@1.0.11
+  - @apptane/react-ui-pane@1.0.11
+  - @apptane/react-ui-spinner@1.0.11
+  - @apptane/react-ui-theme@1.0.11
+  - @apptane/react-ui-typography@1.0.11
+
 ## 1.0.10
 
 ### Patch Changes
