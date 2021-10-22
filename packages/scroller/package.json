@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-scroller",
   "description": "Scroller and scrollbar component in Apptane React UI framework",
   "license": "Apache-2.0",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "homepage": "https://github.com/apptane/react-ui/tree/master/packages/scroller#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
@@ -59,14 +59,14 @@
     "react": "17.0.2"
   },
   "dependencies": {
-    "@apptane/react-ui-core": "workspace:^1.0.9",
-    "@apptane/react-ui-hooks": "workspace:^1.0.9",
-    "@apptane/react-ui-theme": "workspace:^1.0.9",
+    "@apptane/react-ui-core": "workspace:^1.0.10",
+    "@apptane/react-ui-hooks": "workspace:^1.0.10",
+    "@apptane/react-ui-theme": "workspace:^1.0.10",
     "@babel/runtime": "7.15.4",
     "@emotion/core": "11.0.0",
-    "@emotion/react": "11.4.1",
+    "@emotion/react": "11.5.0",
     "@types/prop-types": "15.7.4",
-    "@types/react": "17.0.26",
+    "@types/react": "17.0.31",
     "prop-types": "15.7.2"
   }
 }

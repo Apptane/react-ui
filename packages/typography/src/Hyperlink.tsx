@@ -156,7 +156,7 @@ function Hyperlink({
           marginRight={visualStyle.iconSpacing}
         />
       )}
-      <span>{children}</span>
+      <span css={ellipsis ? StyleTextEllipsis : undefined}>{children}</span>
       {(iconAfterName || iconAfterData) && (
         <Icon
           color={disabled ? visualAppearance.disabled.icon : "none"}

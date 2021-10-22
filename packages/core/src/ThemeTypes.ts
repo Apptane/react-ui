@@ -127,5 +127,5 @@ export interface AppearanceProps<VisualAppearance, Appearance = void> {
 
 export const AppearancePropTypes = {
   colorMode: PropTypeColorMode,
-  appearance: PropTypes.func,
+  appearance: PropTypes.any,
 };

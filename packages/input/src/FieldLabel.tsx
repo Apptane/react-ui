@@ -18,6 +18,7 @@ const StyleBox = css`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  flex: 1 1 auto;
 `;
 
 /**

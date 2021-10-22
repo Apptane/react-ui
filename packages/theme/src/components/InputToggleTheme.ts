@@ -20,7 +20,7 @@ const DefaultInputToggleTheme: InputToggleTheme = {
     {
       threshold: 24,
       aspectRatio: 1.8,
-      spacing: 4,
+      spacing: 8,
       padding: 2,
       glyphMargin: 3,
     },

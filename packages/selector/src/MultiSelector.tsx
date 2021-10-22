@@ -30,7 +30,7 @@ function Item<T extends ItemValue>({ children, value, checked, onClick, colorMod
 
   return (
     <Menu.Item onClick={handleClick}>
-      <InputCheck value={checked} label={children} readonly colorMode={colorMode} />
+      <InputCheck value={checked} label={children} readonly colorMode={colorMode} width="100%" labelWidth="100%" />
     </Menu.Item>
   );
 }
@@ -113,7 +113,13 @@ function MultiSelector<T extends ItemValue>({
   items.unshift(<Menu.Divider key="divider" />);
   items.unshift(
     <Menu.Item key="all" onClick={onClickAll}>
-      <InputCheck colorMode={other.colorMode} value={selectionState} indeterminateAllowed readonly>
+      <InputCheck
+        colorMode={other.colorMode}
+        value={selectionState}
+        indeterminateAllowed
+        readonly
+        width="100%"
+        labelWidth="100%">
         {selectionState === true ? "Deselect all" : "Select all"}
       </InputCheck>
     </Menu.Item>

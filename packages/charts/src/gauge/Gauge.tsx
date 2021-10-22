@@ -1,4 +1,5 @@
 import take from "lodash/take";
+import { Portal } from "@apptane/react-ui-behaviors";
 import {
   AnimationStyle,
   Color,
@@ -22,8 +23,6 @@ import { ChartLegend } from "../parts/ChartLegend";
 import { ChartMarker } from "../parts/ChartMarker";
 import { GaugeDatum, GaugeProps, GaugePropTypes } from "./Gauge.types";
 
-const MIN_TOOLTIP_WIDTH = 120;
-
 const StyleContainer = (width?: number) => css`
   position: relative;
   overflow: visible;
@@ -41,7 +40,7 @@ const StyleInteractive = css`
   cursor: pointer;
 `;
 
-const StyleTooltip = (animation: AnimationStyle) => css`
+const StyleTooltip = (animation: AnimationStyle, zIndex: number) => css`
   > div {
     transition-delay: ${animation.delay}ms;
     transition-duration: ${animation.duration}ms;
@@ -53,6 +52,7 @@ const StyleTooltip = (animation: AnimationStyle) => css`
   // prevents tooltip from triggering onMouseLeave
   pointer-events: none;
   position: absolute;
+  z-index: ${zIndex};
 `;
 
 type SliceData<Data = void> = Datum<Data> & {
@@ -167,6 +167,16 @@ function Gauge<Data = void>({
     [onClick]
   );
 
+  function getTooltipLocation() {
+    const containerRect = containerRef.current?.getBoundingClientRect();
+    const containerTop = window.pageYOffset + (containerRect?.top ?? 0);
+    const containerLeft = window.pageXOffset + (containerRect?.left ?? 0);
+    return {
+      top: containerTop + containerHeight / 2,
+      left: containerLeft,
+    };
+  }
+
   return (
     <div ref={containerRef} css={StyleContainer(width)}>
       <svg
@@ -226,36 +236,44 @@ function Gauge<Data = void>({
           />
         </div>
       )}
-      {tooltipVisible && current && (
-        <div
-          css={StyleTooltip(theme.animation)}
-          style={{ top: containerHeight / 2, width: containerWidth, height: containerHeight }}>
-          <div
-            style={{
-              top: 0,
-              left: Math.min(Math.max(0, current.x + current.w * 0.5), containerWidth - MIN_TOOLTIP_WIDTH),
-            }}>
-            <Tooltip colorMode={actualColorMode}>
-              <Pane verticalAlignment="center" orientation="horizontal">
-                <ChartMarker theme={theme} colorMode={actualColorMode} color={current.color} />
-                <Text
-                  color={visualAppearance.tooltip.label}
-                  {...visualStyle.font.tooltip.label}
-                  marginLeft={visualStyle.tooltip.markerSpacing}
-                  nowrap>
-                  {current.d.label}
-                </Text>
-                <Text
-                  color={visualAppearance.tooltip.value}
-                  {...visualStyle.font.tooltip.value}
-                  marginLeft={visualStyle.tooltip.valueSpacing}
-                  nowrap>
-                  {formatValue != null ? formatValue(current.d.value) : current.d.value.toLocaleString()}
-                </Text>
-              </Pane>
-            </Tooltip>
-          </div>
-        </div>
+      {tooltipVisible && (
+        <Portal trapEvents={false}>
+          {current && (
+            <div
+              css={StyleTooltip(theme.animation, theme.zindex.tooltip)}
+              style={{
+                ...getTooltipLocation(),
+                width: containerWidth,
+                height: containerHeight,
+              }}>
+              <div
+                style={{
+                  top: 0,
+                  left: Math.min(Math.max(0, current.x + current.w * 0.5), containerWidth),
+                }}>
+                <Tooltip colorMode={actualColorMode}>
+                  <Pane verticalAlignment="center" orientation="horizontal">
+                    <ChartMarker theme={theme} colorMode={actualColorMode} color={current.color} />
+                    <Text
+                      color={visualAppearance.tooltip.label}
+                      {...visualStyle.font.tooltip.label}
+                      marginLeft={visualStyle.tooltip.markerSpacing}
+                      nowrap>
+                      {current.d.label}
+                    </Text>
+                    <Text
+                      color={visualAppearance.tooltip.value}
+                      {...visualStyle.font.tooltip.value}
+                      marginLeft={visualStyle.tooltip.valueSpacing}
+                      nowrap>
+                      {formatValue != null ? formatValue(current.d.value) : current.d.value.toLocaleString()}
+                    </Text>
+                  </Pane>
+                </Tooltip>
+              </div>
+            </div>
+          )}
+        </Portal>
       )}
     </div>
   );

@@ -1,5 +1,11 @@
 # @apptane/react-ui-core
 
+## 1.0.10
+
+### Patch Changes
+
+- 4a2f5d5: Improved presentational styles for Hyperlink, FieldLabel, MultiSelector. Place Gauge's tooltip into portal to simplify embedding.
+
 ## 1.0.9
 
 ### Patch Changes

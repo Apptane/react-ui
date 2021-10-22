@@ -1,5 +1,19 @@
 # @apptane/react-ui-charts
 
+## 1.0.13
+
+### Patch Changes
+
+- 4a2f5d5: Improved presentational styles for Hyperlink, FieldLabel, MultiSelector. Place Gauge's tooltip into portal to simplify embedding.
+- Updated dependencies [4a2f5d5]
+  - @apptane/react-ui-behaviors@1.0.10
+  - @apptane/react-ui-core@1.0.10
+  - @apptane/react-ui-hooks@1.0.10
+  - @apptane/react-ui-pane@1.0.10
+  - @apptane/react-ui-theme@1.0.10
+  - @apptane/react-ui-tooltip@1.0.10
+  - @apptane/react-ui-typography@1.0.10
+
 ## 1.0.12
 
 ### Patch Changes

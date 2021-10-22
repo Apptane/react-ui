@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-glyphs",
   "description": "Built-in glyphs in Apptane React UI framework",
   "license": "Apache-2.0",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "homepage": "https://github.com/apptane/react-ui/tree/master/packages/glyphs#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
@@ -61,6 +61,6 @@
   "dependencies": {
     "@babel/runtime": "7.15.4",
     "@types/prop-types": "15.7.4",
-    "@types/react": "17.0.26"
+    "@types/react": "17.0.31"
   }
 }
