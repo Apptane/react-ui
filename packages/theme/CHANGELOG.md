@@ -1,5 +1,11 @@
 # @apptane/react-ui-theme
 
+## 1.0.12
+
+### Patch Changes
+
+- caeba92: Fixed visual inconsistencies for tooltip, selector, table and charts.
+
 ## 1.0.11
 
 ### Patch Changes

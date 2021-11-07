@@ -1,5 +1,16 @@
 # @apptane/react-ui-sidebar
 
+## 1.0.13
+
+### Patch Changes
+
+- caeba92: Fixed visual inconsistencies for tooltip, selector, table and charts.
+- Updated dependencies [caeba92]
+  - @apptane/react-ui-theme@1.0.12
+  - @apptane/react-ui-tooltip@1.0.12
+  - @apptane/react-ui-avatar@1.0.12
+  - @apptane/react-ui-button@1.0.12
+
 ## 1.0.12
 
 ### Patch Changes

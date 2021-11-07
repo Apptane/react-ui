@@ -1,5 +1,23 @@
 # @apptane/react-ui
 
+## 1.0.17
+
+### Patch Changes
+
+- caeba92: Fixed visual inconsistencies for tooltip, selector, table and charts.
+- Updated dependencies [caeba92]
+  - @apptane/react-ui-charts@1.0.15
+  - @apptane/react-ui-selector@1.0.13
+  - @apptane/react-ui-tableview@1.0.14
+  - @apptane/react-ui-theme@1.0.12
+  - @apptane/react-ui-tooltip@1.0.12
+  - @apptane/react-ui-avatar@1.0.12
+  - @apptane/react-ui-button@1.0.12
+  - @apptane/react-ui-cue@1.0.12
+  - @apptane/react-ui-input@1.0.13
+  - @apptane/react-ui-sidebar@1.0.13
+  - @apptane/react-ui-tag@1.0.12
+
 ## 1.0.16
 
 ### Patch Changes

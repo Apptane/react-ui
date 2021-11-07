@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook
 
+## 1.0.14
+
+### Patch Changes
+
+- caeba92: Fixed visual inconsistencies for tooltip, selector, table and charts.
+
 ## 1.0.13
 
 ### Patch Changes

@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-tableview",
   "description": "Virtualized table view component in Apptane React UI framework",
   "license": "Apache-2.0",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "homepage": "https://github.com/apptane/react-ui/tree/master/packages/tableview#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
@@ -64,7 +64,7 @@
     "@apptane/react-ui-core": "workspace:^1.0.11",
     "@apptane/react-ui-icon": "workspace:^1.0.11",
     "@apptane/react-ui-pane": "workspace:^1.0.11",
-    "@apptane/react-ui-theme": "workspace:^1.0.11",
+    "@apptane/react-ui-theme": "workspace:^1.0.12",
     "@apptane/react-ui-typography": "workspace:^1.0.11",
     "@apptane/react-ui-virtual-list": "workspace:^1.0.11",
     "@babel/runtime": "7.15.4",

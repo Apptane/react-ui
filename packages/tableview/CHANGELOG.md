@@ -1,5 +1,13 @@
 # @apptane/react-ui-tableview
 
+## 1.0.14
+
+### Patch Changes
+
+- caeba92: Fixed visual inconsistencies for tooltip, selector, table and charts.
+- Updated dependencies [caeba92]
+  - @apptane/react-ui-theme@1.0.12
+
 ## 1.0.13
 
 ### Patch Changes

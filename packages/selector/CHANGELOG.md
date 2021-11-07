@@ -1,5 +1,15 @@
 # @apptane/react-ui-selector
 
+## 1.0.13
+
+### Patch Changes
+
+- caeba92: Fixed visual inconsistencies for tooltip, selector, table and charts.
+- Updated dependencies [caeba92]
+  - @apptane/react-ui-theme@1.0.12
+  - @apptane/react-ui-input@1.0.13
+  - @apptane/react-ui-tag@1.0.12
+
 ## 1.0.12
 
 ### Patch Changes
