@@ -1,5 +1,13 @@
 # @apptane/react-ui-storybook-dark-mode
 
+## 1.0.4
+
+### Patch Changes
+
+- 748901a: Updated Babel runtime package
+- Updated dependencies [748901a]
+  - @apptane/react-ui-theme@1.0.13
+
 ## 1.0.3
 
 ### Patch Changes

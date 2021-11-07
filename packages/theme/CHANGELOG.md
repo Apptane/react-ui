@@ -1,5 +1,13 @@
 # @apptane/react-ui-theme
 
+## 1.0.13
+
+### Patch Changes
+
+- 748901a: Updated Babel runtime package
+- Updated dependencies [748901a]
+  - @apptane/react-ui-core@1.0.12
+
 ## 1.0.12
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @apptane/react-ui-cue
 
+## 1.0.13
+
+### Patch Changes
+
+- 748901a: Updated Babel runtime package
+- Updated dependencies [748901a]
+  - @apptane/react-ui-behaviors@1.0.12
+  - @apptane/react-ui-core@1.0.12
+  - @apptane/react-ui-icon@1.0.12
+  - @apptane/react-ui-theme@1.0.13
+  - @apptane/react-ui-tooltip@1.0.13
+  - @apptane/react-ui-typography@1.0.12
+
 ## 1.0.12
 
 ### Patch Changes

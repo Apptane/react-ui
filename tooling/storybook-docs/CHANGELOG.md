@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook-docs
 
+## 1.0.7
+
+### Patch Changes
+
+- 748901a: Updated Babel runtime package
+
 ## 1.0.6
 
 ### Patch Changes

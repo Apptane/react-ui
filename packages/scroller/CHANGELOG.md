@@ -1,5 +1,15 @@
 # @apptane/react-ui-scroller
 
+## 1.0.12
+
+### Patch Changes
+
+- 748901a: Updated Babel runtime package
+- Updated dependencies [748901a]
+  - @apptane/react-ui-core@1.0.12
+  - @apptane/react-ui-hooks@1.0.12
+  - @apptane/react-ui-theme@1.0.13
+
 ## 1.0.11
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @apptane/react-ui-side-panel
 
+## 1.0.12
+
+### Patch Changes
+
+- 748901a: Updated Babel runtime package
+- Updated dependencies [748901a]
+  - @apptane/react-ui-behaviors@1.0.12
+  - @apptane/react-ui-button@1.0.13
+  - @apptane/react-ui-core@1.0.12
+  - @apptane/react-ui-pane@1.0.12
+  - @apptane/react-ui-theme@1.0.13
+
 ## 1.0.11
 
 ### Patch Changes

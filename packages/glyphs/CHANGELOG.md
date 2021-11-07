@@ -1,5 +1,11 @@
 # @apptane/react-ui-glyphs
 
+## 1.0.12
+
+### Patch Changes
+
+- 748901a: Updated Babel runtime package
+
 ## 1.0.11
 
 ### Patch Changes
