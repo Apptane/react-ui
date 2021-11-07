@@ -143,3 +143,26 @@ Specify `formatValue` function for custom formatting of the value:
     {Template.bind({})}
   </Story>
 </Canvas>
+
+## Flexible width
+
+<Canvas withSource="none">
+  <Story name="Flexible width">
+    <Pane width={400}>
+      <StateManager initialValue={undefined}>
+        {({ state, setState }) => (
+          <MultiSelector value={state} onChange={setState} size="large" width="100%">
+            <MultiSelector.Item value="a">
+              <Pane grow={1} horizontalAlignment="space-between" orientation="horizontal">
+                <span>Alpha</span>
+                <span>A</span>
+              </Pane>
+            </MultiSelector.Item>
+            <MultiSelector.Item value="b">Bravo</MultiSelector.Item>
+            <MultiSelector.Item value="c">Charlie</MultiSelector.Item>
+          </MultiSelector>
+        )}
+      </StateManager>
+    </Pane>
+  </Story>
+</Canvas>

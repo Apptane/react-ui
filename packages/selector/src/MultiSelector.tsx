@@ -147,7 +147,7 @@ function MultiSelector<T extends ItemValue>({
         </Menu>
       )}>
       {({ visible }: { visible?: boolean }) => (
-        <InputBox ref={ref} {...other} focused={visible} cursor="pointer" glyph="i:arrow-down">
+        <InputBox ref={ref} {...other} width="100%" focused={visible} cursor="pointer" glyph="i:arrow-down">
           <button css={StyleControl}>{displayValue}</button>
         </InputBox>
       )}

@@ -25,7 +25,7 @@ const DefaultChartXYTheme: ChartXYTheme = {
       gridStroke: 1,
     },
     overlay: {
-      opacity: 0.1,
+      opacity: 0.05,
       padding: 4,
     },
     gap: 24,

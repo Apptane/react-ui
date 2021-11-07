@@ -79,6 +79,7 @@ const StyleCells = css`
   flex-wrap: nowrap;
   align-items: center;
   box-sizing: border-box;
+  overflow: hidden;
 `;
 
 const StyleCellsOther = css`

@@ -147,7 +147,7 @@ function XYBandLayer<X extends DomainXValue, Data = void>({
               key={id ?? `_${index}`}
               d={generator(bands) ?? undefined}
               fill={loColor}
-              opacity={selectedDatumId != null && id !== selectedDatumId ? 0.5 : undefined}
+              opacity={selectedDatumId != null ? (id !== selectedDatumId ? 0.5 : undefined) : 0.65}
             />
           )
       )}

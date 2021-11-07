@@ -119,6 +119,7 @@ const StyleContent = (style: TooltipVisualStyle, appearance: TooltipVisualAppear
   background-color: ${appearance.back};
   ${appearance.border && `border: solid 1px ${appearance.border}`};
   border-radius: ${style.borderRadius}px;
+  overflow: hidden;
 `;
 
 function StyleArrow(style: TooltipVisualStyle, appearance: TooltipVisualAppearance, placement: Placement) {
@@ -186,7 +187,7 @@ function Tooltip({
             {header}
           </Text>
         )}
-        <Paragraph {...visualStyle.font.body} color={visualAppearance.text} alignment="left">
+        <Paragraph {...visualStyle.font.body} color={visualAppearance.text} alignment="left" ellipsis>
           {children}
         </Paragraph>
       </div>

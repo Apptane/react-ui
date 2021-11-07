@@ -74,13 +74,14 @@ export function XYChartTooltip<X extends DomainXValue, Y extends DomainYValue, D
       }
 
       items.push(
-        <Pane key={`_${index}`} verticalAlignment="center" orientation="horizontal">
+        <Pane key={`_${index}`} verticalAlignment="center" orientation="horizontal" overflow="hidden">
           <ChartMarker theme={theme} colorMode={colorMode} color={d.color ?? ""} {...other} />
           <Text
             color={visualAppearance.tooltip.label}
             {...visualStyle.font.tooltip.label}
             marginLeft={visualStyle.tooltip.markerSpacing}
-            nowrap>
+            nowrap
+            ellipsis>
             {d.label}
           </Text>
           <Pane grow={1} verticalAlignment="center" horizontalAlignment="right" orientation="horizontal">
@@ -125,7 +126,7 @@ export function XYChartTooltip<X extends DomainXValue, Y extends DomainYValue, D
         top: Math.round(top),
         transform: slice.y != null ? "translateY(-50%)" : undefined,
       }}>
-      <Tooltip colorMode={colorMode}>
+      <Tooltip colorMode={colorMode} maxWidth={Math.min(350, width)}>
         {slice.label && (
           <Text
             color={visualAppearance.tooltip.header}
