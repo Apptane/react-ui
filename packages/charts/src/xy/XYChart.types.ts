@@ -653,6 +653,11 @@ export type XYChartPanePropsEx<X extends DomainXValue> = XYChartPanePropsExBase 
   invertX: (v: number) => X | undefined;
 
   /**
+   * X axis title.
+   */
+  axisXTitle?: string;
+
+  /**
    * An optional function to format primary domain (X) values
    * displayed in the tooltip.
    */

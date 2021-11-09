@@ -59,6 +59,7 @@ export function XYChartPane<X extends DomainXValue, Y extends DomainYValue, Data
   extentX,
   extentY,
   axisYWidth,
+  axisXTitle,
   axisYTitle,
   tooltipVisible,
   tooltipTotalVisible,
@@ -114,8 +115,16 @@ export function XYChartPane<X extends DomainXValue, Y extends DomainYValue, Data
 
         function formatLabel(nx: X | undefined, ny: Y | undefined) {
           const parts: string[] = [];
-          if (nx != null) parts.push(formatXTooltip != null ? formatXTooltip(nx) : nx.toLocaleString());
-          if (ny != null) parts.push(formatYTooltip != null ? formatYTooltip(ny) : ny.toLocaleString());
+          if (nx != null) {
+            const s = formatXTooltip != null ? formatXTooltip(nx) : nx.toLocaleString();
+            parts.push(axisXTitle ? `${axisXTitle}: ${s}` : s);
+          }
+
+          if (ny != null) {
+            const s = formatYTooltip != null ? formatYTooltip(ny) : ny.toLocaleString();
+            parts.push(axisYTitle ? `${axisYTitle}: ${s}` : s);
+          }
+
           return parts.join(" • ");
         }
 
@@ -137,6 +146,8 @@ export function XYChartPane<X extends DomainXValue, Y extends DomainYValue, Data
     },
     [
       computed,
+      axisXTitle,
+      axisYTitle,
       scaleX,
       scaleY,
       invertX,
