@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook
 
+## 1.0.17
+
+### Patch Changes
+
+- 28b5742: Fixed crash when showing tooltip for non-existent X value
+
 ## 1.0.16
 
 ### Patch Changes

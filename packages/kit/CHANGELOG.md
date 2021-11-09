@@ -1,5 +1,13 @@
 # @apptane/react-ui
 
+## 1.0.20
+
+### Patch Changes
+
+- 28b5742: Fixed crash when showing tooltip for non-existent X value
+- Updated dependencies [28b5742]
+  - @apptane/react-ui-charts@1.0.18
+
 ## 1.0.19
 
 ### Patch Changes
