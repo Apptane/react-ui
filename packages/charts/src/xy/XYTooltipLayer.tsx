@@ -54,18 +54,20 @@ export const XYTooltipLayer = <X extends DomainXValue, Data = void>({
   if (data != null && domainX != null && slice.domainXIndex != null) {
     // use domain index to locate the corresponding value
     const dx = domainX.values[slice.domainXIndex];
-    data.forEach((d, index) => {
-      const p = findValue(d, (p) => domainX.isEqual(p.x, dx));
-      if (p != null) {
-        const _p = p as unknown as XYComputedValue;
-        if (_p.c != null && typeof p.y === "number" && isFinite(p.y)) {
-          markers.push(<circle key={`_${index}`} cx={0} cy={_p.c.y} r={4.5} stroke={palette.white} fill={d.color} />);
-          if (_p.c.y < minY) {
-            minY = _p.c.y;
+    if (dx != null) {
+      data.forEach((d, index) => {
+        const p = findValue(d, (p) => domainX.isEqual(p.x, dx));
+        if (p != null) {
+          const _p = p as unknown as XYComputedValue;
+          if (_p.c != null && typeof p.y === "number" && isFinite(p.y)) {
+            markers.push(<circle key={`_${index}`} cx={0} cy={_p.c.y} r={4.5} stroke={palette.white} fill={d.color} />);
+            if (_p.c.y < minY) {
+              minY = _p.c.y;
+            }
           }
         }
-      }
-    });
+      });
+    }
   }
 
   return markers.length > 0 ? (
