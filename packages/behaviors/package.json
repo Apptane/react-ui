@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-behaviors",
   "description": "Visual and non-visual behaviors in Apptane React UI framework",
   "license": "Apache-2.0",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "homepage": "https://github.com/apptane/react-ui/tree/master/packages/behaviors#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
@@ -68,9 +68,9 @@
     "react-dom": "17.0.2"
   },
   "dependencies": {
-    "@apptane/react-ui-core": "workspace:^1.0.12",
-    "@apptane/react-ui-hooks": "workspace:^1.0.12",
-    "@apptane/react-ui-theme": "workspace:^1.0.13",
+    "@apptane/react-ui-core": "workspace:^1.0.13",
+    "@apptane/react-ui-hooks": "workspace:^1.0.13",
+    "@apptane/react-ui-theme": "workspace:^1.0.14",
     "@babel/runtime": "7.16.0",
     "@emotion/core": "11.0.0",
     "@emotion/react": "11.5.0",

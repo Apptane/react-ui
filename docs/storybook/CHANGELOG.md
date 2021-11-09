@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook
 
+## 1.0.18
+
+### Patch Changes
+
+- 536c879: Updated packages. Improved tooltip presentation in XYZ chart pane.
+
 ## 1.0.17
 
 ### Patch Changes

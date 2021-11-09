@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-tag",
   "description": "Tag component in Apptane React UI framework",
   "license": "Apache-2.0",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "homepage": "https://github.com/apptane/react-ui/tree/master/packages/tag#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
@@ -60,10 +60,10 @@
     "react-dom": "17.0.2"
   },
   "dependencies": {
-    "@apptane/react-ui-core": "workspace:^1.0.12",
-    "@apptane/react-ui-theme": "workspace:^1.0.13",
-    "@apptane/react-ui-tooltip": "workspace:^1.0.13",
-    "@apptane/react-ui-typography": "workspace:^1.0.12",
+    "@apptane/react-ui-core": "workspace:^1.0.13",
+    "@apptane/react-ui-theme": "workspace:^1.0.14",
+    "@apptane/react-ui-tooltip": "workspace:^1.0.14",
+    "@apptane/react-ui-typography": "workspace:^1.0.13",
     "@babel/runtime": "7.16.0",
     "@emotion/core": "11.0.0",
     "@emotion/react": "11.5.0",

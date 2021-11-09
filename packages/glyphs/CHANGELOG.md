@@ -1,5 +1,11 @@
 # @apptane/react-ui-glyphs
 
+## 1.0.13
+
+### Patch Changes
+
+- 536c879: Updated packages. Improved tooltip presentation in XYZ chart pane.
+
 ## 1.0.12
 
 ### Patch Changes

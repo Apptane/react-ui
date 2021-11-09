@@ -1,5 +1,17 @@
 # @apptane/react-ui-form
 
+## 1.0.14
+
+### Patch Changes
+
+- 536c879: Updated packages. Improved tooltip presentation in XYZ chart pane.
+- Updated dependencies [536c879]
+  - @apptane/react-ui-core@1.0.13
+  - @apptane/react-ui-input@1.0.15
+  - @apptane/react-ui-pane@1.0.13
+  - @apptane/react-ui-theme@1.0.14
+  - @apptane/react-ui-typography@1.0.13
+
 ## 1.0.13
 
 ### Patch Changes
