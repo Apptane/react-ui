@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook
 
+## 1.0.19
+
+### Patch Changes
+
+- 8b33556: Updated packages. Pie chart: minor visual fix.
+
 ## 1.0.18
 
 ### Patch Changes

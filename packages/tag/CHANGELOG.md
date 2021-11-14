@@ -1,5 +1,16 @@
 # @apptane/react-ui-tag
 
+## 1.0.15
+
+### Patch Changes
+
+- 8b33556: Updated packages. Pie chart: minor visual fix.
+- Updated dependencies [8b33556]
+  - @apptane/react-ui-core@1.0.14
+  - @apptane/react-ui-theme@1.0.15
+  - @apptane/react-ui-tooltip@1.0.15
+  - @apptane/react-ui-typography@1.0.14
+
 ## 1.0.14
 
 ### Patch Changes

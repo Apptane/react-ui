@@ -1,5 +1,22 @@
 # @apptane/react-ui-sidebar
 
+## 1.0.16
+
+### Patch Changes
+
+- 8b33556: Updated packages. Pie chart: minor visual fix.
+- Updated dependencies [8b33556]
+  - @apptane/react-ui-avatar@1.0.15
+  - @apptane/react-ui-badge@1.0.14
+  - @apptane/react-ui-bullet@1.0.14
+  - @apptane/react-ui-button@1.0.15
+  - @apptane/react-ui-core@1.0.14
+  - @apptane/react-ui-icon@1.0.14
+  - @apptane/react-ui-pane@1.0.14
+  - @apptane/react-ui-theme@1.0.15
+  - @apptane/react-ui-tooltip@1.0.15
+  - @apptane/react-ui-typography@1.0.14
+
 ## 1.0.15
 
 ### Patch Changes

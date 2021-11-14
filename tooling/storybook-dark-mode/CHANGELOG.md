@@ -1,5 +1,13 @@
 # @apptane/react-ui-storybook-dark-mode
 
+## 1.0.5
+
+### Patch Changes
+
+- 8b33556: Updated packages. Pie chart: minor visual fix.
+- Updated dependencies [8b33556]
+  - @apptane/react-ui-theme@1.0.15
+
 ## 1.0.4
 
 ### Patch Changes

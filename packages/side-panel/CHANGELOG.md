@@ -1,5 +1,17 @@
 # @apptane/react-ui-side-panel
 
+## 1.0.14
+
+### Patch Changes
+
+- 8b33556: Updated packages. Pie chart: minor visual fix.
+- Updated dependencies [8b33556]
+  - @apptane/react-ui-behaviors@1.0.14
+  - @apptane/react-ui-button@1.0.15
+  - @apptane/react-ui-core@1.0.14
+  - @apptane/react-ui-pane@1.0.14
+  - @apptane/react-ui-theme@1.0.15
+
 ## 1.0.13
 
 ### Patch Changes
