@@ -95,7 +95,7 @@
     "@apptane/react-ui-tooltip": "workspace:^1.0.14",
     "@apptane/react-ui-typography": "workspace:^1.0.13",
     "@apptane/react-ui-virtual-list": "workspace:^1.0.13",
-    "@babel/runtime": "7.16.0",
+    "@babel/runtime": "7.16.3",
     "@types/prop-types": "15.7.4",
     "@types/react": "17.0.34"
   },

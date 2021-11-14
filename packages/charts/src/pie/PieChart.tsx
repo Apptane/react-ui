@@ -118,7 +118,7 @@ const StyleLegendItemValue = (spacing: number) => css`
 const StyleLegendItemPercent = (spacing: number) => css`
   text-align: right;
   flex: none;
-  width: 40px;
+  width: ${40 + spacing}px;
   padding-left: ${spacing}px;
 `;
 

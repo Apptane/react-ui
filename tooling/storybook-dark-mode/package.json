@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "@apptane/react-ui-theme": "workspace:^1.0.13",
-    "@babel/runtime": "7.16.0"
+    "@babel/runtime": "7.16.3"
   },
   "storybook": {
     "displayName": "Apptane UI Dark Mode",
