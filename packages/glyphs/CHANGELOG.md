@@ -1,5 +1,11 @@
 # @apptane/react-ui-glyphs
 
+## 1.0.15
+
+### Patch Changes
+
+- 88d6db0: Updated packages. Added flex auto to MediaObject content.
+
 ## 1.0.14
 
 ### Patch Changes

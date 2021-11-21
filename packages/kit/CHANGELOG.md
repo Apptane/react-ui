@@ -1,5 +1,49 @@
 # @apptane/react-ui
 
+## 1.0.23
+
+### Patch Changes
+
+- 88d6db0: Updated packages. Added flex auto to MediaObject content.
+- Updated dependencies [88d6db0]
+  - @apptane/react-ui-avatar@1.0.16
+  - @apptane/react-ui-badge@1.0.15
+  - @apptane/react-ui-banner@1.0.16
+  - @apptane/react-ui-behaviors@1.0.15
+  - @apptane/react-ui-bullet@1.0.15
+  - @apptane/react-ui-button@1.0.16
+  - @apptane/react-ui-calendar@1.0.16
+  - @apptane/react-ui-charts@1.0.21
+  - @apptane/react-ui-core@1.0.15
+  - @apptane/react-ui-cue@1.0.16
+  - @apptane/react-ui-dialog@1.0.15
+  - @apptane/react-ui-divider@1.0.15
+  - @apptane/react-ui-form@1.0.16
+  - @apptane/react-ui-glyphs@1.0.15
+  - @apptane/react-ui-hooks@1.0.15
+  - @apptane/react-ui-icon@1.0.15
+  - @apptane/react-ui-input@1.0.17
+  - @apptane/react-ui-layout@1.0.16
+  - @apptane/react-ui-media@1.0.15
+  - @apptane/react-ui-menu@1.0.15
+  - @apptane/react-ui-pane@1.0.15
+  - @apptane/react-ui-progress@1.0.16
+  - @apptane/react-ui-scroller@1.0.15
+  - @apptane/react-ui-selector@1.0.17
+  - @apptane/react-ui-side-panel@1.0.15
+  - @apptane/react-ui-sidebar@1.0.17
+  - @apptane/react-ui-skeleton@1.0.15
+  - @apptane/react-ui-spinner@1.0.15
+  - @apptane/react-ui-tableview@1.0.18
+  - @apptane/react-ui-tabs@1.0.16
+  - @apptane/react-ui-tag@1.0.16
+  - @apptane/react-ui-theme@1.0.16
+  - @apptane/react-ui-toaster@1.0.16
+  - @apptane/react-ui-toggle-group@1.0.15
+  - @apptane/react-ui-tooltip@1.0.16
+  - @apptane/react-ui-typography@1.0.15
+  - @apptane/react-ui-virtual-list@1.0.15
+
 ## 1.0.22
 
 ### Patch Changes

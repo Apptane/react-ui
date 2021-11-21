@@ -1,5 +1,16 @@
 # @apptane/react-ui-virtual-list
 
+## 1.0.15
+
+### Patch Changes
+
+- 88d6db0: Updated packages. Added flex auto to MediaObject content.
+- Updated dependencies [88d6db0]
+  - @apptane/react-ui-core@1.0.15
+  - @apptane/react-ui-hooks@1.0.15
+  - @apptane/react-ui-scroller@1.0.15
+  - @apptane/react-ui-theme@1.0.16
+
 ## 1.0.14
 
 ### Patch Changes

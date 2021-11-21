@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook
 
+## 1.0.20
+
+### Patch Changes
+
+- 88d6db0: Updated packages. Added flex auto to MediaObject content.
+
 ## 1.0.19
 
 ### Patch Changes
