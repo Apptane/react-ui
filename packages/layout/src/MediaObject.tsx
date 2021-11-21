@@ -5,7 +5,7 @@ const StyleGrid = (spacing: number) => css`
   display: grid;
   width: 100%;
   grid-column-gap: ${spacing}px;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto minmax(0, 1fr);
   grid-template-rows: repeat(3, minmax(min-content, max-content)) 1fr;
   grid-template-areas:
     "media ."
@@ -59,6 +59,7 @@ const StyleFlexMedia = (alignToTop: boolean, spacing?: number) => css`
 
 const StyleFlexContent = css`
   display: flex;
+  flex: auto;
   flex-direction: column;
   justify-content: center;
 `;

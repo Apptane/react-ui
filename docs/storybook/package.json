@@ -35,14 +35,14 @@
     "@babel/plugin-proposal-export-default-from": "7.16.0",
     "@babel/plugin-proposal-export-namespace-from": "7.16.0",
     "@babel/plugin-proposal-object-rest-spread": "7.16.0",
-    "@babel/plugin-transform-runtime": "7.16.0",
-    "@babel/preset-env": "7.16.0",
+    "@babel/plugin-transform-runtime": "7.16.4",
+    "@babel/preset-env": "7.16.4",
     "@babel/preset-react": "7.16.0",
     "@babel/preset-typescript": "7.16.0",
     "@emotion/babel-plugin": "11.3.0",
     "@emotion/babel-preset-css-prop": "11.2.0",
     "@emotion/core": "11.0.0",
-    "@emotion/react": "11.5.0",
+    "@emotion/react": "11.6.0",
     "@storybook/addon-a11y": "6.3.12",
     "@storybook/addon-actions": "6.3.12",
     "@storybook/addon-essentials": "6.3.12",
@@ -58,7 +58,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "ts-dedent": "2.2.0",
-    "typescript": "4.4.4"
+    "typescript": "4.5.2"
   },
   "browserslist": [
     "defaults",

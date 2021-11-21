@@ -64,9 +64,9 @@
     "@apptane/react-ui-typography": "workspace:^1.0.14",
     "@babel/runtime": "7.16.3",
     "@emotion/core": "11.0.0",
-    "@emotion/react": "11.5.0",
+    "@emotion/react": "11.6.0",
     "@types/prop-types": "15.7.4",
-    "@types/react": "17.0.34",
+    "@types/react": "17.0.35",
     "prop-types": "15.7.2"
   }
 }
