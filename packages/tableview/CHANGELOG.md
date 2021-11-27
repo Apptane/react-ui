@@ -1,5 +1,18 @@
 # @apptane/react-ui-tableview
 
+## 1.0.19
+
+### Patch Changes
+
+- 57506d8: Updated packages. Minor type tweaks.
+- Updated dependencies [57506d8]
+  - @apptane/react-ui-core@1.0.16
+  - @apptane/react-ui-icon@1.0.16
+  - @apptane/react-ui-pane@1.0.16
+  - @apptane/react-ui-theme@1.0.17
+  - @apptane/react-ui-typography@1.0.16
+  - @apptane/react-ui-virtual-list@1.0.16
+
 ## 1.0.18
 
 ### Patch Changes

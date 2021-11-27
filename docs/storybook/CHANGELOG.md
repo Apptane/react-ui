@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook
 
+## 1.0.21
+
+### Patch Changes
+
+- 57506d8: Updated packages. Minor type tweaks.
+
 ## 1.0.20
 
 ### Patch Changes

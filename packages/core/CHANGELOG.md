@@ -1,5 +1,11 @@
 # @apptane/react-ui-core
 
+## 1.0.16
+
+### Patch Changes
+
+- 57506d8: Updated packages. Minor type tweaks.
+
 ## 1.0.15
 
 ### Patch Changes

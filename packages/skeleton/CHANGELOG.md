@@ -1,5 +1,14 @@
 # @apptane/react-ui-skeleton
 
+## 1.0.16
+
+### Patch Changes
+
+- 57506d8: Updated packages. Minor type tweaks.
+- Updated dependencies [57506d8]
+  - @apptane/react-ui-core@1.0.16
+  - @apptane/react-ui-theme@1.0.17
+
 ## 1.0.15
 
 ### Patch Changes

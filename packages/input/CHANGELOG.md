@@ -1,5 +1,23 @@
 # @apptane/react-ui-input
 
+## 1.0.18
+
+### Patch Changes
+
+- 57506d8: Updated packages. Minor type tweaks.
+- Updated dependencies [57506d8]
+  - @apptane/react-ui-behaviors@1.0.16
+  - @apptane/react-ui-core@1.0.16
+  - @apptane/react-ui-cue@1.0.17
+  - @apptane/react-ui-hooks@1.0.16
+  - @apptane/react-ui-icon@1.0.16
+  - @apptane/react-ui-layout@1.0.17
+  - @apptane/react-ui-pane@1.0.16
+  - @apptane/react-ui-tag@1.0.17
+  - @apptane/react-ui-theme@1.0.17
+  - @apptane/react-ui-tooltip@1.0.17
+  - @apptane/react-ui-typography@1.0.16
+
 ## 1.0.17
 
 ### Patch Changes
