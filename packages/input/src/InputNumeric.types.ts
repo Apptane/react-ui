@@ -50,7 +50,7 @@ export interface InputNumericProps extends Omit<InputTextBaseProps, "empty"> {
    * Callback invoked when `value` changes.
    * If callback returns `false` the change is not accepted and reverted to previous value.
    */
-  onChange?: (value?: number | null) => boolean | undefined;
+  onChange?: (value?: number | null) => boolean | undefined | void;
 
   /**
    * Custom key down event handler.

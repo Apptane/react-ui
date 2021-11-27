@@ -56,6 +56,6 @@ export const TableViewCellPropTypes = {
   minWidth: PropTypes.number,
   paddingLeft: PropTypes.number.isRequired,
   paddingRight: PropTypes.number.isRequired,
-  rowObject: PropTypes.object,
+  rowObject: PropTypes.any,
   rowIndex: PropTypes.number,
 };
