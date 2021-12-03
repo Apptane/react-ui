@@ -80,7 +80,7 @@ function Selector<T extends ItemValue>({
   return (
     <InputBox
       {...other}
-      empty={!value}
+      empty={value == null}
       glyph="i:arrow-down"
       control={
         !disabled ? (
