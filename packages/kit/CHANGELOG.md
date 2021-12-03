@@ -1,5 +1,14 @@
 # @apptane/react-ui
 
+## 1.0.25
+
+### Patch Changes
+
+- 6efa896: Fixed incorrect detection of empty value in Selector. Updated packages.
+- Updated dependencies [6efa896]
+  - @apptane/react-ui-calendar@1.0.18
+  - @apptane/react-ui-selector@1.0.19
+
 ## 1.0.24
 
 ### Patch Changes

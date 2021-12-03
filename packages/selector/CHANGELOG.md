@@ -1,5 +1,11 @@
 # @apptane/react-ui-selector
 
+## 1.0.19
+
+### Patch Changes
+
+- 6efa896: Fixed incorrect detection of empty value in Selector. Updated packages.
+
 ## 1.0.18
 
 ### Patch Changes

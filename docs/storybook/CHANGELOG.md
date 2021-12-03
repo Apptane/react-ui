@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook
 
+## 1.0.22
+
+### Patch Changes
+
+- 6efa896: Fixed incorrect detection of empty value in Selector. Updated packages.
+
 ## 1.0.21
 
 ### Patch Changes

@@ -2,7 +2,7 @@
   "name": "@apptane/react-ui-calendar",
   "description": "Calendar component in Apptane React UI framework",
   "license": "Apache-2.0",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "homepage": "https://github.com/apptane/react-ui/tree/master/packages/calendar#readme",
   "author": "Oleg Grodzevich <oleg@apptane.com>",
   "keywords": [
