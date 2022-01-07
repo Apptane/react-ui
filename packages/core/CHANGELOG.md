@@ -1,5 +1,11 @@
 # @apptane/react-ui-core
 
+## 1.0.17
+
+### Patch Changes
+
+- 7331448: Updated packages. Added support for setting value on blur for InputTag.
+
 ## 1.0.16
 
 ### Patch Changes

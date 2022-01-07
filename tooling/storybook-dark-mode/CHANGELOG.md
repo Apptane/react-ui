@@ -1,5 +1,13 @@
 # @apptane/react-ui-storybook-dark-mode
 
+## 1.0.6
+
+### Patch Changes
+
+- 7331448: Updated packages. Added support for setting value on blur for InputTag.
+- Updated dependencies [7331448]
+  - @apptane/react-ui-theme@1.0.18
+
 ## 1.0.5
 
 ### Patch Changes

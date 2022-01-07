@@ -1,5 +1,15 @@
 # @apptane/react-ui-typography
 
+## 1.0.17
+
+### Patch Changes
+
+- 7331448: Updated packages. Added support for setting value on blur for InputTag.
+- Updated dependencies [7331448]
+  - @apptane/react-ui-core@1.0.17
+  - @apptane/react-ui-icon@1.0.17
+  - @apptane/react-ui-theme@1.0.18
+
 ## 1.0.16
 
 ### Patch Changes

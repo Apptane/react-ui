@@ -1,5 +1,11 @@
 # @apptane/react-ui-storybook
 
+## 1.0.23
+
+### Patch Changes
+
+- 7331448: Updated packages. Added support for setting value on blur for InputTag.
+
 ## 1.0.22
 
 ### Patch Changes

@@ -1,5 +1,49 @@
 # @apptane/react-ui
 
+## 1.0.26
+
+### Patch Changes
+
+- 7331448: Updated packages. Added support for setting value on blur for InputTag.
+- Updated dependencies [7331448]
+  - @apptane/react-ui-avatar@1.0.18
+  - @apptane/react-ui-badge@1.0.17
+  - @apptane/react-ui-banner@1.0.18
+  - @apptane/react-ui-behaviors@1.0.17
+  - @apptane/react-ui-bullet@1.0.17
+  - @apptane/react-ui-button@1.0.18
+  - @apptane/react-ui-calendar@1.0.19
+  - @apptane/react-ui-charts@1.0.23
+  - @apptane/react-ui-core@1.0.17
+  - @apptane/react-ui-cue@1.0.18
+  - @apptane/react-ui-dialog@1.0.17
+  - @apptane/react-ui-divider@1.0.17
+  - @apptane/react-ui-form@1.0.18
+  - @apptane/react-ui-glyphs@1.0.17
+  - @apptane/react-ui-hooks@1.0.17
+  - @apptane/react-ui-icon@1.0.17
+  - @apptane/react-ui-input@1.0.19
+  - @apptane/react-ui-layout@1.0.18
+  - @apptane/react-ui-media@1.0.17
+  - @apptane/react-ui-menu@1.0.17
+  - @apptane/react-ui-pane@1.0.17
+  - @apptane/react-ui-progress@1.0.18
+  - @apptane/react-ui-scroller@1.0.17
+  - @apptane/react-ui-selector@1.0.20
+  - @apptane/react-ui-side-panel@1.0.17
+  - @apptane/react-ui-sidebar@1.0.19
+  - @apptane/react-ui-skeleton@1.0.17
+  - @apptane/react-ui-spinner@1.0.17
+  - @apptane/react-ui-tableview@1.0.20
+  - @apptane/react-ui-tabs@1.0.18
+  - @apptane/react-ui-tag@1.0.18
+  - @apptane/react-ui-theme@1.0.18
+  - @apptane/react-ui-toaster@1.0.18
+  - @apptane/react-ui-toggle-group@1.0.17
+  - @apptane/react-ui-tooltip@1.0.18
+  - @apptane/react-ui-typography@1.0.17
+  - @apptane/react-ui-virtual-list@1.0.17
+
 ## 1.0.25
 
 ### Patch Changes
