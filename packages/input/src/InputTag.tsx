@@ -4,7 +4,7 @@ import { useTimeout } from "@apptane/react-ui-hooks";
 import { Tag } from "@apptane/react-ui-tag";
 import { useTheme } from "@apptane/react-ui-theme";
 import { css, keyframes } from "@emotion/react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { InputTagProps, InputTagPropsTypes } from "./InputTag.types";
 import InputTextBase from "./InputTextBase";
 
@@ -300,6 +300,26 @@ function InputTag({
     [currentText, currentEntries, onChange, separators, deleteOnBackspace]
   );
 
+  const onInputBlur = useCallback(
+    (e: React.FocusEvent) => {
+      const targetValue = (e.target as HTMLInputElement).value;
+      if (targetValue) {
+        if (typeof onChange === "function") {
+          // do not append if the value already exists
+          if (currentEntries.some((entry) => entry[0] === targetValue)) {
+            return;
+          }
+
+          onChange(appendValue(currentEntries, targetValue));
+        }
+
+        e.preventDefault();
+        setCurrentText("");
+      }
+    },
+    [currentEntries, onChange]
+  );
+
   // there are three classes of entries:
   // - "removed", exist in currentValue, but not in value;
   // - "added", exist in value, but not in currentValue;
@@ -332,6 +352,7 @@ function InputTag({
       size="auto"
       onInputChange={onInputChange}
       onInputKeyDown={onInputKeyDown}
+      onInputBlur={onInputBlur}
       inputProps={inputProps}
       empty={!value || value.length === 0}
       renderInput={(childProps) => (

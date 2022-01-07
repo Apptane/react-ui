@@ -59,6 +59,7 @@ export type InputTextCoreProps<
   onInputKeyDown?: (event: React.KeyboardEvent) => void;
   onInputPaste?: (event: React.ClipboardEvent) => void;
   onInputChange?: (value: string, selection: TextSelection) => void;
+  onInputBlur?: (event: React.FocusEvent) => void;
   renderInput: (props: TAttributes) => React.ReactNode;
   inputProps: TAttributes;
 };
@@ -71,8 +72,17 @@ const InputTextBase = forwardRef(
     props: InputTextCoreProps<TElement, TAttributes>,
     ref: React.Ref<InputTextRefObject>
   ) => {
-    const { autoFocus, placeholder, onInputKeyDown, onInputPaste, onInputChange, renderInput, inputProps, ...other } =
-      props;
+    const {
+      autoFocus,
+      placeholder,
+      onInputKeyDown,
+      onInputPaste,
+      onInputChange,
+      onInputBlur,
+      renderInput,
+      inputProps,
+      ...other
+    } = props;
 
     const disabled = props.disabled;
     const readonly = props.readonly;
@@ -86,6 +96,7 @@ const InputTextBase = forwardRef(
 
     inputProps.onKeyDown = onInputKeyDown;
     inputProps.onPaste = onInputPaste;
+    inputProps.onBlur = onInputBlur;
 
     useImperativeHandle(ref, () => ({
       focus: () => {
